@@ -1,6 +1,5 @@
-﻿  machines.c
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\Trabalho Pratico 18550\Trabalho Pratico 18550\machines.c(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\Trabalho Pratico 18550\Trabalho Pratico 18550\machines.c(5,33): warning C4013: 'calloc' undefined; assuming extern returning int
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\Trabalho Pratico 18550\Trabalho Pratico 18550\machines.c(6,16): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\Trabalho Pratico 18550\Trabalho Pratico 18550\machines.c(7,18): warning C4047: '=': 'int' differs in levels of indirection from 'int *'
-  Trabalho Pratico 18550.vcxproj -> D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\Trabalho Pratico 18550\Debug\Trabalho Pratico 18550.exe
+﻿  operations.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.c(5,37): warning C4013: 'calloc' undefined; assuming extern returning int
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.c(27,35): warning C4133: 'function': incompatible types - from 'OperationsList *' to 'MachinesList *'
+  Trabalho Pratico 18550.vcxproj -> D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Debug\Trabalho Pratico 18550.exe

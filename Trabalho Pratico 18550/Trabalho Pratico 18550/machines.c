@@ -25,9 +25,9 @@ MachinesList* InsertMachineInMachineList(MachinesList* h, Machine* newMachine) {
 
 	MachinesList* aux = CreateMachineListNode(newMachine);
 
-	/*if (CheckIfMachineAlreadyExists(h, aux->machine.cod)) {
+	if (CheckIfMachineAlreadyExists(h, aux->machine.cod)) {
 		return h;
-	}*/
+	}
 
 	if (h == NULL) {
 		h = aux;
