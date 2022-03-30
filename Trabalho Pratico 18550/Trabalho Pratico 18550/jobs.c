@@ -58,40 +58,122 @@ bool CheckJobExists(ProcessPlan* h, int cod) {
 	return false;
 }
 
-Job* AddNewOperationToJob(Job* j, Operation* o) {
-	if (j == NULL) {
-		return j;
+ProcessPlan* AddNewOperationToJob(ProcessPlan* h, int jobCod, Operation* o) {
+	if (h != NULL) {
+		Job* aux = SearchJob(h, jobCod);
+		if (aux != NULL)		//se encontrou o job
+		{
+			aux->operations = InsertOperationInOperationsList(aux->operations, o);
+		}
 	}
-
-	Job* aux = j;
-	aux->operations = InsertOperationInOperationsList(aux->operations, o);
-	return aux;
+	return h;
 }
 
-Job* RemoveOperationFromJob(Job* j, int cod) {
-	if (j == NULL) {
-		return j;
+ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, int jobCod, int opCod) {
+	if (h != NULL) {
+		Job* job = SearchJob(h, jobCod);
+		if (job != NULL && job->operations != NULL) {
+			if (job->operations->operation.cod == opCod) {				//primeira operacao
+				OperationsList* aux = job->operations;
+				job->operations = job->operations->nextOperation;		//head passa para a segunda operacao
+				free(aux);
+			}else {
+				OperationsList* aux = job->operations;
+				OperationsList* auxAnt = aux;
+				while (aux && aux->operation.cod != opCod) {			//procura para remover
+					auxAnt = aux;
+					aux = aux->nextOperation;
+				}
+				if (aux != NULL) {									//se encontrou, remove
+					auxAnt->nextOperation = aux->nextOperation;
+					free(aux);
+				}
+			}
+		}
 	}
-	if (cod == NULL) {
-		return j;
-	}
+	return h;
+}
 
-	if (j->operations->operation.cod == cod) {				//primeira operacao
-		OperationsList* aux = j->operations;
-		j->operations = j->operations->nextOperation;
-		free(aux);
+ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int macCod, int newTime) {
+	if (h != NULL) {
+		Job* aux = SearchJob(h, jobCod);
+		if (aux != NULL && aux->operations != NULL)		//se encontrou o job e contem operacoes
+		{
+			Operation* auxOperation = SearchOperation(aux->operations, opCod);
+			if (auxOperation != NULL) {
+				Machine* auxMachine = SearchMachine(auxOperation->machines, macCod);
+				if (auxMachine != NULL) {
+					auxMachine->time = newTime;
+				}
+			}
+		}
+	}
+	return h;
+}
+
+Job* SearchJob(ProcessPlan* h, int cod) {
+	if (h == NULL) {
+		return NULL;
 	}else {
-		OperationsList* aux = j->operations;
-		OperationsList* auxAnt = aux;
-		while (aux && aux->operation.cod != cod) {			//procura para revover
-			auxAnt = aux;
-			aux = aux->nextOperation;
+		ProcessPlan* aux = h;
+		while (aux != NULL) {
+			if (aux->job.cod == cod) {
+				return (aux);
+			}
+			aux = aux->nextJob;
 		}
-		if (aux != NULL) {									//se encontrou, remove
-			auxAnt->nextOperation = aux->nextOperation;
-			free(aux);
+		return NULL;
+	}
+}
+
+OperationsMath GetMinTimeToCompleteJob(ProcessPlan* h, int jobCod) {
+	OperationsMath x = { 0, NULL };
+	int minTime = 0;
+
+	if (h != NULL) {
+		Job* job = SearchJob(h, jobCod);
+		if (job != NULL && job->operations != NULL) {
+			OperationsList* auxOperations = job->operations;
+			while (auxOperations != NULL) {											//percorrer todas as operacoes
+				MachinesList* auxMachines = auxOperations->operation.machines;
+				int aux = auxMachines->machine.time;								//atribui à aux o tempo da primeira maquina
+				while (auxMachines != NULL) {										//percorrer todas as maquinas da operacao
+					if (auxMachines->machine.time < aux) {							//comparar se o tempo da maquina e menor ao da auxiliar
+						aux = auxMachines->machine.time;
+					}
+					auxMachines = auxMachines->nextMachine;
+				}
+				minTime += aux;
+				auxOperations = auxOperations->nextOperation;
+			}
+			x.res = minTime;
 		}
 	}
+	return x;
+};
 
-	return j;
-}
+OperationsMath GetMaxTimeToCompleteJob(ProcessPlan* h, int jobCod) {
+	OperationsMath x = { 0, NULL };
+	int minTime = 0;
+
+	if (h != NULL) {
+		Job* job = SearchJob(h, jobCod);
+		if (job != NULL && job->operations != NULL) {
+			OperationsList* auxOperations = job->operations;
+			while (auxOperations != NULL) {											//percorrer todas as operacoes
+				MachinesList* auxMachines = auxOperations->operation.machines;
+				int aux = auxMachines->machine.time;								//atribui à aux o tempo da primeira maquina
+				while (auxMachines != NULL) {										//percorrer todas as maquinas da operacao
+					if (auxMachines->machine.time > aux) {							//comparar se o tempo da maquina e superior ao da auxiliar
+						aux = auxMachines->machine.time;
+					}
+					auxMachines = auxMachines->nextMachine;
+				}
+				minTime += aux;
+				auxOperations = auxOperations->nextOperation;
+			}
+			x.res = minTime;
+		}
+	}
+	return x;
+};

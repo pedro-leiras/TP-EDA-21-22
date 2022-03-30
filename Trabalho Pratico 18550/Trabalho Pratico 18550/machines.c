@@ -57,3 +57,19 @@ bool CheckMachineExists(MachinesList* h, int cod) {
 
 	return false;
 }
+
+Machine* SearchMachine(MachinesList* h, int cod) {
+	if (h == NULL) {
+		return NULL;
+	}
+	else {
+		MachinesList* aux = h;
+		while (aux != NULL) {
+			if (aux->machine.cod == cod) {
+				return (aux);
+			}
+			aux = aux->nextMachine;
+		}
+		return NULL;
+	}
+}

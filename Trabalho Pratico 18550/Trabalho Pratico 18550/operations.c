@@ -56,3 +56,19 @@ bool CheckOperationExists(OperationsList* h, int cod) {
 
 	return false;
 }
+
+Operation* SearchOperation(OperationsList* h, int cod) {
+	if (h == NULL) {
+		return NULL;
+	}else {
+		OperationsList* aux = h;
+		while (aux != NULL) {
+			if (aux->operation.cod == cod) {
+				return (aux);
+			}
+			aux = aux->nextOperation;
+		}
+		return NULL;
+	}
+}
+
