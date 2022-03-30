@@ -1,7 +1,6 @@
-#include "machines.h";
-#include <stdio.h>
+#include "header.h"
 
-Machine* CreateMachine(int* cod, int* time) {
+Machine* CreateMachine(int cod, int time) {
 	Machine* aux = (Machine*)calloc(1, sizeof(Machine));
 	aux->cod = cod;
 	aux->time = time;
@@ -18,14 +17,14 @@ MachinesList* CreateMachineListNode(Machine* m) {
 	return newNode;
 }
 
-MachinesList* InsertMachineInMachineList(MachinesList* h, Machine* newMachine) {
+MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) {
 	if (newMachine == NULL) {
 		return h;
 	}
 
 	MachinesList* aux = CreateMachineListNode(newMachine);
 
-	if (CheckIfMachineAlreadyExists(h, aux->machine.cod)) {
+	if (CheckMachineExists(h, aux->machine.cod)) {
 		return h;
 	}
 
@@ -42,7 +41,7 @@ MachinesList* InsertMachineInMachineList(MachinesList* h, Machine* newMachine) {
 	return h;
 }
 
-bool CheckIfMachineAlreadyExists(MachinesList* h, int cod) {
+bool CheckMachineExists(MachinesList* h, int cod) {
 	if (h == NULL) {
 		return false;
 	}

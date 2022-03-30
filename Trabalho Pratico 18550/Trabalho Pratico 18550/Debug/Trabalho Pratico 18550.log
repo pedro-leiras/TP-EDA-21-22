@@ -1,5 +1,3 @@
-﻿  operations.c
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.c(5,37): warning C4013: 'calloc' undefined; assuming extern returning int
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.c(27,35): warning C4133: 'function': incompatible types - from 'OperationsList *' to 'MachinesList *'
+﻿  main.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
   Trabalho Pratico 18550.vcxproj -> D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Debug\Trabalho Pratico 18550.exe

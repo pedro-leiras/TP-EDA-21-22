@@ -24,17 +24,11 @@
     <ClCompile Include="operations.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="jobs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="jobs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="machines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="operations.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="header.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -1,5 +1,4 @@
-#include "operations.h"
-#include "machines.h"
+#include "header.h"
 
 Operation* CreateOperation(int cod, MachinesList* m) {
 	Operation* aux = (Operation*)calloc(1, sizeof(Operation));
@@ -17,14 +16,14 @@ OperationsList* CreateOperationListNode(Operation* o) {
 	return newNode;
 }
 
-OperationsList* InsertOperationInOperationList(OperationsList* h, Operation* newMOperation) {
-	if (newMOperation == NULL) {
+OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* newOperation) {
+	if (newOperation == NULL) {
 		return h;
 	}
 
-	OperationsList* aux = CreateOperationListNode(newMOperation);
+	OperationsList* aux = CreateOperationListNode(newOperation);
 
-	if (CheckIfMachineAlreadyExists(h, aux->operation.cod)) {
+	if (CheckOperationExists(h, aux->operation.cod)) {
 		return h;
 	}
 
@@ -41,7 +40,7 @@ OperationsList* InsertOperationInOperationList(OperationsList* h, Operation* new
 	return h;
 }
 
-bool CheckIfOperationAlreadyExists(OperationsList* h, int cod) {
+bool CheckOperationExists(OperationsList* h, int cod) {
 	if (h == NULL) {
 		return false;
 	}
