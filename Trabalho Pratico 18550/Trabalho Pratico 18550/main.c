@@ -2,6 +2,11 @@
 
 int main() {
 	ProcessPlan* p = NULL;
+	MachinesList* machinesOp1 = NULL, * machinesOp2 = NULL, * machinesOp3 = NULL;
+	OperationsList* OperationsJob1 = NULL;
+	OperationsMath x;
+	float y;
+
 	//p = ReadProcessPlanFile("data.txt", p);
 
 	Machine* M1 = CreateMachine(1, 4);
@@ -9,22 +14,18 @@ int main() {
 	Machine* M3 = CreateMachine(3, 5);
 	Machine* M4 = CreateMachine(4, 5);
 
-	MachinesList* machinesOp1 = NULL;
 	machinesOp1 = InsertMachineInMachinesList(machinesOp1, M1);
 	machinesOp1 = InsertMachineInMachinesList(machinesOp1, M2);
-	
+
 	Operation* O1 = CreateOperation(1, machinesOp1);
-	OperationsList* OperationsJob1 = NULL;
 	OperationsJob1 = InsertOperationInOperationsList(OperationsJob1, O1);
 
 	Job* Job1 = CreateJob(1, OperationsJob1);
 	p = InsertJobInProcessPlan(p, Job1);
 
-	MachinesList* machinesOp2 = NULL;
 	machinesOp2 = InsertMachineInMachinesList(machinesOp2, M3);
 	machinesOp2 = InsertMachineInMachinesList(machinesOp2, M4);
 	Operation* O2 = CreateOperation(2, machinesOp2);
-	MachinesList* machinesOp3 = NULL;
 	machinesOp3 = InsertMachineInMachinesList(machinesOp3, M1);
 	machinesOp3 = InsertMachineInMachinesList(machinesOp3, M3);
 	Operation* O3 = CreateOperation(3, machinesOp3);
@@ -34,11 +35,13 @@ int main() {
 	p = RemoveOperationFromJob(p, 1, 1);
 	p = ChangeOperationInJob(p, 1, 3, 3, 10);
 
-	OperationsMath x;
 	x = GetMinTimeToCompleteJob(p, 1);
+	ListOperations(x.operations);
+	puts(" ");
 	x = GetMaxTimeToCompleteJob(p, 1);
+	ListOperations(x.operations);
 
-	float y = GetAverageOperationTime(p, 1, 3);
+	y = GetAverageOperationTime(p, 1, 3);
 
 	return 0;
 }
@@ -72,7 +75,6 @@ ProcessPlan* ReadProcessPlanFile(char* path, ProcessPlan* p) {
 				/*while (auxMach != NULL) {
 					printf("%s", auxMach);
 					macData = strtok(auxMach, ",");
-					machCod = macData;
 					while (macData != NULL) {
 						macData = strtok(auxMach, ",");
 						machTime = macData;

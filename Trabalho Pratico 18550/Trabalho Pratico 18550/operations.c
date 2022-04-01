@@ -1,5 +1,25 @@
+/**
+ * @file operations.c
+ * @author Pedro Leiras
+ * @email a18550@alunos.ipca.pt
+ * @date 2022
+ * @brief Trabalho prático da UC EDA (versão 1)
+ * Métodos para manipular as Structs Operation e OperationsList
+ *
+ * @bug bugs desconhecidos.
+*/
+
 #include "header.h"
 
+/**
+*	@brief Cria novo Operation.
+*
+*	Aloca memória necessária para armazenar um operation em memória
+*
+*	@param [in] cod Código da Operation
+*	@param [in] m	Inicio da Lista de Máquinas
+*
+*/
 Operation* CreateOperation(int cod, MachinesList* m) {
 	Operation* aux = (Operation*)calloc(1, sizeof(Operation));
 	aux->cod = cod;
@@ -8,6 +28,12 @@ Operation* CreateOperation(int cod, MachinesList* m) {
 	return aux;
 }
 
+/**
+* @brief Cria novo nodo para a Lista de Jobs
+* Copia para o nodo da lista a informação de um job
+* @param [in] j	Novo Job
+* @param [out] Apontador para nodo criado
+*/
 OperationsList* CreateOperationListNode(Operation* o) {
 	OperationsList* newNode = (OperationsList*)calloc(1, sizeof(OperationsList));
 	newNode->operation.cod = o->cod;
@@ -94,8 +120,7 @@ float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod) {
 ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int macCod, int newTime) {
 	if (h != NULL) {
 		Job* job = SearchJob(h, jobCod);
-		if (job != NULL && job->operations != NULL)		//se encontrou o job e contem operacoes
-		{
+		if (job != NULL && job->operations != NULL) {
 			Operation* auxOperation = SearchOperation(job->operations, opCod);
 			if (auxOperation != NULL) {
 				Machine* auxMachine = SearchMachine(auxOperation->machines, macCod);
@@ -107,44 +132,56 @@ ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int mac
 	return h;
 }
 
-int GetMinTimeToCompleteOperation(Operation h) {
-	int aux = 0;
-	if (h.machines != NULL) {
-		MachinesList* auxMachines = h.machines;
-		aux = GetMinMachineTime(auxMachines);
-	}
+OperationsMath GetMinTimeToCompleteOperations(OperationsList* h) {
+	OperationsMath x = { 0, NULL };
+	Machine* auxMachine;
+	MachinesList* auxMachineList;
+	Operation* auxOperation;
 
-	return aux;
-}
-
-int GetMaxTimeToCompleteOperation(Operation h) {
-	int aux = 0;
-	if (h.machines != NULL) {
-		MachinesList* auxMachines = h.machines;
-		aux = GetMaxMachineTime(auxMachines);
-	}
-
-	return aux;
-}
-
-int GetMinTimeToCompleteOperations(OperationsList* h) {
-	int aux = 0;												//total da soma do tempo min de cada operacao
 	while (h != NULL) {
-		Operation auxOperation = h->operation;
-		aux += GetMinTimeToCompleteOperation(auxOperation);
+		auxMachineList = NULL;
+		auxMachine = GetMachineWithLowerTime(h->operation.machines);							//obtem a struct da maquina com menor tempo da operacao iterada
+		if (auxMachine != NULL) {
+			x.res += auxMachine->time;															//vai somando o tempo minimo de todas as maquinas
+			auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);			//cria uma lista de maquinas com a maquina de menor tempo
+			auxOperation = CreateOperation(h->operation.cod, auxMachineList);					//cria a operacao
+			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operaçoes a retornar
+		}
 		h = h->nextOperation;
 	}
 
-	return aux;
+	return x;
 }
 
-int GetMaxTimeToCompleteOperations(OperationsList* h) {
-	int aux = 0;												//total da soma do tempo max de cada operacao
+OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h) {
+	OperationsMath x = { 0, NULL };
+	Machine* auxMachine;
+	MachinesList* auxMachineList;
+	Operation* auxOperation;
+
 	while (h != NULL) {
-		Operation auxOperation = h->operation;
-		aux += GetMaxTimeToCompleteOperation(auxOperation);
+		auxMachineList = NULL;
+		auxMachine = GetMachineWithHigherTime(h->operation.machines);							//obtem a struct da maquina com maior tempo da operacao iterada
+		if (auxMachine != NULL) {
+			x.res += auxMachine->time;															//vai somando o maior tempo de todas as maquinas
+			auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);			//cria uma lista de maquinas com a maquina de maior tempo
+			auxOperation = CreateOperation(h->operation.cod, auxMachineList);					//cria a operacao
+			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operaçoes a retornar
+		}
 		h = h->nextOperation;
 	}
 
-	return aux;
+	return x;
+}
+
+void ListOperations(OperationsList* h) {
+	if (h != NULL) {
+		printf("Codigo Operacao: %d - Maquinas: \n", h->operation.cod);
+		ListMachines(h->operation.machines);
+		while (h->nextOperation != NULL) {
+			h = h->nextOperation;
+			printf("Codigo Operacao: %d - Maquinas: \n", h->operation.cod);
+			ListMachines(h->operation.machines);	
+		};
+	}
 }

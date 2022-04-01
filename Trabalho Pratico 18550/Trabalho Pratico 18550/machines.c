@@ -96,13 +96,17 @@ Machine* ChangeMachineTime(Machine* h, int newTime) {
 	return h;
 }
 
-int GetMinMachineTime(MachinesList* h) {
-	int aux = 0;
+Machine* GetMachineWithLowerTime(MachinesList* h) {
+	Machine* aux = NULL;
+	int auxTime;
+
 	if (h != NULL) {
-		aux = h->machine.time;									//atribui à aux o tempo da primeira maquina
-		while (h != NULL) {										//percorrer todas as maquinas da operacao
-			if (h->machine.time < aux) {						//comparar se o tempo da maquina e menor ao da aux
-				aux = h->machine.time;
+		auxTime = h->machine.time;									//atribui à aux o tempo da primeira maquina
+		aux = CreateMachine(h->machine.cod, auxTime);
+		while (h != NULL) {											//percorrer todas as maquinas da operacao
+			if (h->machine.time < auxTime) {						//comparar se o tempo da maquina e menor ao da aux
+				auxTime = h->machine.time;
+				aux = CreateMachine(h->machine.cod, auxTime);		
 			}
 			h = h->nextMachine;
 		}
@@ -111,17 +115,31 @@ int GetMinMachineTime(MachinesList* h) {
 	return aux;
 }
 
-int GetMaxMachineTime(MachinesList* h) {
-	int aux = 0;
+Machine* GetMachineWithHigherTime(MachinesList* h) {
+	Machine* aux = NULL;
+	int auxTime;
+
 	if (h != NULL) {
-		aux = h->machine.time;									//atribui à aux o tempo da primeira maquina
-		while (h != NULL) {										//percorrer todas as maquinas da operacao
-			if (h->machine.time > aux) {						//comparar se o tempo da maquina e maior ao da aux
-				aux = h->machine.time;
+		auxTime = h->machine.time;									//atribui à aux o tempo da primeira maquina
+		aux = CreateMachine(h->machine.cod, auxTime);
+		while (h != NULL) {											//percorrer todas as maquinas da operacao
+			if (h->machine.time > auxTime) {						//comparar se o tempo da maquina e maior ao da aux
+				auxTime = h->machine.time;
+				aux = CreateMachine(h->machine.cod, auxTime);
 			}
 			h = h->nextMachine;
 		}
 	}
 
 	return aux;
+}
+
+void ListMachines(MachinesList* h) {
+	if (h != NULL) {
+		printf("- Codigo Maquina: %d | Tempo: %d\n", h->machine.cod, h->machine.time);
+		while (h->nextMachine != NULL) {
+			h = h->nextMachine;
+			printf("- Codigo Maquina: %d | Tempo: %d\n", h->machine.cod, h->machine.time);	
+		};
+	}
 }
