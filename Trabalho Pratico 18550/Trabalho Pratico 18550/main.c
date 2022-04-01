@@ -1,3 +1,12 @@
+/**
+ * @file main.c
+ * @author Pedro Leiras
+ * @email a18550@alunos.ipca.pt
+ * @date 2022
+ * @brief Trabalho prático da UC EDA (versão 1)
+ * @bug bugs desconhecidos.
+*/
+
 #include "header.h";
 
 int main() {
@@ -33,7 +42,7 @@ int main() {
 	p = AddNewOperationToJob(p, 1, O2);
 	p = AddNewOperationToJob(p, 1, O3);
 	p = RemoveOperationFromJob(p, 1, 1);
-	p = ChangeOperationInJob(p, 1, 3, 3, 10);
+	p = ChangeOperationInJob(p, 1, 3, 3, 3, 10);
 
 	x = GetMinTimeToCompleteJob(p, 1);
 	ListOperations(x.operations);

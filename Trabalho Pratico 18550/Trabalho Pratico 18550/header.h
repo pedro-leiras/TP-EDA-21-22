@@ -97,7 +97,7 @@ typedef struct OperationsMath {
 	Machine* SearchMachine(MachinesList* h, int cod);
 	int SumMachineTime(MachinesList* h);
 	int CountMachines(MachinesList* h);
-	Machine* ChangeMachineTime(Machine* h, int newTime);
+	Machine* ChangeMachine(Machine* h, int newMacCod, int newTime);
 	Machine* GetMachineWithLowerTime(MachinesList* h);
 	Machine* GetMachineWithHigherTime(MachinesList* h);
 	void ListMachines(MachinesList* h);
@@ -110,7 +110,7 @@ typedef struct OperationsMath {
 	bool CheckOperationExists(OperationsList* h, int cod);
 	Operation* SearchOperation(OperationsList* h, int cod);
 	float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod);
-	ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int macCod, int newTime);
+	ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int macCod, int newMacCod, int newTime);
 	OperationsMath GetMinTimeToCompleteOperations(OperationsList* h);
 	OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h);
 	void ListOperations(OperationsList* h);

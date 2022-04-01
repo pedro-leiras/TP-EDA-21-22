@@ -31,8 +31,8 @@ Job* CreateJob(int cod, OperationsList* o) {
 /**
 * @brief Cria novo nodo para a Lista de Jobs
 * Copia para o nodo da lista a informação de um job
-* @param [in] j	Novo Job
-* @param [out] Apontador para nodo criado
+* @param [in] j		Novo Job
+* @return	Apontador para nodo criado
 */
 ProcessPlan* CreateProcessPlanNode(Job* j) {
 	ProcessPlan* newNode = (ProcessPlan*)calloc(1, sizeof(ProcessPlan));
@@ -61,8 +61,7 @@ ProcessPlan* InsertJobInProcessPlan(ProcessPlan* h, Job* newJob) {
 
 	if (h == NULL) {
 		h = aux;
-	}
-	else {
+	}else {
 		ProcessPlan* tmp = h;
 		while (tmp->nextJob != NULL) {
 			tmp = tmp->nextJob;
@@ -74,11 +73,11 @@ ProcessPlan* InsertJobInProcessPlan(ProcessPlan* h, Job* newJob) {
 }
 
 /**
-* @brief Verifica se um job existe a Lista de Jobs
+* @brief Verifica se um job existe na Lista de Jobs
 * Procura se o job está presente na Lista de Jobs, através do código
 * @param [in] h		Inicio da Lista do ProcessPlan
 * @param [in] cod	Código do Job a procurar
-* @param [out] true - Job existe na lista; false - Job não está presente na lista
+* @return	true - Job existe na lista; false - Job não está presente na lista
 */
 bool CheckJobExists(ProcessPlan* h, int cod) {
 	if (h != NULL) {
@@ -99,7 +98,7 @@ bool CheckJobExists(ProcessPlan* h, int cod) {
 * @param [in] h			Inicio da Lista do ProcessPlan
 * @param [in] jobCod	Código do Job
 * @param [in] o			Apontador da lista de Operações adicionar
-* @param [out] Inicio da Lista do ProcessPlan
+* @return	Inicio da Lista do ProcessPlan
 */
 ProcessPlan* AddNewOperationToJob(ProcessPlan* h, int jobCod, Operation* o) {
 	if (h != NULL) {
@@ -117,7 +116,7 @@ ProcessPlan* AddNewOperationToJob(ProcessPlan* h, int jobCod, Operation* o) {
 * @param [in] h				Inicio da Lista do ProcessPlan
 * @param [in] jobCod		Código do Job
 * @param [in] opCod			Código da Operação a remover
-* @param [out] Inicio da Lista do ProcessPlan
+* @return	Inicio da Lista do ProcessPlan
 */
 ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, int jobCod, int opCod) {
 	if (h != NULL) {
@@ -145,10 +144,10 @@ ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, int jobCod, int opCod) {
 }
 
 /**
-* @brief Verifica se o Job existe. Se existir devolve cópia do Job!
+* @brief Verifica se o Job existe. Se existir devolve endereço do Job!
 * @param [in] h		Inicio da Lista do ProcessPlan
 * @param [in] cod	Código do Job a procurar
-* @return	Apontador para cópia do Job encontrado
+* @return	Apontador para o Job encontrado
 */
 Job* SearchJob(ProcessPlan* h, int cod) {
 	if (h != NULL) {
