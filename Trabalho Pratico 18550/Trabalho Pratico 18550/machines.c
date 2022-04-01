@@ -42,27 +42,21 @@ MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) 
 }
 
 bool CheckMachineExists(MachinesList* h, int cod) {
-	if (h == NULL) {
-		return false;
-	}
-
-	MachinesList* aux = h;
-
-	while (aux != NULL) {
-		if (aux->machine.cod == cod) {
-			return true;
+	if (h != NULL) {
+		MachinesList* aux = h;
+		while (aux != NULL) {
+			if (aux->machine.cod == cod) {
+				return true;
+			}
+			aux = aux->nextMachine;
 		}
-		aux = aux->nextMachine;
 	}
 
 	return false;
 }
 
 Machine* SearchMachine(MachinesList* h, int cod) {
-	if (h == NULL) {
-		return NULL;
-	}
-	else {
+	if (h != NULL) {
 		MachinesList* aux = h;
 		while (aux != NULL) {
 			if (aux->machine.cod == cod) {
@@ -70,6 +64,64 @@ Machine* SearchMachine(MachinesList* h, int cod) {
 			}
 			aux = aux->nextMachine;
 		}
-		return NULL;
 	}
+
+	return NULL;
+}
+
+int SumMachineTime(MachinesList* h) {
+	int sum = 0;
+	while (h != NULL) {
+		sum += h->machine.time;
+		h = h->nextMachine;
+	}
+
+	return sum;
+}
+
+int CountMachines(MachinesList* h) {
+	int count = 0;
+	while (h != NULL) {
+		count++;
+		h = h->nextMachine;
+	}
+
+	return count;
+}
+
+Machine* ChangeMachineTime(Machine* h, int newTime) {
+	if (h != NULL) {
+		h->time = newTime;
+	}
+	return h;
+}
+
+int GetMinMachineTime(MachinesList* h) {
+	int aux = 0;
+	if (h != NULL) {
+		aux = h->machine.time;									//atribui à aux o tempo da primeira maquina
+		while (h != NULL) {										//percorrer todas as maquinas da operacao
+			if (h->machine.time < aux) {						//comparar se o tempo da maquina e menor ao da aux
+				aux = h->machine.time;
+			}
+			h = h->nextMachine;
+		}
+	}
+
+	return aux;
+}
+
+int GetMaxMachineTime(MachinesList* h) {
+	int aux = 0;
+	if (h != NULL) {
+		aux = h->machine.time;									//atribui à aux o tempo da primeira maquina
+		while (h != NULL) {										//percorrer todas as maquinas da operacao
+			if (h->machine.time > aux) {						//comparar se o tempo da maquina e maior ao da aux
+				aux = h->machine.time;
+			}
+			h = h->nextMachine;
+		}
+	}
+
+	return aux;
 }

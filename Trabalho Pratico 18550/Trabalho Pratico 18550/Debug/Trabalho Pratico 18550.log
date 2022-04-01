@@ -1,5 +1,7 @@
-﻿  jobs.c
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\jobs.c(4,25): warning C4013: 'calloc' undefined; assuming extern returning int
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\jobs.c(79,9): warning C4013: 'free' undefined; assuming extern returning int
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\jobs.c(121,17): warning C4133: 'return': incompatible types - from 'ProcessPlan *' to 'Job *'
+﻿  main.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(53,6): warning C4101: 'result': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(66,16): warning C4101: 'machTime': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(66,7): warning C4101: 'machCod': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(65,9): warning C4101: 'macData': unreferenced local variable
   Trabalho Pratico 18550.vcxproj -> D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Debug\Trabalho Pratico 18550.exe

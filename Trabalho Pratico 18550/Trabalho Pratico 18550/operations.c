@@ -4,6 +4,7 @@ Operation* CreateOperation(int cod, MachinesList* m) {
 	Operation* aux = (Operation*)calloc(1, sizeof(Operation));
 	aux->cod = cod;
 	aux->machines = m;
+
 	return aux;
 }
 
@@ -41,26 +42,21 @@ OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* ne
 }
 
 bool CheckOperationExists(OperationsList* h, int cod) {
-	if (h == NULL) {
-		return false;
-	}
-
-	OperationsList* aux = h;
-
-	while (aux != NULL) {
-		if (aux->operation.cod == cod) {
-			return true;
+	if (h != NULL) {
+		OperationsList* aux = h;
+		while (aux != NULL) {
+			if (aux->operation.cod == cod) {
+				return true;
+			}
+			aux = aux->nextOperation;
 		}
-		aux = aux->nextOperation;
 	}
 
 	return false;
 }
 
 Operation* SearchOperation(OperationsList* h, int cod) {
-	if (h == NULL) {
-		return NULL;
-	}else {
+	if (h != NULL) {
 		OperationsList* aux = h;
 		while (aux != NULL) {
 			if (aux->operation.cod == cod) {
@@ -68,7 +64,87 @@ Operation* SearchOperation(OperationsList* h, int cod) {
 			}
 			aux = aux->nextOperation;
 		}
-		return NULL;
 	}
+
+	return NULL;
 }
 
+float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod) {
+	int sum = 0, i = 0;
+	float res = -1;
+
+	if (h != NULL) {
+		Job* job = SearchJob(h, jobCod);
+		if (job != NULL && job->operations != NULL) {
+			Operation* auxOperation = SearchOperation(job->operations, opCod);
+			if (auxOperation != NULL) {
+				MachinesList* auxMachines = auxOperation->machines;
+				sum = SumMachineTime(auxMachines);
+				i = CountMachines(auxMachines);
+				if (i != 0) {
+					res = sum / (float)i;
+				}
+			}
+		}
+	}
+
+	return res;
+}
+
+ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int macCod, int newTime) {
+	if (h != NULL) {
+		Job* job = SearchJob(h, jobCod);
+		if (job != NULL && job->operations != NULL)		//se encontrou o job e contem operacoes
+		{
+			Operation* auxOperation = SearchOperation(job->operations, opCod);
+			if (auxOperation != NULL) {
+				Machine* auxMachine = SearchMachine(auxOperation->machines, macCod);
+				auxMachine = ChangeMachineTime(auxMachine, newTime);
+			}
+		}
+	}
+
+	return h;
+}
+
+int GetMinTimeToCompleteOperation(Operation h) {
+	int aux = 0;
+	if (h.machines != NULL) {
+		MachinesList* auxMachines = h.machines;
+		aux = GetMinMachineTime(auxMachines);
+	}
+
+	return aux;
+}
+
+int GetMaxTimeToCompleteOperation(Operation h) {
+	int aux = 0;
+	if (h.machines != NULL) {
+		MachinesList* auxMachines = h.machines;
+		aux = GetMaxMachineTime(auxMachines);
+	}
+
+	return aux;
+}
+
+int GetMinTimeToCompleteOperations(OperationsList* h) {
+	int aux = 0;												//total da soma do tempo min de cada operacao
+	while (h != NULL) {
+		Operation auxOperation = h->operation;
+		aux += GetMinTimeToCompleteOperation(auxOperation);
+		h = h->nextOperation;
+	}
+
+	return aux;
+}
+
+int GetMaxTimeToCompleteOperations(OperationsList* h) {
+	int aux = 0;												//total da soma do tempo max de cada operacao
+	while (h != NULL) {
+		Operation auxOperation = h->operation;
+		aux += GetMaxTimeToCompleteOperation(auxOperation);
+		h = h->nextOperation;
+	}
+
+	return aux;
+}
