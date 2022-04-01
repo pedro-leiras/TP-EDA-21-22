@@ -20,7 +20,7 @@
 /**
  * @brief Estrutura para armazenar uma maquina
  *
- * Uma maquina contém um codigo (@@cod) e tempo (@@time).
+ * Uma maquina contem um codigo (@@cod) e tempo (@@time).
  */
 typedef struct Machine {
 	int cod;	/**< Codigo da Maquina*/
@@ -30,7 +30,7 @@ typedef struct Machine {
 /**
  * @brief Estrutura para armazenar as maquinas
  *
- * Uma lista de maquinas contém a estrutura do tipo Machine (@@machine) e o apontador para a proxima maquina (@@nextMachine).
+ * Uma lista de maquinas contem a estrutura do tipo Machine (@@machine) e o apontador para a proxima maquina (@@nextMachine).
  */
 typedef struct MachinesList {
 	struct Machine machine;					/**< toda a informacao da Maquina */
@@ -40,7 +40,7 @@ typedef struct MachinesList {
 /**
  * @brief Estrutura para armazenar uma operacao
  *
- * Uma operacao contém um codigo (@@cod) e uma lista de maquinas (@@machines).
+ * Uma operacao contem um codigo (@@cod) e uma lista de maquinas (@@machines).
  */
 typedef struct Operation {
 	int cod;							/**< Codigo da Operacao*/
@@ -50,7 +50,7 @@ typedef struct Operation {
 /**
  * @brief Estrutura para armazenar as operacoes
  *
- * Uma lista de operacoes contém a estrutura do tipo Operation (@@operation) e o apontador para a proxima operacao (@@nextOperation).
+ * Uma lista de operacoes contem a estrutura do tipo Operation (@@operation) e o apontador para a proxima operacao (@@nextOperation).
  */
 typedef struct OperationsList {
 	struct Operation operation;					/**< toda a informacao da Operacao */
@@ -60,7 +60,7 @@ typedef struct OperationsList {
 /**
  * @brief Estrutura para armazenar um trabalho
  *
- * Um trabalho contém um codigo (@@cod) e uma lista de operacoes (@@operations).
+ * Um trabalho contem um codigo (@@cod) e uma lista de operacoes (@@operations).
  */
 typedef struct Job {
 	int cod;								/**< Codigo do Job*/
@@ -70,7 +70,7 @@ typedef struct Job {
 /**
  * @brief Estrutura para armazenar os trabalhos
  *
- * Uma lista de trabalhos contém a estrutura do tipo Job (@@job) e o apontador para o proximo trabalho (@@nextJob).
+ * Uma lista de trabalhos contem a estrutura do tipo Job (@@job) e o apontador para o proximo trabalho (@@nextJob).
  */
 typedef struct ProcessPlan {
 	struct Job job;						/**< toda a informacao do Job */
@@ -80,7 +80,7 @@ typedef struct ProcessPlan {
 /**
  * @brief Estrutura utilizada para resultados em calculos com Operacoes
  *
- * Um OperationsMath contém o resultado dos calculos (@@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@@operations).
+ * Um OperationsMath contem o resultado dos calculos (@@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@@operations).
  */
 typedef struct OperationsMath {
 	int res;								/**< resultado dos calculos */

@@ -4,7 +4,7 @@
  * @email a18550@alunos.ipca.pt
  * @date 2022
  * @brief Trabalho pratico da UC EDA (versao 1)
- * Métodos para manipular as Structs Operation e OperationsList
+ * Metodos para manipular as Structs Operation e OperationsList
  *
  * @bug bugs desconhecidos.
 */
@@ -74,7 +74,7 @@ OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* ne
 
 /**
 * @brief Verifica se uma Operation existe a Lista de Operacoes
-* Procura se a Operation esta presente na Lista de Operacoes, através do codigo
+* Procura se a Operation esta presente na Lista de Operacoes, atraves do codigo
 * @param [in] h		Inicio da Lista do OperationsList
 * @param [in] cod	Codigo da Operation a procurar
 * @return	true - Operation existe na lista; false - Operation nao esta presente na lista
@@ -114,11 +114,11 @@ Operation* SearchOperation(OperationsList* h, int cod) {
 }
 
 /**
-* @brief Determina a quantidade média de unidades de tempo necessarias para completar uma operacao
+* @brief Determina a quantidade media de unidades de tempo necessarias para completar uma operacao
 * @param [in] h			Inicio da Lista do ProcessPlan
 * @param [in] jobCod	Codigo da Job
 * @param [in] opCod		Codigo da Operation
-* @return	Quantidade média de unidades de tempo em float
+* @return	Quantidade media de unidades de tempo em float
 */
 float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod) {
 	int sum = 0, i = 0;
@@ -168,7 +168,7 @@ ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int mac
 }
 
 /**
-* @brief Determina a quantidade mínima de unidades de tempo necessarias para completar uma operacao
+* @brief Determina a quantidade minima de unidades de tempo necessarias para completar uma operacao
 * @param [in] h		Inicio da Lista do ProcessPlan
 * @return	Struct com o resultado e respetivas operacoes onde o resultado foi obtido
 */

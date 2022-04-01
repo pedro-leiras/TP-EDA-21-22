@@ -1,0 +1,263 @@
+\doxysection{D\+:/\+Pedro Leiras/\+IPCA/\+EDJD 1ANO/\+S2/\+EDA/\+TP-\/\+EDA-\/21-\/22/\+Trabalho Pratico 18550/\+Trabalho Pratico 18550/jobs.c File Reference}
+\label{jobs_8c}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/jobs.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/jobs.c}}
+
+
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular as Structs \doxyref{Job}{p.}{struct_job} e \doxyref{Process\+Plan}{p.}{struct_process_plan}.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Job} $\ast$ \textbf{ Create\+Job} (int cod, \textbf{ Operations\+List} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Cria novo \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
+\textbf{ Process\+Plan} $\ast$ \textbf{ Create\+Process\+Plan\+Node} (\textbf{ Job} $\ast$j)
+\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Jobs Copia para o nodo da lista a informacao de um job. \end{DoxyCompactList}\item 
+\textbf{ Process\+Plan} $\ast$ \textbf{ Insert\+Job\+In\+Process\+Plan} (\textbf{ Process\+Plan} $\ast$h, \textbf{ Job} $\ast$new\+Job)
+\begin{DoxyCompactList}\small\item\em Insere um novo job na lista. \end{DoxyCompactList}\item 
+bool \textbf{ Check\+Job\+Exists} (\textbf{ Process\+Plan} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se um job existe na Lista de Jobs Procura se o job esta presente na Lista de Jobs, atraves do codigo. \end{DoxyCompactList}\item 
+\textbf{ Process\+Plan} $\ast$ \textbf{ Add\+New\+Operation\+To\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, \textbf{ Operation} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova operacao ao \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
+\textbf{ Process\+Plan} $\ast$ \textbf{ Remove\+Operation\+From\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod)
+\begin{DoxyCompactList}\small\item\em Remove uma operacao do \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
+\textbf{ Job} $\ast$ \textbf{ Search\+Job} (\textbf{ Process\+Plan} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se o \doxyref{Job}{p.}{struct_job} existe. Se existir devolve endereco do Job! \end{DoxyCompactList}\item 
+\textbf{ Operations\+Math} \textbf{ Get\+Min\+Time\+To\+Complete\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod)
+\begin{DoxyCompactList}\small\item\em Determinar o tempo minimo para completar o \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
+\textbf{ Operations\+Math} \textbf{ Get\+Max\+Time\+To\+Complete\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod)
+\begin{DoxyCompactList}\small\item\em Determinar o tempo maximo para completar o \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular as Structs \doxyref{Job}{p.}{struct_job} e \doxyref{Process\+Plan}{p.}{struct_process_plan}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Leiras @email {\texttt{ a18550@alunos.\+ipca.\+pt}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\textbf{ Bug}]bugs desconhecidos. \end{DoxyRefDesc}
+
+
+Definition in file \textbf{ jobs.\+c}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{jobs_8c_a2ef2c0ac42434e6382e8a37454eb4c5c}} 
+\index{jobs.c@{jobs.c}!AddNewOperationToJob@{AddNewOperationToJob}}
+\index{AddNewOperationToJob@{AddNewOperationToJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{AddNewOperationToJob()}
+{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Add\+New\+Operation\+To\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{\textbf{ Operation} $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Adiciona uma nova operacao ao \doxyref{Job}{p.}{struct_job}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\hline
+\mbox{\texttt{ in}}  & {\em o} & Apontador da lista de Operacoes adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 103} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a77dcfbb7baae202cde0298943eecffa9}} 
+\index{jobs.c@{jobs.c}!CheckJobExists@{CheckJobExists}}
+\index{CheckJobExists@{CheckJobExists}!jobs.c@{jobs.c}}
+\doxysubsubsection{CheckJobExists()}
+{\footnotesize\ttfamily bool Check\+Job\+Exists (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se um job existe na Lista de Jobs Procura se o job esta presente na Lista de Jobs, atraves do codigo. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ \doxyref{Job}{p.}{struct_job} existe na lista; false -\/ \doxyref{Job}{p.}{struct_job} nao esta presente na lista 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 82} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a54562da31c08c96d9b36165327f0babd}} 
+\index{jobs.c@{jobs.c}!CreateJob@{CreateJob}}
+\index{CreateJob@{CreateJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{CreateJob()}
+{\footnotesize\ttfamily \textbf{ Job} $\ast$ Create\+Job (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\textbf{ Operations\+List} $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Cria novo \doxyref{Job}{p.}{struct_job}. 
+
+Aloca memoria necessaria para armazenar um job em memoria
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\hline
+\mbox{\texttt{ in}}  & {\em o} & Inicio da Lista de Operacoes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 23} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a568850c2b9d587f32aa4fe9ca783c3f9}} 
+\index{jobs.c@{jobs.c}!CreateProcessPlanNode@{CreateProcessPlanNode}}
+\index{CreateProcessPlanNode@{CreateProcessPlanNode}!jobs.c@{jobs.c}}
+\doxysubsubsection{CreateProcessPlanNode()}
+{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Create\+Process\+Plan\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Job} $\ast$}]{j }\end{DoxyParamCaption})}
+
+
+
+Cria novo nodo para a Lista de Jobs Copia para o nodo da lista a informacao de um job. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & Novo \doxyref{Job}{p.}{struct_job} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para nodo criado 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 37} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a90d6e8bb0d91f65233a25f7f03edc410}} 
+\index{jobs.c@{jobs.c}!GetMaxTimeToCompleteJob@{GetMaxTimeToCompleteJob}}
+\index{GetMaxTimeToCompleteJob@{GetMaxTimeToCompleteJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{GetMaxTimeToCompleteJob()}
+{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Max\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
+
+
+
+Determinar o tempo maximo para completar o \doxyref{Job}{p.}{struct_job}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Struct com o tempo maximo para completar o \doxyref{Job}{p.}{struct_job} e as respetivas operacoes, com as maquinas para obter esse valor 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 192} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a30bfde5d1435253942fd666156e81fe6}} 
+\index{jobs.c@{jobs.c}!GetMinTimeToCompleteJob@{GetMinTimeToCompleteJob}}
+\index{GetMinTimeToCompleteJob@{GetMinTimeToCompleteJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{GetMinTimeToCompleteJob()}
+{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Min\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
+
+
+
+Determinar o tempo minimo para completar o \doxyref{Job}{p.}{struct_job}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Struct com o tempo minimo para completar o \doxyref{Job}{p.}{struct_job} e as respetivas operacoes, com as maquinas para obter esse valor 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 172} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a64902ea12b4e9cd03c6062727b728a00}} 
+\index{jobs.c@{jobs.c}!InsertJobInProcessPlan@{InsertJobInProcessPlan}}
+\index{InsertJobInProcessPlan@{InsertJobInProcessPlan}!jobs.c@{jobs.c}}
+\doxysubsubsection{InsertJobInProcessPlan()}
+{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Insert\+Job\+In\+Process\+Plan (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{\textbf{ Job} $\ast$}]{new\+Job }\end{DoxyParamCaption})}
+
+
+
+Insere um novo job na lista. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+Job} & Apontador do \doxyref{Job}{p.}{struct_job} a adicionar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 51} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_ab35fb3c991455c3d1139cfefb6f2d4de}} 
+\index{jobs.c@{jobs.c}!RemoveOperationFromJob@{RemoveOperationFromJob}}
+\index{RemoveOperationFromJob@{RemoveOperationFromJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{RemoveOperationFromJob()}
+{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Remove\+Operation\+From\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
+
+
+
+Remove uma operacao do \doxyref{Job}{p.}{struct_job}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\hline
+\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da Operacao a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 121} of file \textbf{ jobs.\+c}.
+
+\mbox{\label{jobs_8c_a1cf3d0102ef8db597c1ee531f0075217}} 
+\index{jobs.c@{jobs.c}!SearchJob@{SearchJob}}
+\index{SearchJob@{SearchJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{SearchJob()}
+{\footnotesize\ttfamily \textbf{ Job} $\ast$ Search\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se o \doxyref{Job}{p.}{struct_job} existe. Se existir devolve endereco do Job! 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para o \doxyref{Job}{p.}{struct_job} encontrado 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 152} of file \textbf{ jobs.\+c}.
+

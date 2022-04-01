@@ -4,7 +4,7 @@
  * @email a18550@alunos.ipca.pt
  * @date 2022
  * @brief Trabalho pratico da UC EDA (versao 1)
- * Métodos para manipular as Structs Job e ProcessPlan
+ * Metodos para manipular as Structs Job e ProcessPlan
  * 
  * @bug bugs desconhecidos.
 */
@@ -74,7 +74,7 @@ ProcessPlan* InsertJobInProcessPlan(ProcessPlan* h, Job* newJob) {
 
 /**
 * @brief Verifica se um job existe na Lista de Jobs
-* Procura se o job esta presente na Lista de Jobs, através do codigo
+* Procura se o job esta presente na Lista de Jobs, atraves do codigo
 * @param [in] h		Inicio da Lista do ProcessPlan
 * @param [in] cod	Codigo do Job a procurar
 * @return	true - Job existe na lista; false - Job nao esta presente na lista
@@ -164,10 +164,10 @@ Job* SearchJob(ProcessPlan* h, int cod) {
 }
 
 /**
-* @brief Determinar o tempo mínimo para completar o Job
+* @brief Determinar o tempo minimo para completar o Job
 * @param [in] h			Inicio da Lista do ProcessPlan
 * @param [in] jobCod	Codigo do Job
-* @return	Struct com o tempo mínimo para completar o Job e as respetivas operacoes, com as maquinas para obter esse valor
+* @return	Struct com o tempo minimo para completar o Job e as respetivas operacoes, com as maquinas para obter esse valor
 */
 OperationsMath GetMinTimeToCompleteJob(ProcessPlan* h, int jobCod) {
 	OperationsMath aux = { 0, NULL };

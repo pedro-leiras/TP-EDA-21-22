@@ -1,0 +1,286 @@
+\doxysection{D\+:/\+Pedro Leiras/\+IPCA/\+EDJD 1ANO/\+S2/\+EDA/\+TP-\/\+EDA-\/21-\/22/\+Trabalho Pratico 18550/\+Trabalho Pratico 18550/operations.c File Reference}
+\label{operations_8c}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/operations.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/operations.c}}
+
+
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular as Structs \doxyref{Operation}{p.}{struct_operation} e \doxyref{Operations\+List}{p.}{struct_operations_list}.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Operation} $\ast$ \textbf{ Create\+Operation} (int cod, \textbf{ Machines\+List} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Cria nova \doxyref{Operation}{p.}{struct_operation}. \end{DoxyCompactList}\item 
+\textbf{ Operations\+List} $\ast$ \textbf{ Create\+Operation\+List\+Node} (\textbf{ Operation} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \doxyref{Operation}{p.}{struct_operation}. \end{DoxyCompactList}\item 
+\textbf{ Operations\+List} $\ast$ \textbf{ Insert\+Operation\+In\+Operations\+List} (\textbf{ Operations\+List} $\ast$h, \textbf{ Operation} $\ast$new\+Operation)
+\begin{DoxyCompactList}\small\item\em Insere uma nova \doxyref{Operation}{p.}{struct_operation} na lista. \end{DoxyCompactList}\item 
+bool \textbf{ Check\+Operation\+Exists} (\textbf{ Operations\+List} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se uma \doxyref{Operation}{p.}{struct_operation} existe a Lista de Operacoes Procura se a \doxyref{Operation}{p.}{struct_operation} esta presente na Lista de Operacoes, atraves do codigo. \end{DoxyCompactList}\item 
+\textbf{ Operation} $\ast$ \textbf{ Search\+Operation} (\textbf{ Operations\+List} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se a \doxyref{Operation}{p.}{struct_operation} existe. Se existir devolve endereco da Operation! \end{DoxyCompactList}\item 
+float \textbf{ Get\+Average\+Operation\+Time} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod)
+\begin{DoxyCompactList}\small\item\em Determina a quantidade media de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
+\textbf{ Process\+Plan} $\ast$ \textbf{ Change\+Operation\+In\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod, int mac\+Cod, int new\+Mac\+Cod, int new\+Time)
+\begin{DoxyCompactList}\small\item\em Altera os dados de uma Operacao. \end{DoxyCompactList}\item 
+\textbf{ Operations\+Math} \textbf{ Get\+Min\+Time\+To\+Complete\+Operations} (\textbf{ Operations\+List} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Determina a quantidade minima de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
+\textbf{ Operations\+Math} \textbf{ Get\+Max\+Time\+To\+Complete\+Operations} (\textbf{ Operations\+List} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Determina a quantidade maxima de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
+void \textbf{ List\+Operations} (\textbf{ Operations\+List} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Lista todas as operacoes de uma Lista de Operacoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular as Structs \doxyref{Operation}{p.}{struct_operation} e \doxyref{Operations\+List}{p.}{struct_operations_list}. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Leiras @email {\texttt{ a18550@alunos.\+ipca.\+pt}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\textbf{ Bug}]bugs desconhecidos. \end{DoxyRefDesc}
+
+
+Definition in file \textbf{ operations.\+c}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{operations_8c_a235196aa6c989c0c49622de7d14109de}} 
+\index{operations.c@{operations.c}!ChangeOperationInJob@{ChangeOperationInJob}}
+\index{ChangeOperationInJob@{ChangeOperationInJob}!operations.c@{operations.c}}
+\doxysubsubsection{ChangeOperationInJob()}
+{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Change\+Operation\+In\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod,  }\item[{int}]{mac\+Cod,  }\item[{int}]{new\+Mac\+Cod,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
+
+
+
+Altera os dados de uma Operacao. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \doxyref{Job}{p.}{struct_job} \\
+\hline
+\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\hline
+\mbox{\texttt{ in}}  & {\em mac\+Cod} & Codigo da \doxyref{Machine}{p.}{struct_machine} \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+Mac\+Cod} & Novo codigo da \doxyref{Machine}{p.}{struct_machine} \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+Time} & Novo tempo da \doxyref{Machine}{p.}{struct_machine} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 155} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a70d5498820b9d3b0d57b5b3f7b0611e6}} 
+\index{operations.c@{operations.c}!CheckOperationExists@{CheckOperationExists}}
+\index{CheckOperationExists@{CheckOperationExists}!operations.c@{operations.c}}
+\doxysubsubsection{CheckOperationExists()}
+{\footnotesize\ttfamily bool Check\+Operation\+Exists (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se uma \doxyref{Operation}{p.}{struct_operation} existe a Lista de Operacoes Procura se a \doxyref{Operation}{p.}{struct_operation} esta presente na Lista de Operacoes, atraves do codigo. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Operations\+List}{p.}{struct_operations_list} \\
+\hline
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true -\/ \doxyref{Operation}{p.}{struct_operation} existe na lista; false -\/ \doxyref{Operation}{p.}{struct_operation} nao esta presente na lista 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 82} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a55cec244093d3be768819b96260e3df0}} 
+\index{operations.c@{operations.c}!CreateOperation@{CreateOperation}}
+\index{CreateOperation@{CreateOperation}!operations.c@{operations.c}}
+\doxysubsubsection{CreateOperation()}
+{\footnotesize\ttfamily \textbf{ Operation} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\textbf{ Machines\+List} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Cria nova \doxyref{Operation}{p.}{struct_operation}. 
+
+Aloca memoria necessaria para armazenar uma \doxyref{Operation}{p.}{struct_operation} em memoria
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\hline
+\mbox{\texttt{ in}}  & {\em m} & Inicio da Lista de Maquinas \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 23} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a1c8d73b6eba6d821da25647c86e2af65}} 
+\index{operations.c@{operations.c}!CreateOperationListNode@{CreateOperationListNode}}
+\index{CreateOperationListNode@{CreateOperationListNode}!operations.c@{operations.c}}
+\doxysubsubsection{CreateOperationListNode()}
+{\footnotesize\ttfamily \textbf{ Operations\+List} $\ast$ Create\+Operation\+List\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Operation} $\ast$}]{o }\end{DoxyParamCaption})}
+
+
+
+Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \doxyref{Operation}{p.}{struct_operation}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em o} & Nova \doxyref{Operation}{p.}{struct_operation} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para nodo criado 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 37} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a988ed3af4f9b2f4c28151183ed6722e1}} 
+\index{operations.c@{operations.c}!GetAverageOperationTime@{GetAverageOperationTime}}
+\index{GetAverageOperationTime@{GetAverageOperationTime}!operations.c@{operations.c}}
+\doxysubsubsection{GetAverageOperationTime()}
+{\footnotesize\ttfamily float Get\+Average\+Operation\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
+
+
+
+Determina a quantidade media de unidades de tempo necessarias para completar uma operacao. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \doxyref{Job}{p.}{struct_job} \\
+\hline
+\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quantidade media de unidades de tempo em float 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 123} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_ab1b50d442f3f730e77bc3cd2e5fea177}} 
+\index{operations.c@{operations.c}!GetMaxTimeToCompleteOperations@{GetMaxTimeToCompleteOperations}}
+\index{GetMaxTimeToCompleteOperations@{GetMaxTimeToCompleteOperations}!operations.c@{operations.c}}
+\doxysubsubsection{GetMaxTimeToCompleteOperations()}
+{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Max\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Determina a quantidade maxima de unidades de tempo necessarias para completar uma operacao. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Struct com o resultado e respetivas operacoes onde o resultado foi obtido 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 201} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_aae44660d8fd42d25ce15f34e4fa3b8a4}} 
+\index{operations.c@{operations.c}!GetMinTimeToCompleteOperations@{GetMinTimeToCompleteOperations}}
+\index{GetMinTimeToCompleteOperations@{GetMinTimeToCompleteOperations}!operations.c@{operations.c}}
+\doxysubsubsection{GetMinTimeToCompleteOperations()}
+{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Min\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Determina a quantidade minima de unidades de tempo necessarias para completar uma operacao. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Struct com o resultado e respetivas operacoes onde o resultado foi obtido 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 175} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a70ca8c4605b9443afee9fb49312e045b}} 
+\index{operations.c@{operations.c}!InsertOperationInOperationsList@{InsertOperationInOperationsList}}
+\index{InsertOperationInOperationsList@{InsertOperationInOperationsList}!operations.c@{operations.c}}
+\doxysubsubsection{InsertOperationInOperationsList()}
+{\footnotesize\ttfamily \textbf{ Operations\+List} $\ast$ Insert\+Operation\+In\+Operations\+List (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{\textbf{ Operation} $\ast$}]{new\+Operation }\end{DoxyParamCaption})}
+
+
+
+Insere uma nova \doxyref{Operation}{p.}{struct_operation} na lista. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista de Operacoes \\
+\hline
+\mbox{\texttt{ in}}  & {\em new\+Operation} & Apontador da \doxyref{Operation}{p.}{struct_operation} a adicionar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 51} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a464521e892eefc968d19a2ad18803e1d}} 
+\index{operations.c@{operations.c}!ListOperations@{ListOperations}}
+\index{ListOperations@{ListOperations}!operations.c@{operations.c}}
+\doxysubsubsection{ListOperations()}
+{\footnotesize\ttfamily void List\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Lista todas as operacoes de uma Lista de Operacoes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista de Operacoes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 226} of file \textbf{ operations.\+c}.
+
+\mbox{\label{operations_8c_a93755e4b77c40d29fed15b39eee032f4}} 
+\index{operations.c@{operations.c}!SearchOperation@{SearchOperation}}
+\index{SearchOperation@{SearchOperation}!operations.c@{operations.c}}
+\doxysubsubsection{SearchOperation()}
+{\footnotesize\ttfamily \textbf{ Operation} $\ast$ Search\+Operation (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+
+
+
+Verifica se a \doxyref{Operation}{p.}{struct_operation} existe. Se existir devolve endereco da Operation! 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Operations\+List}{p.}{struct_operations_list} \\
+\hline
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para a \doxyref{Operation}{p.}{struct_operation} encontrada 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 102} of file \textbf{ operations.\+c}.
+

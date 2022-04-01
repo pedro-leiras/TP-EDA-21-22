@@ -4,7 +4,7 @@
  * @email a18550@alunos.ipca.pt
  * @date 2022
  * @brief Trabalho pratico da UC EDA (versao 1)
- * Métodos para manipular as Structs Machine e MachinesList
+ * Metodos para manipular as Structs Machine e MachinesList
  *
  * @bug bugs desconhecidos.
 */
@@ -73,7 +73,7 @@ MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) 
 
 /**
 * @brief Verifica se uma Machine existe a Lista de Maquinas
-* Procura se a Machine esta presente na Lista de Maquinas, através do codigo
+* Procura se a Machine esta presente na Lista de Maquinas, atraves do codigo
 * @param [in] h		Inicio da Lista do MachinesList
 * @param [in] cod	Codigo da Machine a procurar
 * @return	true - Machine existe na lista; false - Machine nao esta presente na lista
