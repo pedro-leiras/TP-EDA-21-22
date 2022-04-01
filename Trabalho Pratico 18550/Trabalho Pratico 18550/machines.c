@@ -3,7 +3,7 @@
  * @author Pedro Leiras
  * @email a18550@alunos.ipca.pt
  * @date 2022
- * @brief Trabalho prático da UC EDA (versão 1)
+ * @brief Trabalho pratico da UC EDA (versao 1)
  * Métodos para manipular as Structs Machine e MachinesList
  *
  * @bug bugs desconhecidos.
@@ -13,9 +13,9 @@
 /**
 *	@brief Cria nova Machine.
 *
-*	Aloca memória necessária para armazenar uma Machine em memória
+*	Aloca memoria necessaria para armazenar uma Machine em memoria
 *
-*	@param [in] cod		Código da Machine
+*	@param [in] cod		Codigo da Machine
 *	@param [in] time	Tempo para realizar tarefa
 *
 */
@@ -28,8 +28,8 @@ Machine* CreateMachine(int cod, int time) {
 }
 
 /**
-* @brief Cria novo nodo para a Lista de Máquinas
-* Copia para o nodo da lista a informação de uma Machine
+* @brief Cria novo nodo para a Lista de Maquinas
+* Copia para o nodo da lista a informacao de uma Machine
 * @param [in] m		Nova Machine
 * @return	Apontador para nodo criado
 */
@@ -44,7 +44,7 @@ MachinesList* CreateMachineListNode(Machine* m) {
 
 /**
 * @brief Insere uma nova Machine na lista
-* @param [in] h				Inicio da Lista de Máquinas
+* @param [in] h				Inicio da Lista de Maquinas
 * @param [in] newOperation	Apontador da Machine a adicionar
 */
 MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) {
@@ -72,11 +72,11 @@ MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) 
 }
 
 /**
-* @brief Verifica se uma Machine existe a Lista de Máquinas
-* Procura se a Machine está presente na Lista de Máquinas, através do código
+* @brief Verifica se uma Machine existe a Lista de Maquinas
+* Procura se a Machine esta presente na Lista de Maquinas, através do codigo
 * @param [in] h		Inicio da Lista do MachinesList
-* @param [in] cod	Código da Machine a procurar
-* @return	true - Machine existe na lista; false - Machine não está presente na lista
+* @param [in] cod	Codigo da Machine a procurar
+* @return	true - Machine existe na lista; false - Machine nao esta presente na lista
 */
 bool CheckMachineExists(MachinesList* h, int cod) {
 	if (h != NULL) {
@@ -93,9 +93,9 @@ bool CheckMachineExists(MachinesList* h, int cod) {
 }
 
 /**
-* @brief Verifica se a Machine existe. Se existir devolve endereço da Machine!
+* @brief Verifica se a Machine existe. Se existir devolve endereco da Machine!
 * @param [in] h		Inicio da Lista do MachinesList
-* @param [in] cod	Código da Machine a procurar
+* @param [in] cod	Codigo da Machine a procurar
 * @return	Apontador para a Machine encontrada
 */
 Machine* SearchMachine(MachinesList* h, int cod) {
@@ -113,7 +113,7 @@ Machine* SearchMachine(MachinesList* h, int cod) {
 }
 
 /**
-* @brief Soma todos os tempos das máquinas presentes numa Lista de Máquinas
+* @brief Soma todos os tempos das maquinas presentes numa Lista de Maquinas
 * @param [in] h		Inicio da Lista do MachinesList
 * @return	Total da soma
 */
@@ -128,9 +128,9 @@ int SumMachineTime(MachinesList* h) {
 }
 
 /**
-* @brief Conta todas as máquinas presentes numa Lista de Máquinas
+* @brief Conta todas as maquinas presentes numa Lista de Maquinas
 * @param [in] h		Inicio da Lista do MachinesList
-* @return	Total de máquinas
+* @return	Total de maquinas
 */
 int CountMachines(MachinesList* h) {
 	int count = 0;
@@ -143,10 +143,10 @@ int CountMachines(MachinesList* h) {
 }
 
 /**
-* @brief Altera os dados de uma máquina
+* @brief Altera os dados de uma maquina
 * @param [in] h				Apontador da Machine
-* @param [in] newMacCod		Novo código para a máquina
-* @param [in] newTime		Novo tempo para a máquina
+* @param [in] newMacCod		Novo codigo para a maquina
+* @param [in] newTime		Novo tempo para a maquina
 * @return	Apontador da Machine
 */
 Machine* ChangeMachine(Machine* h, int newMacCod, int newTime) {
@@ -158,9 +158,9 @@ Machine* ChangeMachine(Machine* h, int newMacCod, int newTime) {
 }
 
 /**
-* @brief Determinar a máquina com menor tempo numa Lista de Máquinas
+* @brief Determinar a maquina com menor tempo numa Lista de Maquinas
 * @param [in] h		Inicio da Lista do MachinesList
-* @return	Apontador da cópia da Machine
+* @return	Apontador da copia da Machine
 */
 Machine* GetMachineWithLowerTime(MachinesList* h) {
 	Machine* aux = NULL;
@@ -182,9 +182,9 @@ Machine* GetMachineWithLowerTime(MachinesList* h) {
 }
 
 /**
-* @brief Determinar a máquina com maior tempo numa Lista de Máquinas
+* @brief Determinar a maquina com maior tempo numa Lista de Maquinas
 * @param [in] h		Inicio da Lista do MachinesList
-* @return	Apontador da cópia da Machine
+* @return	Apontador da copia da Machine
 */
 Machine* GetMachineWithHigherTime(MachinesList* h) {
 	Machine* aux = NULL;
@@ -206,8 +206,8 @@ Machine* GetMachineWithHigherTime(MachinesList* h) {
 }
 
 /**
-* @brief Lista todas as máquinas de uma Lista de Máquinas
-* @param [in] h		Inicio da Lista de Máquinas
+* @brief Lista todas as maquinas de uma Lista de Maquinas
+* @param [in] h		Inicio da Lista de Maquinas
 */
 void ListMachines(MachinesList* h) {
 	if (h != NULL) {

@@ -1,0 +1,153 @@
+\doxysection{machines.\+c}
+\label{machines_8c_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/machines.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/machines.c}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}header.h"{}}}
+\DoxyCodeLine{00012 }
+\DoxyCodeLine{00022 Machine* CreateMachine(\textcolor{keywordtype}{int} cod, \textcolor{keywordtype}{int} time) \{}
+\DoxyCodeLine{00023     Machine* aux = (Machine*)calloc(1, \textcolor{keyword}{sizeof}(Machine));}
+\DoxyCodeLine{00024     aux-\/>cod = cod;}
+\DoxyCodeLine{00025     aux-\/>time = time;}
+\DoxyCodeLine{00026 }
+\DoxyCodeLine{00027     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{00028 \}}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00036 MachinesList* CreateMachineListNode(Machine* m) \{}
+\DoxyCodeLine{00037     MachinesList* newNode = (MachinesList*)calloc(1, \textcolor{keyword}{sizeof}(MachinesList));}
+\DoxyCodeLine{00038     newNode-\/>machine.cod = m-\/>cod;}
+\DoxyCodeLine{00039     newNode-\/>machine.time = m-\/>time;}
+\DoxyCodeLine{00040     newNode-\/>nextMachine = NULL;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     \textcolor{keywordflow}{return} newNode;}
+\DoxyCodeLine{00043 \}}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00050 MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) \{}
+\DoxyCodeLine{00051     \textcolor{keywordflow}{if} (newMachine == NULL) \{}
+\DoxyCodeLine{00052         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{00053     \}}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     MachinesList* aux = CreateMachineListNode(newMachine);}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057     \textcolor{keywordflow}{if} (CheckMachineExists(h, aux-\/>machine.cod)) \{}
+\DoxyCodeLine{00058         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{00059     \}}
+\DoxyCodeLine{00060 }
+\DoxyCodeLine{00061     \textcolor{keywordflow}{if} (h == NULL) \{}
+\DoxyCodeLine{00062         h = aux;}
+\DoxyCodeLine{00063     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{00064         MachinesList* tmp = h;}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{while} (tmp-\/>nextMachine != NULL) \{}
+\DoxyCodeLine{00066             tmp = tmp-\/>nextMachine;}
+\DoxyCodeLine{00067         \}}
+\DoxyCodeLine{00068         tmp-\/>nextMachine = aux;}
+\DoxyCodeLine{00069     \}}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{00072 \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00081 \textcolor{keywordtype}{bool} CheckMachineExists(MachinesList* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00083         MachinesList* aux = h;}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{00085             \textcolor{keywordflow}{if} (aux-\/>machine.cod == cod) \{}
+\DoxyCodeLine{00086                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00087             \}}
+\DoxyCodeLine{00088             aux = aux-\/>nextMachine;}
+\DoxyCodeLine{00089         \}}
+\DoxyCodeLine{00090     \}}
+\DoxyCodeLine{00091 }
+\DoxyCodeLine{00092     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00093 \}}
+\DoxyCodeLine{00094 }
+\DoxyCodeLine{00101 Machine* SearchMachine(MachinesList* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{00102     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00103         MachinesList* aux = h;}
+\DoxyCodeLine{00104         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{00105             \textcolor{keywordflow}{if} (aux-\/>machine.cod == cod) \{}
+\DoxyCodeLine{00106                 \textcolor{keywordflow}{return} (aux);}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108             aux = aux-\/>nextMachine;}
+\DoxyCodeLine{00109         \}}
+\DoxyCodeLine{00110     \}}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{00113 \}}
+\DoxyCodeLine{00114 }
+\DoxyCodeLine{00120 \textcolor{keywordtype}{int} SumMachineTime(MachinesList* h) \{}
+\DoxyCodeLine{00121     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{00122     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{00123         sum += h-\/>machine.time;}
+\DoxyCodeLine{00124         h = h-\/>nextMachine;}
+\DoxyCodeLine{00125     \}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{00128 \}}
+\DoxyCodeLine{00129 }
+\DoxyCodeLine{00135 \textcolor{keywordtype}{int} CountMachines(MachinesList* h) \{}
+\DoxyCodeLine{00136     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{00137     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{00138         count++;}
+\DoxyCodeLine{00139         h = h-\/>nextMachine;}
+\DoxyCodeLine{00140     \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{00143 \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00152 Machine* ChangeMachine(Machine* h, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime) \{}
+\DoxyCodeLine{00153     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00154         h-\/>cod = newMacCod;}
+\DoxyCodeLine{00155         h-\/>time = newTime;}
+\DoxyCodeLine{00156     \}}
+\DoxyCodeLine{00157     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{00158 \}}
+\DoxyCodeLine{00159 }
+\DoxyCodeLine{00165 Machine* GetMachineWithLowerTime(MachinesList* h) \{}
+\DoxyCodeLine{00166     Machine* aux = NULL;}
+\DoxyCodeLine{00167     \textcolor{keywordtype}{int} auxTime;}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00170         auxTime = h-\/>machine.time;                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
+\DoxyCodeLine{00171         aux = CreateMachine(h-\/>machine.cod, auxTime);}
+\DoxyCodeLine{00172         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
+\DoxyCodeLine{00173             \textcolor{keywordflow}{if} (h-\/>machine.time < auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e menor ao da aux}}
+\DoxyCodeLine{00174                 auxTime = h-\/>machine.time;}
+\DoxyCodeLine{00175                 aux = CreateMachine(h-\/>machine.cod, auxTime);        }
+\DoxyCodeLine{00176             \}}
+\DoxyCodeLine{00177             h = h-\/>nextMachine;}
+\DoxyCodeLine{00178         \}}
+\DoxyCodeLine{00179     \}}
+\DoxyCodeLine{00180 }
+\DoxyCodeLine{00181     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{00182 \}}
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00189 Machine* GetMachineWithHigherTime(MachinesList* h) \{}
+\DoxyCodeLine{00190     Machine* aux = NULL;}
+\DoxyCodeLine{00191     \textcolor{keywordtype}{int} auxTime;}
+\DoxyCodeLine{00192 }
+\DoxyCodeLine{00193     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00194         auxTime = h-\/>machine.time;                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
+\DoxyCodeLine{00195         aux = CreateMachine(h-\/>machine.cod, auxTime);}
+\DoxyCodeLine{00196         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
+\DoxyCodeLine{00197             \textcolor{keywordflow}{if} (h-\/>machine.time > auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e maior ao da aux}}
+\DoxyCodeLine{00198                 auxTime = h-\/>machine.time;}
+\DoxyCodeLine{00199                 aux = CreateMachine(h-\/>machine.cod, auxTime);}
+\DoxyCodeLine{00200             \}}
+\DoxyCodeLine{00201             h = h-\/>nextMachine;}
+\DoxyCodeLine{00202         \}}
+\DoxyCodeLine{00203     \}}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{00206 \}}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00212 \textcolor{keywordtype}{void} ListMachines(MachinesList* h) \{}
+\DoxyCodeLine{00213     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{00214         printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>machine.cod, h-\/>machine.time);}
+\DoxyCodeLine{00215         \textcolor{keywordflow}{while} (h-\/>nextMachine != NULL) \{}
+\DoxyCodeLine{00216             h = h-\/>nextMachine;}
+\DoxyCodeLine{00217             printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>machine.cod, h-\/>machine.time); }
+\DoxyCodeLine{00218         \};}
+\DoxyCodeLine{00219     \}}
+\DoxyCodeLine{00220 \}}
+
+\end{DoxyCode}

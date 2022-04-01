@@ -3,7 +3,7 @@
  * @author Pedro Leiras
  * @email a18550@alunos.ipca.pt
  * @date 2022
- * @brief Trabalho prático da UC EDA (versão 1)
+ * @brief Trabalho pratico da UC EDA (versao 1)
  * Métodos para manipular as Structs Job e ProcessPlan
  * 
  * @bug bugs desconhecidos.
@@ -14,10 +14,10 @@
 /**
 *	@brief Cria novo Job.
 *
-*	Aloca memória necessária para armazenar um job em memória
+*	Aloca memoria necessaria para armazenar um job em memoria
 *
-*	@param [in] cod Código do Job
-*	@param [in] o	Inicio da Lista de Operações
+*	@param [in] cod Codigo do Job
+*	@param [in] o	Inicio da Lista de Operacoes
 *
 */
 Job* CreateJob(int cod, OperationsList* o) {
@@ -30,7 +30,7 @@ Job* CreateJob(int cod, OperationsList* o) {
 
 /**
 * @brief Cria novo nodo para a Lista de Jobs
-* Copia para o nodo da lista a informação de um job
+* Copia para o nodo da lista a informacao de um job
 * @param [in] j		Novo Job
 * @return	Apontador para nodo criado
 */
@@ -74,10 +74,10 @@ ProcessPlan* InsertJobInProcessPlan(ProcessPlan* h, Job* newJob) {
 
 /**
 * @brief Verifica se um job existe na Lista de Jobs
-* Procura se o job está presente na Lista de Jobs, através do código
+* Procura se o job esta presente na Lista de Jobs, através do codigo
 * @param [in] h		Inicio da Lista do ProcessPlan
-* @param [in] cod	Código do Job a procurar
-* @return	true - Job existe na lista; false - Job não está presente na lista
+* @param [in] cod	Codigo do Job a procurar
+* @return	true - Job existe na lista; false - Job nao esta presente na lista
 */
 bool CheckJobExists(ProcessPlan* h, int cod) {
 	if (h != NULL) {
@@ -94,10 +94,10 @@ bool CheckJobExists(ProcessPlan* h, int cod) {
 }
 
 /**
-* @brief Adiciona uma nova operação ao Job
+* @brief Adiciona uma nova operacao ao Job
 * @param [in] h			Inicio da Lista do ProcessPlan
-* @param [in] jobCod	Código do Job
-* @param [in] o			Apontador da lista de Operações adicionar
+* @param [in] jobCod	Codigo do Job
+* @param [in] o			Apontador da lista de Operacoes adicionar
 * @return	Inicio da Lista do ProcessPlan
 */
 ProcessPlan* AddNewOperationToJob(ProcessPlan* h, int jobCod, Operation* o) {
@@ -112,10 +112,10 @@ ProcessPlan* AddNewOperationToJob(ProcessPlan* h, int jobCod, Operation* o) {
 }
 
 /**
-* @brief Remove uma operação do Job
+* @brief Remove uma operacao do Job
 * @param [in] h				Inicio da Lista do ProcessPlan
-* @param [in] jobCod		Código do Job
-* @param [in] opCod			Código da Operação a remover
+* @param [in] jobCod		Codigo do Job
+* @param [in] opCod			Codigo da Operacao a remover
 * @return	Inicio da Lista do ProcessPlan
 */
 ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, int jobCod, int opCod) {
@@ -144,9 +144,9 @@ ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, int jobCod, int opCod) {
 }
 
 /**
-* @brief Verifica se o Job existe. Se existir devolve endereço do Job!
+* @brief Verifica se o Job existe. Se existir devolve endereco do Job!
 * @param [in] h		Inicio da Lista do ProcessPlan
-* @param [in] cod	Código do Job a procurar
+* @param [in] cod	Codigo do Job a procurar
 * @return	Apontador para o Job encontrado
 */
 Job* SearchJob(ProcessPlan* h, int cod) {
@@ -166,8 +166,8 @@ Job* SearchJob(ProcessPlan* h, int cod) {
 /**
 * @brief Determinar o tempo mínimo para completar o Job
 * @param [in] h			Inicio da Lista do ProcessPlan
-* @param [in] jobCod	Código do Job
-* @return	Struct com o tempo mínimo para completar o Job e as respetivas operações, com as máquinas para obter esse valor
+* @param [in] jobCod	Codigo do Job
+* @return	Struct com o tempo mínimo para completar o Job e as respetivas operacoes, com as maquinas para obter esse valor
 */
 OperationsMath GetMinTimeToCompleteJob(ProcessPlan* h, int jobCod) {
 	OperationsMath aux = { 0, NULL };
@@ -184,10 +184,10 @@ OperationsMath GetMinTimeToCompleteJob(ProcessPlan* h, int jobCod) {
 };
 
 /**
-* @brief Determinar o tempo máximo para completar o Job
+* @brief Determinar o tempo maximo para completar o Job
 * @param [in] h			Inicio da Lista do ProcessPlan
-* @param [in] jobCod	Código do Job
-* @return	Struct com o tempo máximo para completar o Job e as respetivas operações, com as máquinas para obter esse valor
+* @param [in] jobCod	Codigo do Job
+* @return	Struct com o tempo maximo para completar o Job e as respetivas operacoes, com as maquinas para obter esse valor
 */
 OperationsMath GetMaxTimeToCompleteJob(ProcessPlan* h, int jobCod) {
 	OperationsMath x = { 0, NULL };

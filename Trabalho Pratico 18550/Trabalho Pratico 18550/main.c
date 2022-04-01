@@ -3,7 +3,7 @@
  * @author Pedro Leiras
  * @email a18550@alunos.ipca.pt
  * @date 2022
- * @brief Trabalho prático da UC EDA (versão 1)
+ * @brief Trabalho pratico da UC EDA (versao 1)
  * @bug bugs desconhecidos.
 */
 

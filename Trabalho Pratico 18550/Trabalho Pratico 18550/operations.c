@@ -3,7 +3,7 @@
  * @author Pedro Leiras
  * @email a18550@alunos.ipca.pt
  * @date 2022
- * @brief Trabalho prático da UC EDA (versão 1)
+ * @brief Trabalho pratico da UC EDA (versao 1)
  * Métodos para manipular as Structs Operation e OperationsList
  *
  * @bug bugs desconhecidos.
@@ -14,10 +14,10 @@
 /**
 *	@brief Cria nova Operation.
 *
-*	Aloca memória necessária para armazenar uma Operation em memória
+*	Aloca memoria necessaria para armazenar uma Operation em memoria
 *
-*	@param [in] cod Código da Operation
-*	@param [in] m	Inicio da Lista de Máquinas
+*	@param [in] cod Codigo da Operation
+*	@param [in] m	Inicio da Lista de Maquinas
 *
 */
 Operation* CreateOperation(int cod, MachinesList* m) {
@@ -29,8 +29,8 @@ Operation* CreateOperation(int cod, MachinesList* m) {
 }
 
 /**
-* @brief Cria novo nodo para a Lista de Operações
-* Copia para o nodo da lista a informação de uma Operation
+* @brief Cria novo nodo para a Lista de Operacoes
+* Copia para o nodo da lista a informacao de uma Operation
 * @param [in] o		Nova Operation
 * @return	Apontador para nodo criado
 */
@@ -45,7 +45,7 @@ OperationsList* CreateOperationListNode(Operation* o) {
 
 /**
 * @brief Insere uma nova Operation na lista
-* @param [in] h				Inicio da Lista de Operações
+* @param [in] h				Inicio da Lista de Operacoes
 * @param [in] newOperation	Apontador da Operation a adicionar
 */
 OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* newOperation) {
@@ -73,11 +73,11 @@ OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* ne
 }
 
 /**
-* @brief Verifica se uma Operation existe a Lista de Operações
-* Procura se a Operation está presente na Lista de Operações, através do código
+* @brief Verifica se uma Operation existe a Lista de Operacoes
+* Procura se a Operation esta presente na Lista de Operacoes, através do codigo
 * @param [in] h		Inicio da Lista do OperationsList
-* @param [in] cod	Código da Operation a procurar
-* @return	true - Operation existe na lista; false - Operation não está presente na lista
+* @param [in] cod	Codigo da Operation a procurar
+* @return	true - Operation existe na lista; false - Operation nao esta presente na lista
 */
 bool CheckOperationExists(OperationsList* h, int cod) {
 	if (h != NULL) {
@@ -94,9 +94,9 @@ bool CheckOperationExists(OperationsList* h, int cod) {
 }
 
 /**
-* @brief Verifica se a Operation existe. Se existir devolve endereço da Operation!
+* @brief Verifica se a Operation existe. Se existir devolve endereco da Operation!
 * @param [in] h		Inicio da Lista do OperationsList
-* @param [in] cod	Código da Operation a procurar
+* @param [in] cod	Codigo da Operation a procurar
 * @return	Apontador para a Operation encontrada
 */
 Operation* SearchOperation(OperationsList* h, int cod) {
@@ -114,10 +114,10 @@ Operation* SearchOperation(OperationsList* h, int cod) {
 }
 
 /**
-* @brief Determina a quantidade média de unidades de tempo necessárias para completar uma operação
+* @brief Determina a quantidade média de unidades de tempo necessarias para completar uma operacao
 * @param [in] h			Inicio da Lista do ProcessPlan
-* @param [in] jobCod	Código da Job
-* @param [in] opCod		Código da Operation
+* @param [in] jobCod	Codigo da Job
+* @param [in] opCod		Codigo da Operation
 * @return	Quantidade média de unidades de tempo em float
 */
 float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod) {
@@ -143,12 +143,12 @@ float GetAverageOperationTime(ProcessPlan* h, int jobCod, int opCod) {
 }
 
 /**
-* @brief Altera os dados de uma Operação
+* @brief Altera os dados de uma Operacao
 * @param [in] h				Inicio da Lista do ProcessPlan
-* @param [in] jobCod		Código da Job
-* @param [in] opCod			Código da Operation
-* @param [in] macCod		Código da Machine
-* @param [in] newMacCod		Novo código da Machine
+* @param [in] jobCod		Codigo da Job
+* @param [in] opCod			Codigo da Operation
+* @param [in] macCod		Codigo da Machine
+* @param [in] newMacCod		Novo codigo da Machine
 * @param [in] newTime		Novo tempo da Machine
 * @return	Inicio da Lista do ProcessPlan
 */
@@ -168,9 +168,9 @@ ProcessPlan* ChangeOperationInJob(ProcessPlan* h, int jobCod, int opCod, int mac
 }
 
 /**
-* @brief Determina a quantidade mínima de unidades de tempo necessárias para completar uma operação
+* @brief Determina a quantidade mínima de unidades de tempo necessarias para completar uma operacao
 * @param [in] h		Inicio da Lista do ProcessPlan
-* @return	Struct com o resultado e respetivas operações onde o resultado foi obtido
+* @return	Struct com o resultado e respetivas operacoes onde o resultado foi obtido
 */
 OperationsMath GetMinTimeToCompleteOperations(OperationsList* h) {
 	OperationsMath x = { 0, NULL };
@@ -185,7 +185,7 @@ OperationsMath GetMinTimeToCompleteOperations(OperationsList* h) {
 			x.res += auxMachine->time;															//vai somando o tempo minimo de todas as maquinas
 			auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);			//cria uma lista de maquinas com a maquina de menor tempo
 			auxOperation = CreateOperation(h->operation.cod, auxMachineList);					//cria a operacao
-			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operaçoes a retornar
+			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operacoes a retornar
 		}
 		h = h->nextOperation;
 	}
@@ -194,9 +194,9 @@ OperationsMath GetMinTimeToCompleteOperations(OperationsList* h) {
 }
 
 /**
-* @brief Determina a quantidade máxima de unidades de tempo necessárias para completar uma operação
+* @brief Determina a quantidade maxima de unidades de tempo necessarias para completar uma operacao
 * @param [in] h		Inicio da Lista do ProcessPlan
-* @return	Struct com o resultado e respetivas operações onde o resultado foi obtido
+* @return	Struct com o resultado e respetivas operacoes onde o resultado foi obtido
 */
 OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h) {
 	OperationsMath x = { 0, NULL };
@@ -211,7 +211,7 @@ OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h) {
 			x.res += auxMachine->time;															//vai somando o maior tempo de todas as maquinas
 			auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);			//cria uma lista de maquinas com a maquina de maior tempo
 			auxOperation = CreateOperation(h->operation.cod, auxMachineList);					//cria a operacao
-			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operaçoes a retornar
+			x.operations = InsertOperationInOperationsList(x.operations, auxOperation);			//insere a operacao criada na lista de operacoes a retornar
 		}
 		h = h->nextOperation;
 	}
@@ -220,8 +220,8 @@ OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h) {
 }
 
 /**
-* @brief Lista todas as operações de uma Lista de Operações
-* @param [in] h		Inicio da Lista de Operações
+* @brief Lista todas as operacoes de uma Lista de Operacoes
+* @param [in] h		Inicio da Lista de Operacoes
 */
 void ListOperations(OperationsList* h) {
 	if (h != NULL) {

@@ -3,11 +3,11 @@ D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabal
   machines.c
 D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\machines.c(106,17): warning C4133: 'return': incompatible types - from 'MachinesList *' to 'Machine *'
   main.c
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(54,6): warning C4101: 'result': unreferenced local variable
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(67,16): warning C4101: 'machTime': unreferenced local variable
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(67,7): warning C4101: 'machCod': unreferenced local variable
-D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(66,9): warning C4101: 'macData': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(63,6): warning C4101: 'result': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(76,16): warning C4101: 'machTime': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(76,7): warning C4101: 'machCod': unreferenced local variable
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\main.c(75,9): warning C4101: 'macData': unreferenced local variable
   operations.c
 D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550\Trabalho Pratico 18550\operations.c(107,17): warning C4133: 'return': incompatible types - from 'OperationsList *' to 'Operation *'
   Generating Code...

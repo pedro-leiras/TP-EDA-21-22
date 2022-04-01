@@ -3,9 +3,9 @@
  * @author Pedro Leiras
  * @email a18550@alunos.ipca.pt
  * @date 2022
- * @brief Definições Globais para o Trabalho prático da UC EDA (versão 1)
+ * @brief Definicoes Globais para o Trabalho pratico da UC EDA (versao 1)
  *
- *	Structs e Assinaturas de Funções
+ *	Structs e Assinaturas de Funcoes
  * @bug bugs desconhecidos.
 */
 
@@ -18,77 +18,77 @@
 #include <string.h>
 
 /**
- * @brief Estrutura para armazenar uma máquina
+ * @brief Estrutura para armazenar uma maquina
  *
- * Uma máquina contém um código (@@cod) e tempo (@@time).
+ * Uma maquina contém um codigo (@@cod) e tempo (@@time).
  */
 typedef struct Machine {
-	int cod;	/**< Código da Máquina*/
-	int time;	/**< Tempo para executar a operação*/
+	int cod;	/**< Codigo da Maquina*/
+	int time;	/**< Tempo para executar a operacao*/
 }Machine;
 
 /**
- * @brief Estrutura para armazenar as máquinas
+ * @brief Estrutura para armazenar as maquinas
  *
- * Uma lista de máquinas contém a estrutura do tipo Machine (@@machine) e o apontador para a próxima máquina (@@nextMachine).
+ * Uma lista de maquinas contém a estrutura do tipo Machine (@@machine) e o apontador para a proxima maquina (@@nextMachine).
  */
 typedef struct MachinesList {
-	struct Machine machine;					/**< toda a informação da Máquina */
-	struct MachinesList* nextMachine;		/**< Ligação a outra Máquina*/
+	struct Machine machine;					/**< toda a informacao da Maquina */
+	struct MachinesList* nextMachine;		/**< Ligacao a outra Maquina*/
 }MachinesList;
 
 /**
- * @brief Estrutura para armazenar uma operação
+ * @brief Estrutura para armazenar uma operacao
  *
- * Uma operação contém um código (@@cod) e uma lista de máquinas (@@machines).
+ * Uma operacao contém um codigo (@@cod) e uma lista de maquinas (@@machines).
  */
 typedef struct Operation {
-	int cod;							/**< Código da Operação*/
-	struct MachinesList* machines;		/**< Todas as Máquinas da Operação*/
+	int cod;							/**< Codigo da Operacao*/
+	struct MachinesList* machines;		/**< Todas as Maquinas da Operacao*/
 }Operation;
 
 /**
- * @brief Estrutura para armazenar as operações
+ * @brief Estrutura para armazenar as operacoes
  *
- * Uma lista de operações contém a estrutura do tipo Operation (@@operation) e o apontador para a próxima operação (@@nextOperation).
+ * Uma lista de operacoes contém a estrutura do tipo Operation (@@operation) e o apontador para a proxima operacao (@@nextOperation).
  */
 typedef struct OperationsList {
-	struct Operation operation;					/**< toda a informação da Operação */
-	struct OperationsList* nextOperation;		/**< Ligação a outra Operação*/
+	struct Operation operation;					/**< toda a informacao da Operacao */
+	struct OperationsList* nextOperation;		/**< Ligacao a outra Operacao*/
 }OperationsList;
 
 /**
  * @brief Estrutura para armazenar um trabalho
  *
- * Um trabalho contém um código (@@cod) e uma lista de operações (@@operations).
+ * Um trabalho contém um codigo (@@cod) e uma lista de operacoes (@@operations).
  */
 typedef struct Job {
-	int cod;								/**< Código do Job*/
-	struct OperationsList* operations;		/**< Todas as Operações do Job*/
+	int cod;								/**< Codigo do Job*/
+	struct OperationsList* operations;		/**< Todas as Operacoes do Job*/
 }Job;
 
 /**
  * @brief Estrutura para armazenar os trabalhos
  *
- * Uma lista de trabalhos contém a estrutura do tipo Job (@@job) e o apontador para o próximo trabalho (@@nextJob).
+ * Uma lista de trabalhos contém a estrutura do tipo Job (@@job) e o apontador para o proximo trabalho (@@nextJob).
  */
 typedef struct ProcessPlan {
-	struct Job job;						/**< toda a informação do Job */
-	struct ProcessPlan* nextJob;		/**< Ligação o outro Job*/
+	struct Job job;						/**< toda a informacao do Job */
+	struct ProcessPlan* nextJob;		/**< Ligacao o outro Job*/
 }ProcessPlan;
 
 /**
- * @brief Estrutura utilizada para resultados em calculos com Operações
+ * @brief Estrutura utilizada para resultados em calculos com Operacoes
  *
- * Um OperationsMath contém o resultado dos calculos (@@res) e o apontador para o lista de operações utilizadas para obter o resultado (@@operations).
+ * Um OperationsMath contém o resultado dos calculos (@@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@@operations).
  */
 typedef struct OperationsMath {
-	int res;								/**< resultado dos cálculos */
-	struct OperationsList* operations;		/**< Todas as Operações utilizadas para obter o resultado*/
+	int res;								/**< resultado dos calculos */
+	struct OperationsList* operations;		/**< Todas as Operacoes utilizadas para obter o resultado*/
 }OperationsMath;
 
 
-//Assinaturas de funções
+//Assinaturas de funcoes
 #pragma region Machine Functions
 	Machine* CreateMachine(int cod, int time);
 	MachinesList* CreateMachineListNode(Machine* m);

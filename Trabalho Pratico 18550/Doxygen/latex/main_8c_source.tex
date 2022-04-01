@@ -1,0 +1,101 @@
+\doxysection{main.\+c}
+\label{main_8c_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/main.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/main.c}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}header.h"{}};}
+\DoxyCodeLine{00011 }
+\DoxyCodeLine{00012 \textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{00013     ProcessPlan* p = NULL;}
+\DoxyCodeLine{00014     MachinesList* machinesOp1 = NULL, * machinesOp2 = NULL, * machinesOp3 = NULL;}
+\DoxyCodeLine{00015     OperationsList* OperationsJob1 = NULL;}
+\DoxyCodeLine{00016     OperationsMath x;}
+\DoxyCodeLine{00017     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{00018 }
+\DoxyCodeLine{00019     \textcolor{comment}{//p = ReadProcessPlanFile("{}data.txt"{}, p);}}
+\DoxyCodeLine{00020 }
+\DoxyCodeLine{00021     Machine* M1 = CreateMachine(1, 4);}
+\DoxyCodeLine{00022     Machine* M2 = CreateMachine(2, 4);}
+\DoxyCodeLine{00023     Machine* M3 = CreateMachine(3, 5);}
+\DoxyCodeLine{00024     Machine* M4 = CreateMachine(4, 5);}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026     machinesOp1 = InsertMachineInMachinesList(machinesOp1, M1);}
+\DoxyCodeLine{00027     machinesOp1 = InsertMachineInMachinesList(machinesOp1, M2);}
+\DoxyCodeLine{00028 }
+\DoxyCodeLine{00029     Operation* O1 = CreateOperation(1, machinesOp1);}
+\DoxyCodeLine{00030     OperationsJob1 = InsertOperationInOperationsList(OperationsJob1, O1);}
+\DoxyCodeLine{00031 }
+\DoxyCodeLine{00032     Job* Job1 = CreateJob(1, OperationsJob1);}
+\DoxyCodeLine{00033     p = InsertJobInProcessPlan(p, Job1);}
+\DoxyCodeLine{00034 }
+\DoxyCodeLine{00035     machinesOp2 = InsertMachineInMachinesList(machinesOp2, M3);}
+\DoxyCodeLine{00036     machinesOp2 = InsertMachineInMachinesList(machinesOp2, M4);}
+\DoxyCodeLine{00037     Operation* O2 = CreateOperation(2, machinesOp2);}
+\DoxyCodeLine{00038     machinesOp3 = InsertMachineInMachinesList(machinesOp3, M1);}
+\DoxyCodeLine{00039     machinesOp3 = InsertMachineInMachinesList(machinesOp3, M3);}
+\DoxyCodeLine{00040     Operation* O3 = CreateOperation(3, machinesOp3);}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042     p = AddNewOperationToJob(p, 1, O2);}
+\DoxyCodeLine{00043     p = AddNewOperationToJob(p, 1, O3);}
+\DoxyCodeLine{00044     p = RemoveOperationFromJob(p, 1, 1);}
+\DoxyCodeLine{00045     p = ChangeOperationInJob(p, 1, 3, 3, 3, 10);}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047     x = GetMinTimeToCompleteJob(p, 1);}
+\DoxyCodeLine{00048     ListOperations(x.operations);}
+\DoxyCodeLine{00049     puts(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{00050     x = GetMaxTimeToCompleteJob(p, 1);}
+\DoxyCodeLine{00051     ListOperations(x.operations);}
+\DoxyCodeLine{00052 }
+\DoxyCodeLine{00053     y = GetAverageOperationTime(p, 1, 3);}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{00056 \}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059 \textcolor{comment}{//TODO: perceber como desfragmentar cada linha}}
+\DoxyCodeLine{00060 ProcessPlan* ReadProcessPlanFile(\textcolor{keywordtype}{char}* path, ProcessPlan* p) \{}
+\DoxyCodeLine{00061     FILE* fp = fopen(path, \textcolor{stringliteral}{"{}r"{}});}
+\DoxyCodeLine{00062     \textcolor{keywordtype}{char} buffer[256];}
+\DoxyCodeLine{00063     \textcolor{keywordtype}{int} result;}
+\DoxyCodeLine{00064     \textcolor{keywordflow}{if} (fp == NULL)}
+\DoxyCodeLine{00065     \{}
+\DoxyCodeLine{00066         printf(\textcolor{stringliteral}{"{}Error: could not open file \%s"{}}, path);}
+\DoxyCodeLine{00067         \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{00068     \}}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070     \textcolor{keywordflow}{while} (fgets(buffer, 256, fp)) \{}
+\DoxyCodeLine{00071         \textcolor{keywordtype}{char} line[250];}
+\DoxyCodeLine{00072         \textcolor{keywordtype}{char}* machines;}
+\DoxyCodeLine{00073         \textcolor{keywordtype}{char} machine[250];}
+\DoxyCodeLine{00074         \textcolor{keywordtype}{char}* auxMach;}
+\DoxyCodeLine{00075         \textcolor{keywordtype}{char}* macData;}
+\DoxyCodeLine{00076         \textcolor{keywordtype}{int} machCod, machTime;}
+\DoxyCodeLine{00077         strcpy(line, buffer);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079         machines = strtok(line, \textcolor{stringliteral}{"{}()"{}});}
+\DoxyCodeLine{00080         \textcolor{keywordflow}{while} (machines != NULL) \{}
+\DoxyCodeLine{00081             \textcolor{keywordflow}{if} (strcmp(machines, \textcolor{stringliteral}{"{};"{}}) != 0) \{}
+\DoxyCodeLine{00082                 strcpy(machine, machines);}
+\DoxyCodeLine{00083                 auxMach = strtok(machine, \textcolor{stringliteral}{"{}\{\}"{}});}
+\DoxyCodeLine{00084                 \textcolor{comment}{/*while (auxMach != NULL) \{}}
+\DoxyCodeLine{00085 \textcolor{comment}{                    printf("{}\%s"{}, auxMach);}}
+\DoxyCodeLine{00086 \textcolor{comment}{                    macData = strtok(auxMach, "{},"{});}}
+\DoxyCodeLine{00087 \textcolor{comment}{                    while (macData != NULL) \{}}
+\DoxyCodeLine{00088 \textcolor{comment}{                        macData = strtok(auxMach, "{},"{});}}
+\DoxyCodeLine{00089 \textcolor{comment}{                        machTime = macData;}}
+\DoxyCodeLine{00090 \textcolor{comment}{                        auxMach = strtok(NULL, "{},"{});}}
+\DoxyCodeLine{00091 \textcolor{comment}{                    \}}}
+\DoxyCodeLine{00092 \textcolor{comment}{                    auxMach = strtok(NULL, "{}\{\}"{});}}
+\DoxyCodeLine{00093 \textcolor{comment}{                \}*/}}
+\DoxyCodeLine{00094             \}}
+\DoxyCodeLine{00095     }
+\DoxyCodeLine{00096             machines = strtok(NULL, \textcolor{stringliteral}{"{}()"{}});}
+\DoxyCodeLine{00097         \}}
+\DoxyCodeLine{00098     \}}
+\DoxyCodeLine{00099         }
+\DoxyCodeLine{00100     fclose(fp);}
+\DoxyCodeLine{00101 }
+\DoxyCodeLine{00102     \textcolor{keywordflow}{return} p;}
+\DoxyCodeLine{00103 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,93 @@
+\doxysection{header.\+h}
+\label{header_8h_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/header.h@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/header.h}}
+\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001 }
+\DoxyCodeLine{00012 \textcolor{preprocessor}{\#ifndef HEADER\_H}}
+\DoxyCodeLine{00013 \textcolor{preprocessor}{\#define HEADER\_H }}
+\DoxyCodeLine{00014 }
+\DoxyCodeLine{00015 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{00016 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{00017 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{00018 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00025 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }Machine \{}
+\DoxyCodeLine{00026     \textcolor{keywordtype}{int} cod; }
+\DoxyCodeLine{00027     \textcolor{keywordtype}{int} time;   }
+\DoxyCodeLine{00028 \}Machine;}
+\DoxyCodeLine{00029 }
+\DoxyCodeLine{00035 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }MachinesList \{}
+\DoxyCodeLine{00036     \textcolor{keyword}{struct }Machine machine;                   }
+\DoxyCodeLine{00037     \textcolor{keyword}{struct }MachinesList* nextMachine;        }
+\DoxyCodeLine{00038 \}MachinesList;}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00045 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }Operation \{}
+\DoxyCodeLine{00046     \textcolor{keywordtype}{int} cod;                         }
+\DoxyCodeLine{00047     \textcolor{keyword}{struct }MachinesList* machines;      }
+\DoxyCodeLine{00048 \}Operation;}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00055 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }OperationsList \{}
+\DoxyCodeLine{00056     \textcolor{keyword}{struct }Operation operation;                   }
+\DoxyCodeLine{00057     \textcolor{keyword}{struct }OperationsList* nextOperation;        }
+\DoxyCodeLine{00058 \}OperationsList;}
+\DoxyCodeLine{00059 }
+\DoxyCodeLine{00065 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }Job \{}
+\DoxyCodeLine{00066     \textcolor{keywordtype}{int} cod;                             }
+\DoxyCodeLine{00067     \textcolor{keyword}{struct }OperationsList* operations;      }
+\DoxyCodeLine{00068 \}Job;}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00075 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }ProcessPlan \{}
+\DoxyCodeLine{00076     \textcolor{keyword}{struct }Job job;                       }
+\DoxyCodeLine{00077     \textcolor{keyword}{struct }ProcessPlan* nextJob;      }
+\DoxyCodeLine{00078 \}ProcessPlan;}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00085 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }OperationsMath \{}
+\DoxyCodeLine{00086     \textcolor{keywordtype}{int} res;                             }
+\DoxyCodeLine{00087     \textcolor{keyword}{struct }OperationsList* operations;      }
+\DoxyCodeLine{00088 \}OperationsMath;}
+\DoxyCodeLine{00089 }
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091 \textcolor{comment}{//Assinaturas de funções}}
+\DoxyCodeLine{00092 \textcolor{preprocessor}{\#pragma region Machine Functions}}
+\DoxyCodeLine{00093     Machine* CreateMachine(\textcolor{keywordtype}{int} cod, \textcolor{keywordtype}{int} time);}
+\DoxyCodeLine{00094     MachinesList* CreateMachineListNode(Machine* m);}
+\DoxyCodeLine{00095     MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine);}
+\DoxyCodeLine{00096     \textcolor{keywordtype}{bool} CheckMachineExists(MachinesList* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00097     Machine* SearchMachine(MachinesList* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00098     \textcolor{keywordtype}{int} SumMachineTime(MachinesList* h);}
+\DoxyCodeLine{00099     \textcolor{keywordtype}{int} CountMachines(MachinesList* h);}
+\DoxyCodeLine{00100     Machine* ChangeMachine(Machine* h, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime);}
+\DoxyCodeLine{00101     Machine* GetMachineWithLowerTime(MachinesList* h);}
+\DoxyCodeLine{00102     Machine* GetMachineWithHigherTime(MachinesList* h);}
+\DoxyCodeLine{00103     \textcolor{keywordtype}{void} ListMachines(MachinesList* h);}
+\DoxyCodeLine{00104 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106 \textcolor{preprocessor}{\#pragma region Operation Functions}}
+\DoxyCodeLine{00107     Operation* CreateOperation(\textcolor{keywordtype}{int} cod, MachinesList* m);}
+\DoxyCodeLine{00108     OperationsList* CreateOperationListNode(Operation* o);}
+\DoxyCodeLine{00109     OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* newOperation);}
+\DoxyCodeLine{00110     \textcolor{keywordtype}{bool} CheckOperationExists(OperationsList* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00111     Operation* SearchOperation(OperationsList* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00112     \textcolor{keywordtype}{float} GetAverageOperationTime(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod);}
+\DoxyCodeLine{00113     ProcessPlan* ChangeOperationInJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod, \textcolor{keywordtype}{int} macCod, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime);}
+\DoxyCodeLine{00114     OperationsMath GetMinTimeToCompleteOperations(OperationsList* h);}
+\DoxyCodeLine{00115     OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h);}
+\DoxyCodeLine{00116     \textcolor{keywordtype}{void} ListOperations(OperationsList* h);}
+\DoxyCodeLine{00117 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119 \textcolor{preprocessor}{\#pragma region Job Functions}}
+\DoxyCodeLine{00120     Job* CreateJob(\textcolor{keywordtype}{int} cod, OperationsList* o);}
+\DoxyCodeLine{00121     ProcessPlan* CreateProcessPlanNode(Job* j);}
+\DoxyCodeLine{00122     ProcessPlan* InsertJobInProcessPlan(ProcessPlan* h, Job* newJob);}
+\DoxyCodeLine{00123     \textcolor{keywordtype}{bool} CheckJobExists(ProcessPlan* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00124     ProcessPlan* AddNewOperationToJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, Operation* o);}
+\DoxyCodeLine{00125     ProcessPlan* RemoveOperationFromJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod);}
+\DoxyCodeLine{00126     Job* SearchJob(ProcessPlan* h, \textcolor{keywordtype}{int} cod);}
+\DoxyCodeLine{00127     OperationsMath GetMinTimeToCompleteJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod);}
+\DoxyCodeLine{00128     OperationsMath GetMaxTimeToCompleteJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod);}
+\DoxyCodeLine{00129 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131 ProcessPlan* ReadProcessPlanFile(\textcolor{keywordtype}{char}* path, ProcessPlan* p);}
+\DoxyCodeLine{00132 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
