@@ -1,0 +1,334 @@
+\hypertarget{process_plan_8c}{}\doxysection{Trabalho Pratico 18550/process\+Plan.c File Reference}
+\label{process_plan_8c}\index{Trabalho Pratico 18550/processPlan.c@{Trabalho Pratico 18550/processPlan.c}}
+
+
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular a arvore do Process\+Plan.  
+
+
+{\ttfamily \#include \char`\"{}header.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_a881597ea8c4d651398386e2f86ad05f6}{Init\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa a arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{process_plan_8c_ab590546bdeb81043ddc806b9baff0645}{New\+Node}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$j)
+\begin{DoxyCompactList}\small\item\em Cria novo node da arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{process_plan_8c_a66963a5eeb9010f59984b2f622332812}{Add\+Node}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$root, \mbox{\hyperlink{struct_job}{Job}} $\ast$j)
+\begin{DoxyCompactList}\small\item\em Adiciona job a arvore. (recursivo) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_a18c9a9c25df936c663eb9bb9ece17868}{Remove\+Job}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, int cod\+Job)
+\begin{DoxyCompactList}\small\item\em Remove job da arvore. (recursivo) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_a618be9a085e93028896819918e3bbec8}{Delete\+Current\+Node}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Remove node da arvore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{process_plan_8c_a71fa20ae3b29036481ab7371e680df82}{Destroy\+Node}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$p)
+\begin{DoxyCompactList}\small\item\em Remove node da arvore na memoria. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_ac47ea1cbebcb5a0de6d051d578c1f099}{Find\+Min}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Encontra o node mais pequeno da arvore (recursivo) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{process_plan_8c_a139d8d3ed475702c12c2d0c01de38534}{Tree\+Size}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} r)
+\begin{DoxyCompactList}\small\item\em Conta quantos nodes tem a arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_ac06302578f5a01ab8fb428e9e4d58ae7}{Balance}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Balanceia os ramos da arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{process_plan_8c_a67435c11453ce520f9db7ef60c221b0f}{BSTBalance}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, \mbox{\hyperlink{struct_node}{Node}} $\ast$list, int ini, int end)
+\item 
+void \mbox{\hyperlink{process_plan_8c_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}{BST2\+List}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, unsigned int $\ast$count, \mbox{\hyperlink{struct_node}{Node}} $\ast$list)
+\item 
+bool \mbox{\hyperlink{process_plan_8c_a21caf4a4910af5d3f9068c20987c34e1}{Save\+All}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, FILE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Grava arvore em ficheiro binario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{process_plan_8c_a20d113ac449e7807cefb88b132dbf7ad}{Get\+All}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Le arvore guardada em ficheiro binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Trabalho pratico da UC EDA (versao 1) Metodos para manipular a arvore do Process\+Plan. 
+
+\begin{DoxyAuthor}{Author}
+Pedro Leiras @email \href{mailto:a18550@alunos.ipca.pt}{\texttt{ a18550@alunos.\+ipca.\+pt}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]bugs desconhecidos. \end{DoxyRefDesc}
+
+
+Definition in file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{process_plan_8c_a66963a5eeb9010f59984b2f622332812}\label{process_plan_8c_a66963a5eeb9010f59984b2f622332812}} 
+\index{processPlan.c@{processPlan.c}!AddNode@{AddNode}}
+\index{AddNode@{AddNode}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{AddNode()}{AddNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{j }\end{DoxyParamCaption})}
+
+
+
+Adiciona job a arvore. (recursivo) 
+
+Adiciona um job a arvore, verificando o codigo do \mbox{\hyperlink{struct_job}{Job}} de forma a escolher o ramo a adicionar
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00054}{54}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_ac06302578f5a01ab8fb428e9e4d58ae7}\label{process_plan_8c_ac06302578f5a01ab8fb428e9e4d58ae7}} 
+\index{processPlan.c@{processPlan.c}!Balance@{Balance}}
+\index{Balance@{Balance}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{Balance()}{Balance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
+
+
+
+Balanceia os ramos da arvore. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00191}{191}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}\label{process_plan_8c_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}} 
+\index{processPlan.c@{processPlan.c}!BST2List@{BST2List}}
+\index{BST2List@{BST2List}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{BST2List()}{BST2List()}}
+{\footnotesize\ttfamily void BST2\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{unsigned int $\ast$}]{count,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00227}{227}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a67435c11453ce520f9db7ef60c221b0f}\label{process_plan_8c_a67435c11453ce520f9db7ef60c221b0f}} 
+\index{processPlan.c@{processPlan.c}!BSTBalance@{BSTBalance}}
+\index{BSTBalance@{BSTBalance}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{BSTBalance()}{BSTBalance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} BSTBalance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{list,  }\item[{int}]{ini,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00212}{212}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a618be9a085e93028896819918e3bbec8}\label{process_plan_8c_a618be9a085e93028896819918e3bbec8}} 
+\index{processPlan.c@{processPlan.c}!DeleteCurrentNode@{DeleteCurrentNode}}
+\index{DeleteCurrentNode@{DeleteCurrentNode}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{DeleteCurrentNode()}{DeleteCurrentNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Delete\+Current\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
+
+
+
+Remove node da arvore. 
+
+Verifica a existencia de sub-\/arvores e remove o node indicado
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00110}{110}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a71fa20ae3b29036481ab7371e680df82}\label{process_plan_8c_a71fa20ae3b29036481ab7371e680df82}} 
+\index{processPlan.c@{processPlan.c}!DestroyNode@{DestroyNode}}
+\index{DestroyNode@{DestroyNode}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{DestroyNode()}{DestroyNode()}}
+{\footnotesize\ttfamily void Destroy\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Remove node da arvore na memoria. 
+
+Liberta da memoria um node indicado
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00149}{149}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_ac47ea1cbebcb5a0de6d051d578c1f099}\label{process_plan_8c_ac47ea1cbebcb5a0de6d051d578c1f099}} 
+\index{processPlan.c@{processPlan.c}!FindMin@{FindMin}}
+\index{FindMin@{FindMin}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{FindMin()}{FindMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Find\+Min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
+
+
+
+Encontra o node mais pequeno da arvore (recursivo) 
+
+Encontra o node com o codigo de \mbox{\hyperlink{struct_job}{Job}} mais pequeno (mais a esquerda)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_node}{Node}} com o codigo de \mbox{\hyperlink{struct_job}{Job}} mais pequeno da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00164}{164}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a20d113ac449e7807cefb88b132dbf7ad}\label{process_plan_8c_a20d113ac449e7807cefb88b132dbf7ad}} 
+\index{processPlan.c@{processPlan.c}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Get\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Le arvore guardada em ficheiro binario. 
+
+Le cada linha com o codigo do \mbox{\hyperlink{struct_job}{Job}}, codigo da operacao e cada maquina de forma individual
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+Name} & Nome do ficheiro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro \mbox{\hyperlink{struct_node}{Node}} da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00279}{279}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a881597ea8c4d651398386e2f86ad05f6}\label{process_plan_8c_a881597ea8c4d651398386e2f86ad05f6}} 
+\index{processPlan.c@{processPlan.c}!InitTree@{InitTree}}
+\index{InitTree@{InitTree}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{InitTree()}{InitTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Init\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inicializa a arvore. 
+
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00018}{18}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_ab590546bdeb81043ddc806b9baff0645}\label{process_plan_8c_ab590546bdeb81043ddc806b9baff0645}} 
+\index{processPlan.c@{processPlan.c}!NewNode@{NewNode}}
+\index{NewNode@{NewNode}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{NewNode()}{NewNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ New\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{j }\end{DoxyParamCaption})}
+
+
+
+Cria novo node da arvore. 
+
+Aloca memoria necessaria para armazenar um node da arvore em memoria
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nodo criado 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00030}{30}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a18c9a9c25df936c663eb9bb9ece17868}\label{process_plan_8c_a18c9a9c25df936c663eb9bb9ece17868}} 
+\index{processPlan.c@{processPlan.c}!RemoveJob@{RemoveJob}}
+\index{RemoveJob@{RemoveJob}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{RemoveJob()}{RemoveJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Remove\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{int}]{cod\+Job }\end{DoxyParamCaption})}
+
+
+
+Remove job da arvore. (recursivo) 
+
+Procura se o \mbox{\hyperlink{struct_job}{Job}} existe na arvore e de forma recursiva encontra o ramo onde se encontra. Uma vez encontrado remove.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00081}{81}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a21caf4a4910af5d3f9068c20987c34e1}\label{process_plan_8c_a21caf4a4910af5d3f9068c20987c34e1}} 
+\index{processPlan.c@{processPlan.c}!SaveAll@{SaveAll}}
+\index{SaveAll@{SaveAll}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{SaveAll()}{SaveAll()}}
+{\footnotesize\ttfamily bool Save\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{FILE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Grava arvore em ficheiro binario. 
+
+Grava em cada linha o codigo do \mbox{\hyperlink{struct_job}{Job}}, codigo da operacao e cada maquina de forma individual
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em fp} & Apontador do ficheiro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE -\/ gravado com sucesso $\vert$ FALSE -\/ erro na gravacao 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00244}{244}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{process_plan_8c_a139d8d3ed475702c12c2d0c01de38534}\label{process_plan_8c_a139d8d3ed475702c12c2d0c01de38534}} 
+\index{processPlan.c@{processPlan.c}!TreeSize@{TreeSize}}
+\index{TreeSize@{TreeSize}!processPlan.c@{processPlan.c}}
+\doxysubsubsection{\texorpdfstring{TreeSize()}{TreeSize()}}
+{\footnotesize\ttfamily int Tree\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{r }\end{DoxyParamCaption})}
+
+
+
+Conta quantos nodes tem a arvore. 
+
+Conta o total de nodes existentes na arvore
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total de nodes 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00178}{178}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+

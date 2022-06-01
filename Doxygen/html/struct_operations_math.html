@@ -9,10 +9,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -25,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Trabalho Prático EDA<span id="projectnumber">&#160;1</span>
+   <div id="projectname">Trabalho Prático EDA
    </div>
   </td>
  </tr>
@@ -50,23 +46,6 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('struct_operations_math.html',''); initResizable(); });
-/* @license-end */
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -81,9 +60,11 @@ $(document).ready(function(){initNavTree('struct_operations_math.html',''); init
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="struct_operations_math-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">OperationsMath Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -94,63 +75,59 @@ $(document).ready(function(){initNavTree('struct_operations_math.html',''); init
 <p><code>#include &lt;<a class="el" href="header_8h_source.html">header.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:aac31eb68bff694554a182bd796b2f1c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operations_math.html#aac31eb68bff694554a182bd796b2f1c5">res</a></td></tr>
-<tr class="separator:aac31eb68bff694554a182bd796b2f1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa63cc6f543bed47dea7113ccf34fc5f6"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_operations_list.html">OperationsList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operations_math.html#aa63cc6f543bed47dea7113ccf34fc5f6">operations</a></td></tr>
-<tr class="separator:aa63cc6f543bed47dea7113ccf34fc5f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a92c5b6bbdacc7e4a3ecc499bd0f11685"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operations_math.html#a92c5b6bbdacc7e4a3ecc499bd0f11685">res</a></td></tr>
+<tr class="separator:a92c5b6bbdacc7e4a3ecc499bd0f11685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4018d43480dc07c9a2ad894f56680b68"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_operations_list.html">OperationsList</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operations_math.html#a4018d43480dc07c9a2ad894f56680b68">operations</a></td></tr>
+<tr class="separator:a4018d43480dc07c9a2ad894f56680b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Estrutura utilizada para resultados em calculos com Operacoes. </p>
 <p >Um <a class="el" href="struct_operations_math.html" title="Estrutura utilizada para resultados em calculos com Operacoes.">OperationsMath</a> contem o resultado dos calculos (@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@operations). </p>
 
-<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00085">85</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="aa63cc6f543bed47dea7113ccf34fc5f6" name="aa63cc6f543bed47dea7113ccf34fc5f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa63cc6f543bed47dea7113ccf34fc5f6">&#9670;&nbsp;</a></span>operations</h2>
+<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00097">97</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4018d43480dc07c9a2ad894f56680b68" name="a4018d43480dc07c9a2ad894f56680b68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4018d43480dc07c9a2ad894f56680b68">&#9670;&nbsp;</a></span>operations</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="struct_operations_list.html">OperationsList</a>* operations</td>
+          <td class="memname">struct <a class="el" href="struct_operations_list.html">OperationsList</a>* OperationsMath::operations</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >Todas as Operacoes utilizadas para obter o resultado </p>
 
-<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00087">87</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00099">99</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
 
 </div>
 </div>
-<a id="aac31eb68bff694554a182bd796b2f1c5" name="aac31eb68bff694554a182bd796b2f1c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac31eb68bff694554a182bd796b2f1c5">&#9670;&nbsp;</a></span>res</h2>
+<a id="a92c5b6bbdacc7e4a3ecc499bd0f11685" name="a92c5b6bbdacc7e4a3ecc499bd0f11685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92c5b6bbdacc7e4a3ecc499bd0f11685">&#9670;&nbsp;</a></span>res</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int res</td>
+          <td class="memname">int OperationsMath::res</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p >resultado dos calculos </p>
 
-<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00086">86</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="header_8h_source.html#l00098">98</a> of file <a class="el" href="header_8h_source.html">header.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-EDA-21-22/Trabalho Pratico 18550/Trabalho Pratico 18550/<a class="el" href="header_8h_source.html">header.h</a></li>
+<li>Trabalho Pratico 18550/<a class="el" href="header_8h_source.html">header.h</a></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="struct_operations_math.html">OperationsMath</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
 </body>
 </html>

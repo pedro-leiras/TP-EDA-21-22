@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operation_0',['Operation',['../header_8h.html#a482954e58a1aa24c2a67b81bb6d92d9c',1,'header.h']]],
-  ['operationslist_1',['OperationsList',['../header_8h.html#a6fc7be9a51de26281edd9f2b4f9dada3',1,'header.h']]],
-  ['operationsmath_2',['OperationsMath',['../header_8h.html#a5d40758bcc7205a6185d35529a72c311',1,'header.h']]]
+  ['node_0',['Node',['../header_8h.html#a3b09f37e675bcd48a01bf22155996872',1,'header.h']]],
+  ['nodeinfo_1',['NodeInfo',['../header_8h.html#ad206b4d646cc03e8945d21cb404d8e75',1,'header.h']]]
 ];

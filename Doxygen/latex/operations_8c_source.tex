@@ -1,168 +1,177 @@
-\doxysection{operations.\+c}
-\label{operations_8c_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/operations.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/operations.c}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{operations_8c_source}{}\doxysection{operations.\+c}
+\label{operations_8c_source}\index{Trabalho Pratico 18550/operations.c@{Trabalho Pratico 18550/operations.c}}
+\mbox{\hyperlink{operations_8c}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 }
-\DoxyCodeLine{00012 \textcolor{preprocessor}{\#include "{}header.h"{}}}
-\DoxyCodeLine{00013 }
-\DoxyCodeLine{00023 Operation* CreateOperation(\textcolor{keywordtype}{int} cod, MachinesList* m) \{}
-\DoxyCodeLine{00024     Operation* aux = (Operation*)calloc(1, \textcolor{keyword}{sizeof}(Operation));}
-\DoxyCodeLine{00025     aux-\/>cod = cod;}
-\DoxyCodeLine{00026     aux-\/>machines = m;}
-\DoxyCodeLine{00027 }
-\DoxyCodeLine{00028     \textcolor{keywordflow}{return} aux;}
-\DoxyCodeLine{00029 \}}
-\DoxyCodeLine{00030 }
-\DoxyCodeLine{00037 OperationsList* CreateOperationListNode(Operation* o) \{}
-\DoxyCodeLine{00038     OperationsList* newNode = (OperationsList*)calloc(1, \textcolor{keyword}{sizeof}(OperationsList));}
-\DoxyCodeLine{00039     newNode-\/>operation.cod = o-\/>cod;}
-\DoxyCodeLine{00040     newNode-\/>operation.machines = o-\/>machines;}
-\DoxyCodeLine{00041     newNode-\/>nextOperation = NULL;}
-\DoxyCodeLine{00042 }
-\DoxyCodeLine{00043     \textcolor{keywordflow}{return} newNode;}
-\DoxyCodeLine{00044 \}}
-\DoxyCodeLine{00045 }
-\DoxyCodeLine{00051 OperationsList* InsertOperationInOperationsList(OperationsList* h, Operation* newOperation) \{}
-\DoxyCodeLine{00052     \textcolor{keywordflow}{if} (newOperation == NULL) \{}
-\DoxyCodeLine{00053         \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00054     \}}
-\DoxyCodeLine{00055 }
-\DoxyCodeLine{00056     OperationsList* aux = CreateOperationListNode(newOperation);}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058     \textcolor{keywordflow}{if} (CheckOperationExists(h, aux-\/>operation.cod)) \{}
-\DoxyCodeLine{00059         \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00060     \}}
-\DoxyCodeLine{00061 }
-\DoxyCodeLine{00062     \textcolor{keywordflow}{if} (h == NULL) \{}
-\DoxyCodeLine{00063         h = aux;}
-\DoxyCodeLine{00064     \}\textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00065         OperationsList* tmp = h;}
-\DoxyCodeLine{00066         \textcolor{keywordflow}{while} (tmp-\/>nextOperation != NULL) \{}
-\DoxyCodeLine{00067             tmp = tmp-\/>nextOperation;}
-\DoxyCodeLine{00068         \}}
-\DoxyCodeLine{00069         tmp-\/>nextOperation = aux;}
-\DoxyCodeLine{00070     \}}
-\DoxyCodeLine{00071 }
-\DoxyCodeLine{00072     \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00073 \}}
-\DoxyCodeLine{00074 }
-\DoxyCodeLine{00082 \textcolor{keywordtype}{bool} CheckOperationExists(OperationsList* h, \textcolor{keywordtype}{int} cod) \{}
-\DoxyCodeLine{00083     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00084         OperationsList* aux = h;}
-\DoxyCodeLine{00085         \textcolor{keywordflow}{while} (aux != NULL) \{}
-\DoxyCodeLine{00086             \textcolor{keywordflow}{if} (aux-\/>operation.cod == cod) \{}
-\DoxyCodeLine{00087                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00088             \}}
-\DoxyCodeLine{00089             aux = aux-\/>nextOperation;}
-\DoxyCodeLine{00090         \}}
-\DoxyCodeLine{00091     \}}
-\DoxyCodeLine{00092 }
-\DoxyCodeLine{00093     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00094 \}}
-\DoxyCodeLine{00095 }
-\DoxyCodeLine{00102 Operation* SearchOperation(OperationsList* h, \textcolor{keywordtype}{int} cod) \{}
-\DoxyCodeLine{00103     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00104         OperationsList* aux = h;}
-\DoxyCodeLine{00105         \textcolor{keywordflow}{while} (aux != NULL) \{}
-\DoxyCodeLine{00106             \textcolor{keywordflow}{if} (aux-\/>operation.cod == cod) \{}
-\DoxyCodeLine{00107                 \textcolor{keywordflow}{return} (aux);}
-\DoxyCodeLine{00108             \}}
-\DoxyCodeLine{00109             aux = aux-\/>nextOperation;}
-\DoxyCodeLine{00110         \}}
-\DoxyCodeLine{00111     \}}
-\DoxyCodeLine{00112 }
-\DoxyCodeLine{00113     \textcolor{keywordflow}{return} NULL;}
-\DoxyCodeLine{00114 \}}
-\DoxyCodeLine{00115 }
-\DoxyCodeLine{00123 \textcolor{keywordtype}{float} GetAverageOperationTime(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod) \{}
-\DoxyCodeLine{00124     \textcolor{keywordtype}{int} sum = 0, i = 0;}
-\DoxyCodeLine{00125     \textcolor{keywordtype}{float} res = -\/1;}
-\DoxyCodeLine{00126 }
-\DoxyCodeLine{00127     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00128         Job* job = SearchJob(h, jobCod);}
-\DoxyCodeLine{00129         \textcolor{keywordflow}{if} (job != NULL \&\& job-\/>operations != NULL) \{}
-\DoxyCodeLine{00130             Operation* auxOperation = SearchOperation(job-\/>operations, opCod);}
-\DoxyCodeLine{00131             \textcolor{keywordflow}{if} (auxOperation != NULL) \{}
-\DoxyCodeLine{00132                 MachinesList* auxMachines = auxOperation-\/>machines;}
-\DoxyCodeLine{00133                 sum = SumMachineTime(auxMachines);}
-\DoxyCodeLine{00134                 i = CountMachines(auxMachines);}
-\DoxyCodeLine{00135                 \textcolor{keywordflow}{if} (i != 0) \{}
-\DoxyCodeLine{00136                     res = sum / (float)i;}
-\DoxyCodeLine{00137                 \}}
-\DoxyCodeLine{00138             \}}
-\DoxyCodeLine{00139         \}}
-\DoxyCodeLine{00140     \}}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142     \textcolor{keywordflow}{return} res;}
-\DoxyCodeLine{00143 \}}
-\DoxyCodeLine{00144 }
-\DoxyCodeLine{00155 ProcessPlan* ChangeOperationInJob(ProcessPlan* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod, \textcolor{keywordtype}{int} macCod, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime) \{}
-\DoxyCodeLine{00156     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00157         Job* job = SearchJob(h, jobCod);}
-\DoxyCodeLine{00158         \textcolor{keywordflow}{if} (job != NULL \&\& job-\/>operations != NULL) \{}
-\DoxyCodeLine{00159             Operation* auxOperation = SearchOperation(job-\/>operations, opCod);}
-\DoxyCodeLine{00160             \textcolor{keywordflow}{if} (auxOperation != NULL) \{}
-\DoxyCodeLine{00161                 Machine* auxMachine = SearchMachine(auxOperation-\/>machines, macCod);}
-\DoxyCodeLine{00162                 auxMachine = ChangeMachine(auxMachine, newMacCod, newTime);}
-\DoxyCodeLine{00163             \}}
-\DoxyCodeLine{00164         \}}
-\DoxyCodeLine{00165     \}}
-\DoxyCodeLine{00166 }
-\DoxyCodeLine{00167     \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00168 \}}
-\DoxyCodeLine{00169 }
-\DoxyCodeLine{00175 OperationsMath GetMinTimeToCompleteOperations(OperationsList* h) \{}
-\DoxyCodeLine{00176     OperationsMath x = \{ 0, NULL \};}
-\DoxyCodeLine{00177     Machine* auxMachine;}
-\DoxyCodeLine{00178     MachinesList* auxMachineList;}
-\DoxyCodeLine{00179     Operation* auxOperation;}
-\DoxyCodeLine{00180 }
-\DoxyCodeLine{00181     \textcolor{keywordflow}{while} (h != NULL) \{}
-\DoxyCodeLine{00182         auxMachineList = NULL;}
-\DoxyCodeLine{00183         auxMachine = GetMachineWithLowerTime(h-\/>operation.machines);                            \textcolor{comment}{//obtem a struct da maquina com menor tempo da operacao iterada}}
-\DoxyCodeLine{00184         \textcolor{keywordflow}{if} (auxMachine != NULL) \{}
-\DoxyCodeLine{00185             x.res += auxMachine-\/>time;                                                           \textcolor{comment}{//vai somando o tempo minimo de todas as maquinas}}
-\DoxyCodeLine{00186             auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);            \textcolor{comment}{//cria uma lista de maquinas com a maquina de menor tempo}}
-\DoxyCodeLine{00187             auxOperation = CreateOperation(h-\/>operation.cod, auxMachineList);                    \textcolor{comment}{//cria a operacao}}
-\DoxyCodeLine{00188             x.operations = InsertOperationInOperationsList(x.operations, auxOperation);          \textcolor{comment}{//insere a operacao criada na lista de operacoes a retornar}}
-\DoxyCodeLine{00189         \}}
-\DoxyCodeLine{00190         h = h-\/>nextOperation;}
-\DoxyCodeLine{00191     \}}
-\DoxyCodeLine{00192 }
-\DoxyCodeLine{00193     \textcolor{keywordflow}{return} x;}
-\DoxyCodeLine{00194 \}}
-\DoxyCodeLine{00195 }
-\DoxyCodeLine{00201 OperationsMath GetMaxTimeToCompleteOperations(OperationsList* h) \{}
-\DoxyCodeLine{00202     OperationsMath x = \{ 0, NULL \};}
-\DoxyCodeLine{00203     Machine* auxMachine;}
-\DoxyCodeLine{00204     MachinesList* auxMachineList;}
-\DoxyCodeLine{00205     Operation* auxOperation;}
-\DoxyCodeLine{00206 }
-\DoxyCodeLine{00207     \textcolor{keywordflow}{while} (h != NULL) \{}
-\DoxyCodeLine{00208         auxMachineList = NULL;}
-\DoxyCodeLine{00209         auxMachine = GetMachineWithHigherTime(h-\/>operation.machines);                          \textcolor{comment}{//obtem a struct da maquina com maior tempo da operacao iterada}}
-\DoxyCodeLine{00210         \textcolor{keywordflow}{if} (auxMachine != NULL) \{}
-\DoxyCodeLine{00211             x.res += auxMachine-\/>time;                                                           \textcolor{comment}{//vai somando o maior tempo de todas as maquinas}}
-\DoxyCodeLine{00212             auxMachineList = InsertMachineInMachinesList(auxMachineList, auxMachine);            \textcolor{comment}{//cria uma lista de maquinas com a maquina de maior tempo}}
-\DoxyCodeLine{00213             auxOperation = CreateOperation(h-\/>operation.cod, auxMachineList);                    \textcolor{comment}{//cria a operacao}}
-\DoxyCodeLine{00214             x.operations = InsertOperationInOperationsList(x.operations, auxOperation);          \textcolor{comment}{//insere a operacao criada na lista de operacoes a retornar}}
-\DoxyCodeLine{00215         \}}
-\DoxyCodeLine{00216         h = h-\/>nextOperation;}
-\DoxyCodeLine{00217     \}}
-\DoxyCodeLine{00218 }
-\DoxyCodeLine{00219     \textcolor{keywordflow}{return} x;}
-\DoxyCodeLine{00220 \}}
-\DoxyCodeLine{00221 }
-\DoxyCodeLine{00226 \textcolor{keywordtype}{void} ListOperations(OperationsList* h) \{}
-\DoxyCodeLine{00227     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00228         printf(\textcolor{stringliteral}{"{}Codigo Operacao: \%d -\/ Maquinas: \(\backslash\)n"{}}, h-\/>operation.cod);}
-\DoxyCodeLine{00229         ListMachines(h-\/>operation.machines);}
-\DoxyCodeLine{00230         \textcolor{keywordflow}{while} (h-\/>nextOperation != NULL) \{}
-\DoxyCodeLine{00231             h = h-\/>nextOperation;}
-\DoxyCodeLine{00232             printf(\textcolor{stringliteral}{"{}Codigo Operacao: \%d -\/ Maquinas: \(\backslash\)n"{}}, h-\/>operation.cod);}
-\DoxyCodeLine{00233             ListMachines(h-\/>operation.machines);   }
-\DoxyCodeLine{00234         \};}
-\DoxyCodeLine{00235     \}}
-\DoxyCodeLine{00236 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00012}00012 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{header_8h}{header.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00023}\mbox{\hyperlink{header_8h_a55cec244093d3be768819b96260e3df0}{00023}} \mbox{\hyperlink{struct_operation}{Operation}}* \mbox{\hyperlink{operations_8c_a55cec244093d3be768819b96260e3df0}{CreateOperation}}(\textcolor{keywordtype}{int} cod, \mbox{\hyperlink{struct_machines_list}{MachinesList}}* m) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00024}00024     \mbox{\hyperlink{struct_operation}{Operation}}* aux = (\mbox{\hyperlink{struct_operation}{Operation}}*)calloc(1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_operation}{Operation}}));}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00025}00025     \textcolor{keywordflow}{if} (aux == NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00026}00026         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00029}00029     aux-\/>\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}} = cod;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00030}00030     aux-\/>\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}} = m;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00032}00032     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00033}00033 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00041}\mbox{\hyperlink{header_8h_a1c8d73b6eba6d821da25647c86e2af65}{00041}} \mbox{\hyperlink{struct_operations_list}{OperationsList}}* \mbox{\hyperlink{operations_8c_a1c8d73b6eba6d821da25647c86e2af65}{CreateOperationListNode}}(\mbox{\hyperlink{struct_operation}{Operation}}* o) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00042}00042     \mbox{\hyperlink{struct_operations_list}{OperationsList}}* newNode = (\mbox{\hyperlink{struct_operations_list}{OperationsList}}*)calloc(1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}));}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00043}00043     \textcolor{keywordflow}{if} (newNode == NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00044}00044         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00047}00047     newNode-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}} = o-\/>\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00048}00048     newNode-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}} = o-\/>\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00049}00049     newNode-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}} = NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00051}00051     \textcolor{keywordflow}{return} newNode;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00059}\mbox{\hyperlink{header_8h_a70ca8c4605b9443afee9fb49312e045b}{00059}} \mbox{\hyperlink{struct_operations_list}{OperationsList}}* \mbox{\hyperlink{operations_8c_a70ca8c4605b9443afee9fb49312e045b}{InsertOperationInOperationsList}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h, \mbox{\hyperlink{struct_operation}{Operation}}* newOperation) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00060}00060     \textcolor{keywordflow}{if} (newOperation == NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00061}00061         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00064}00064     \mbox{\hyperlink{struct_operations_list}{OperationsList}}* aux = \mbox{\hyperlink{operations_8c_a1c8d73b6eba6d821da25647c86e2af65}{CreateOperationListNode}}(newOperation);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00066}00066     \textcolor{keywordflow}{if} (\mbox{\hyperlink{operations_8c_a70d5498820b9d3b0d57b5b3f7b0611e6}{CheckOperationExists}}(h, aux-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}})) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00067}00067         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00068}00068     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00070}00070     \textcolor{keywordflow}{if} (h == NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00071}00071         h = aux;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00072}00072     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00073}00073         \mbox{\hyperlink{struct_operations_list}{OperationsList}}* tmp = h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00074}00074         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00075}00075             tmp = tmp-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00076}00076         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00077}00077         tmp-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}} = aux;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00078}00078     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00080}00080     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00081}00081 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00090}\mbox{\hyperlink{header_8h_a70d5498820b9d3b0d57b5b3f7b0611e6}{00090}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{operations_8c_a70d5498820b9d3b0d57b5b3f7b0611e6}{CheckOperationExists}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00091}00091     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00092}00092         \mbox{\hyperlink{struct_operations_list}{OperationsList}}* aux = h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00093}00093         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00094}00094             \textcolor{keywordflow}{if} (aux-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}} == cod) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00095}00095                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00096}00096             \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00097}00097             aux = aux-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00101}00101     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00110}\mbox{\hyperlink{header_8h_a93755e4b77c40d29fed15b39eee032f4}{00110}} \mbox{\hyperlink{struct_operation}{Operation}}* \mbox{\hyperlink{operations_8c_a93755e4b77c40d29fed15b39eee032f4}{SearchOperation}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00111}00111     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00112}00112         \mbox{\hyperlink{struct_operations_list}{OperationsList}}* aux = h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00113}00113         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00114}00114             \textcolor{keywordflow}{if} (aux-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}} == cod) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00115}00115                 \textcolor{keywordflow}{return} (aux);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00116}00116             \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00117}00117             aux = aux-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00118}00118         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00119}00119     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00120}00120 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00121}00121     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00122}00122 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00131}\mbox{\hyperlink{header_8h_a400977bed351297b568bc32e4fa72434}{00131}} \textcolor{keywordtype}{float} \mbox{\hyperlink{operations_8c_a400977bed351297b568bc32e4fa72434}{GetAverageOperationTime}}(\mbox{\hyperlink{struct_node}{Node}}* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00132}00132     \textcolor{keywordtype}{int} sum = 0, i = 0;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00133}00133     \textcolor{keywordtype}{float} res = -\/1;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00135}00135     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00136}00136         \mbox{\hyperlink{struct_job}{Job}}* job = \mbox{\hyperlink{header_8h_aadc97e255104fdb8113c002e0af94cca}{SearchJob}}(h, jobCod);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00137}00137         \textcolor{keywordflow}{if} (job != NULL \&\& job-\/>\mbox{\hyperlink{struct_job_a57c1088d1ee24de274897eb1c78e8b29}{operations}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00138}00138             \mbox{\hyperlink{struct_operation}{Operation}}* auxOperation = \mbox{\hyperlink{operations_8c_a93755e4b77c40d29fed15b39eee032f4}{SearchOperation}}(job-\/>\mbox{\hyperlink{struct_job_a57c1088d1ee24de274897eb1c78e8b29}{operations}}, opCod);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00139}00139             \textcolor{keywordflow}{if} (auxOperation != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00140}00140                 \mbox{\hyperlink{struct_machines_list}{MachinesList}}* auxMachines = auxOperation-\/>\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00141}00141                 sum = \mbox{\hyperlink{header_8h_a3d9833da4e2f8e45c929e13065a7480a}{SumMachineTime}}(auxMachines);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00142}00142                 i = \mbox{\hyperlink{header_8h_acf52e438306e61b06102beaff08f48f5}{CountMachines}}(auxMachines);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00143}00143                 \textcolor{keywordflow}{if} (i != 0) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00144}00144                     res = sum / (float)i;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00145}00145                 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00146}00146             \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00147}00147         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00148}00148     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00150}00150     \textcolor{keywordflow}{return} res;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00151}00151 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00163}\mbox{\hyperlink{header_8h_a79e50541ca712eaf7ef55cbe998b6f91}{00163}} \mbox{\hyperlink{struct_node}{Node}}* \mbox{\hyperlink{operations_8c_a79e50541ca712eaf7ef55cbe998b6f91}{ChangeOperationInJob}}(\mbox{\hyperlink{struct_node}{Node}}* h, \textcolor{keywordtype}{int} jobCod, \textcolor{keywordtype}{int} opCod, \textcolor{keywordtype}{int} macCod, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00164}00164     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00165}00165         \mbox{\hyperlink{struct_job}{Job}}* job = \mbox{\hyperlink{header_8h_aadc97e255104fdb8113c002e0af94cca}{SearchJob}}(h, jobCod);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00166}00166         \textcolor{keywordflow}{if} (job != NULL \&\& job-\/>\mbox{\hyperlink{struct_job_a57c1088d1ee24de274897eb1c78e8b29}{operations}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00167}00167             \mbox{\hyperlink{struct_operation}{Operation}}* auxOperation = \mbox{\hyperlink{operations_8c_a93755e4b77c40d29fed15b39eee032f4}{SearchOperation}}(job-\/>\mbox{\hyperlink{struct_job_a57c1088d1ee24de274897eb1c78e8b29}{operations}}, opCod);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00168}00168             \textcolor{keywordflow}{if} (auxOperation != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00169}00169                 \mbox{\hyperlink{struct_machine}{Machine}}* auxMachine = \mbox{\hyperlink{header_8h_a43e29489aba14003f59e61ca73431388}{SearchMachine}}(auxOperation-\/>\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}}, macCod);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00170}00170                 auxMachine = \mbox{\hyperlink{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}{ChangeMachine}}(auxMachine, newMacCod, newTime);}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00171}00171             \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00172}00172         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00173}00173     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00175}00175     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00176}00176 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00177}00177 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00184}\mbox{\hyperlink{header_8h_aae44660d8fd42d25ce15f34e4fa3b8a4}{00184}} \mbox{\hyperlink{struct_operations_math}{OperationsMath}} \mbox{\hyperlink{operations_8c_aae44660d8fd42d25ce15f34e4fa3b8a4}{GetMinTimeToCompleteOperations}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00185}00185     \mbox{\hyperlink{struct_operations_math}{OperationsMath}} x = \{ 0, NULL \};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00186}00186     \mbox{\hyperlink{struct_machine}{Machine}}* auxMachine;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00187}00187     \mbox{\hyperlink{struct_machines_list}{MachinesList}}* auxMachineList;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00188}00188     \mbox{\hyperlink{struct_operation}{Operation}}* auxOperation;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00189}00189 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00190}00190     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00191}00191         auxMachineList = NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00192}00192         auxMachine = \mbox{\hyperlink{header_8h_a652a416591b66e1e3d0318c6c7e51717}{GetMachineWithLowerTime}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}});                            \textcolor{comment}{//obtem a struct da maquina com menor tempo da operacao iterada}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00193}00193         \textcolor{keywordflow}{if} (auxMachine != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00194}00194             x.\mbox{\hyperlink{struct_operations_math_a92c5b6bbdacc7e4a3ecc499bd0f11685}{res}} += auxMachine-\/>\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};                                                           \textcolor{comment}{//vai somando o tempo minimo de todas as maquinas}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00195}00195             auxMachineList = \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(auxMachineList, auxMachine);            \textcolor{comment}{//cria uma lista de maquinas com a maquina de menor tempo}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00196}00196             auxOperation = \mbox{\hyperlink{operations_8c_a55cec244093d3be768819b96260e3df0}{CreateOperation}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}}, auxMachineList);                    \textcolor{comment}{//cria a operacao}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00197}00197             x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}} = \mbox{\hyperlink{operations_8c_a70ca8c4605b9443afee9fb49312e045b}{InsertOperationInOperationsList}}(x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}}, auxOperation);          \textcolor{comment}{//insere a operacao criada na lista de operacoes a retornar}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00198}00198         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00199}00199         h = h-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00200}00200     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00201}00201 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00202}00202     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00203}00203 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00210}\mbox{\hyperlink{header_8h_ab1b50d442f3f730e77bc3cd2e5fea177}{00210}} \mbox{\hyperlink{struct_operations_math}{OperationsMath}} \mbox{\hyperlink{operations_8c_ab1b50d442f3f730e77bc3cd2e5fea177}{GetMaxTimeToCompleteOperations}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00211}00211     \mbox{\hyperlink{struct_operations_math}{OperationsMath}} x = \{ 0, NULL \};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00212}00212     \mbox{\hyperlink{struct_machine}{Machine}}* auxMachine;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00213}00213     \mbox{\hyperlink{struct_machines_list}{MachinesList}}* auxMachineList;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00214}00214     \mbox{\hyperlink{struct_operation}{Operation}}* auxOperation;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00216}00216     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00217}00217         auxMachineList = NULL;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00218}00218         auxMachine = \mbox{\hyperlink{header_8h_ae279e8364c7933f085d47c75a2211127}{GetMachineWithHigherTime}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}});                          \textcolor{comment}{//obtem a struct da maquina com maior tempo da operacao iterada}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00219}00219         \textcolor{keywordflow}{if} (auxMachine != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00220}00220             x.\mbox{\hyperlink{struct_operations_math_a92c5b6bbdacc7e4a3ecc499bd0f11685}{res}} += auxMachine-\/>\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};                                                           \textcolor{comment}{//vai somando o maior tempo de todas as maquinas}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00221}00221             auxMachineList = \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(auxMachineList, auxMachine);            \textcolor{comment}{//cria uma lista de maquinas com a maquina de maior tempo}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00222}00222             auxOperation = \mbox{\hyperlink{operations_8c_a55cec244093d3be768819b96260e3df0}{CreateOperation}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}}, auxMachineList);                    \textcolor{comment}{//cria a operacao}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00223}00223             x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}} = \mbox{\hyperlink{operations_8c_a70ca8c4605b9443afee9fb49312e045b}{InsertOperationInOperationsList}}(x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}}, auxOperation);          \textcolor{comment}{//insere a operacao criada na lista de operacoes a retornar}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00224}00224         \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00225}00225         h = h-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00226}00226     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00227}00227 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00228}00228     \textcolor{keywordflow}{return} x;}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00229}00229 \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00230}00230 }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00235}\mbox{\hyperlink{header_8h_a464521e892eefc968d19a2ad18803e1d}{00235}} \textcolor{keywordtype}{void} \mbox{\hyperlink{operations_8c_a464521e892eefc968d19a2ad18803e1d}{ListOperations}}(\mbox{\hyperlink{struct_operations_list}{OperationsList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00236}00236     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00237}00237         printf(\textcolor{stringliteral}{"{}Codigo Operacao: \%d -\/ Maquinas: \(\backslash\)n"{}}, h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}});}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00238}00238         \mbox{\hyperlink{header_8h_a732a6e4510ddfad7068585107eaca427}{ListMachines}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}});}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00239}00239         \textcolor{keywordflow}{while} (h-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00240}00240             h = h-\/>\mbox{\hyperlink{struct_operations_list_af1e6465a2a759463ddd42694ddbf83a2}{nextOperation}};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00241}00241             printf(\textcolor{stringliteral}{"{}Codigo Operacao: \%d -\/ Maquinas: \(\backslash\)n"{}}, h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_a246306a8571a95851f3e6c4aa2cfd291}{cod}});}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00242}00242             \mbox{\hyperlink{header_8h_a732a6e4510ddfad7068585107eaca427}{ListMachines}}(h-\/>\mbox{\hyperlink{struct_operations_list_a19ca833323eb7eccd8113885d201a597}{operation}}.\mbox{\hyperlink{struct_operation_aae298d74cdf5b1371f1c28ca58d45190}{machines}});   }
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00243}00243         \};}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00244}00244     \}}
+\DoxyCodeLine{\Hypertarget{operations_8c_source_l00245}00245 \}}
 
 \end{DoxyCode}

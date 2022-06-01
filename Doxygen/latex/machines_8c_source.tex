@@ -1,153 +1,161 @@
-\doxysection{machines.\+c}
-\label{machines_8c_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/machines.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/machines.c}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{machines_8c_source}{}\doxysection{machines.\+c}
+\label{machines_8c_source}\index{Trabalho Pratico 18550/machines.c@{Trabalho Pratico 18550/machines.c}}
+\mbox{\hyperlink{machines_8c}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 }
-\DoxyCodeLine{00011 \textcolor{preprocessor}{\#include "{}header.h"{}}}
-\DoxyCodeLine{00012 }
-\DoxyCodeLine{00022 Machine* CreateMachine(\textcolor{keywordtype}{int} cod, \textcolor{keywordtype}{int} time) \{}
-\DoxyCodeLine{00023     Machine* aux = (Machine*)calloc(1, \textcolor{keyword}{sizeof}(Machine));}
-\DoxyCodeLine{00024     aux-\/>cod = cod;}
-\DoxyCodeLine{00025     aux-\/>time = time;}
-\DoxyCodeLine{00026 }
-\DoxyCodeLine{00027     \textcolor{keywordflow}{return} aux;}
-\DoxyCodeLine{00028 \}}
-\DoxyCodeLine{00029 }
-\DoxyCodeLine{00036 MachinesList* CreateMachineListNode(Machine* m) \{}
-\DoxyCodeLine{00037     MachinesList* newNode = (MachinesList*)calloc(1, \textcolor{keyword}{sizeof}(MachinesList));}
-\DoxyCodeLine{00038     newNode-\/>machine.cod = m-\/>cod;}
-\DoxyCodeLine{00039     newNode-\/>machine.time = m-\/>time;}
-\DoxyCodeLine{00040     newNode-\/>nextMachine = NULL;}
-\DoxyCodeLine{00041 }
-\DoxyCodeLine{00042     \textcolor{keywordflow}{return} newNode;}
-\DoxyCodeLine{00043 \}}
-\DoxyCodeLine{00044 }
-\DoxyCodeLine{00050 MachinesList* InsertMachineInMachinesList(MachinesList* h, Machine* newMachine) \{}
-\DoxyCodeLine{00051     \textcolor{keywordflow}{if} (newMachine == NULL) \{}
-\DoxyCodeLine{00052         \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00053     \}}
-\DoxyCodeLine{00054 }
-\DoxyCodeLine{00055     MachinesList* aux = CreateMachineListNode(newMachine);}
-\DoxyCodeLine{00056 }
-\DoxyCodeLine{00057     \textcolor{keywordflow}{if} (CheckMachineExists(h, aux-\/>machine.cod)) \{}
-\DoxyCodeLine{00058         \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00059     \}}
-\DoxyCodeLine{00060 }
-\DoxyCodeLine{00061     \textcolor{keywordflow}{if} (h == NULL) \{}
-\DoxyCodeLine{00062         h = aux;}
-\DoxyCodeLine{00063     \}\textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{00064         MachinesList* tmp = h;}
-\DoxyCodeLine{00065         \textcolor{keywordflow}{while} (tmp-\/>nextMachine != NULL) \{}
-\DoxyCodeLine{00066             tmp = tmp-\/>nextMachine;}
-\DoxyCodeLine{00067         \}}
-\DoxyCodeLine{00068         tmp-\/>nextMachine = aux;}
-\DoxyCodeLine{00069     \}}
-\DoxyCodeLine{00070 }
-\DoxyCodeLine{00071     \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00072 \}}
-\DoxyCodeLine{00073 }
-\DoxyCodeLine{00081 \textcolor{keywordtype}{bool} CheckMachineExists(MachinesList* h, \textcolor{keywordtype}{int} cod) \{}
-\DoxyCodeLine{00082     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00083         MachinesList* aux = h;}
-\DoxyCodeLine{00084         \textcolor{keywordflow}{while} (aux != NULL) \{}
-\DoxyCodeLine{00085             \textcolor{keywordflow}{if} (aux-\/>machine.cod == cod) \{}
-\DoxyCodeLine{00086                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
-\DoxyCodeLine{00087             \}}
-\DoxyCodeLine{00088             aux = aux-\/>nextMachine;}
-\DoxyCodeLine{00089         \}}
-\DoxyCodeLine{00090     \}}
-\DoxyCodeLine{00091 }
-\DoxyCodeLine{00092     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
-\DoxyCodeLine{00093 \}}
-\DoxyCodeLine{00094 }
-\DoxyCodeLine{00101 Machine* SearchMachine(MachinesList* h, \textcolor{keywordtype}{int} cod) \{}
-\DoxyCodeLine{00102     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00103         MachinesList* aux = h;}
-\DoxyCodeLine{00104         \textcolor{keywordflow}{while} (aux != NULL) \{}
-\DoxyCodeLine{00105             \textcolor{keywordflow}{if} (aux-\/>machine.cod == cod) \{}
-\DoxyCodeLine{00106                 \textcolor{keywordflow}{return} (aux);}
-\DoxyCodeLine{00107             \}}
-\DoxyCodeLine{00108             aux = aux-\/>nextMachine;}
-\DoxyCodeLine{00109         \}}
-\DoxyCodeLine{00110     \}}
-\DoxyCodeLine{00111 }
-\DoxyCodeLine{00112     \textcolor{keywordflow}{return} NULL;}
-\DoxyCodeLine{00113 \}}
-\DoxyCodeLine{00114 }
-\DoxyCodeLine{00120 \textcolor{keywordtype}{int} SumMachineTime(MachinesList* h) \{}
-\DoxyCodeLine{00121     \textcolor{keywordtype}{int} sum = 0;}
-\DoxyCodeLine{00122     \textcolor{keywordflow}{while} (h != NULL) \{}
-\DoxyCodeLine{00123         sum += h-\/>machine.time;}
-\DoxyCodeLine{00124         h = h-\/>nextMachine;}
-\DoxyCodeLine{00125     \}}
-\DoxyCodeLine{00126 }
-\DoxyCodeLine{00127     \textcolor{keywordflow}{return} sum;}
-\DoxyCodeLine{00128 \}}
-\DoxyCodeLine{00129 }
-\DoxyCodeLine{00135 \textcolor{keywordtype}{int} CountMachines(MachinesList* h) \{}
-\DoxyCodeLine{00136     \textcolor{keywordtype}{int} count = 0;}
-\DoxyCodeLine{00137     \textcolor{keywordflow}{while} (h != NULL) \{}
-\DoxyCodeLine{00138         count++;}
-\DoxyCodeLine{00139         h = h-\/>nextMachine;}
-\DoxyCodeLine{00140     \}}
-\DoxyCodeLine{00141 }
-\DoxyCodeLine{00142     \textcolor{keywordflow}{return} count;}
-\DoxyCodeLine{00143 \}}
-\DoxyCodeLine{00144 }
-\DoxyCodeLine{00152 Machine* ChangeMachine(Machine* h, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime) \{}
-\DoxyCodeLine{00153     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00154         h-\/>cod = newMacCod;}
-\DoxyCodeLine{00155         h-\/>time = newTime;}
-\DoxyCodeLine{00156     \}}
-\DoxyCodeLine{00157     \textcolor{keywordflow}{return} h;}
-\DoxyCodeLine{00158 \}}
-\DoxyCodeLine{00159 }
-\DoxyCodeLine{00165 Machine* GetMachineWithLowerTime(MachinesList* h) \{}
-\DoxyCodeLine{00166     Machine* aux = NULL;}
-\DoxyCodeLine{00167     \textcolor{keywordtype}{int} auxTime;}
-\DoxyCodeLine{00168 }
-\DoxyCodeLine{00169     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00170         auxTime = h-\/>machine.time;                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
-\DoxyCodeLine{00171         aux = CreateMachine(h-\/>machine.cod, auxTime);}
-\DoxyCodeLine{00172         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
-\DoxyCodeLine{00173             \textcolor{keywordflow}{if} (h-\/>machine.time < auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e menor ao da aux}}
-\DoxyCodeLine{00174                 auxTime = h-\/>machine.time;}
-\DoxyCodeLine{00175                 aux = CreateMachine(h-\/>machine.cod, auxTime);        }
-\DoxyCodeLine{00176             \}}
-\DoxyCodeLine{00177             h = h-\/>nextMachine;}
-\DoxyCodeLine{00178         \}}
-\DoxyCodeLine{00179     \}}
-\DoxyCodeLine{00180 }
-\DoxyCodeLine{00181     \textcolor{keywordflow}{return} aux;}
-\DoxyCodeLine{00182 \}}
-\DoxyCodeLine{00183 }
-\DoxyCodeLine{00189 Machine* GetMachineWithHigherTime(MachinesList* h) \{}
-\DoxyCodeLine{00190     Machine* aux = NULL;}
-\DoxyCodeLine{00191     \textcolor{keywordtype}{int} auxTime;}
-\DoxyCodeLine{00192 }
-\DoxyCodeLine{00193     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00194         auxTime = h-\/>machine.time;                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
-\DoxyCodeLine{00195         aux = CreateMachine(h-\/>machine.cod, auxTime);}
-\DoxyCodeLine{00196         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
-\DoxyCodeLine{00197             \textcolor{keywordflow}{if} (h-\/>machine.time > auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e maior ao da aux}}
-\DoxyCodeLine{00198                 auxTime = h-\/>machine.time;}
-\DoxyCodeLine{00199                 aux = CreateMachine(h-\/>machine.cod, auxTime);}
-\DoxyCodeLine{00200             \}}
-\DoxyCodeLine{00201             h = h-\/>nextMachine;}
-\DoxyCodeLine{00202         \}}
-\DoxyCodeLine{00203     \}}
-\DoxyCodeLine{00204 }
-\DoxyCodeLine{00205     \textcolor{keywordflow}{return} aux;}
-\DoxyCodeLine{00206 \}}
-\DoxyCodeLine{00207 }
-\DoxyCodeLine{00212 \textcolor{keywordtype}{void} ListMachines(MachinesList* h) \{}
-\DoxyCodeLine{00213     \textcolor{keywordflow}{if} (h != NULL) \{}
-\DoxyCodeLine{00214         printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>machine.cod, h-\/>machine.time);}
-\DoxyCodeLine{00215         \textcolor{keywordflow}{while} (h-\/>nextMachine != NULL) \{}
-\DoxyCodeLine{00216             h = h-\/>nextMachine;}
-\DoxyCodeLine{00217             printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>machine.cod, h-\/>machine.time); }
-\DoxyCodeLine{00218         \};}
-\DoxyCodeLine{00219     \}}
-\DoxyCodeLine{00220 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00011}00011 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{header_8h}{header.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00022}\mbox{\hyperlink{header_8h_acd18d2851b205d6d5a1a378bef24d257}{00022}} \mbox{\hyperlink{struct_machine}{Machine}}* \mbox{\hyperlink{machines_8c_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(\textcolor{keywordtype}{int} cod, \textcolor{keywordtype}{int} time) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00023}00023     \mbox{\hyperlink{struct_machine}{Machine}}* aux = (\mbox{\hyperlink{struct_machine}{Machine}}*)calloc(1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_machine}{Machine}}));}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00024}00024     \textcolor{keywordflow}{if} (aux == NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00025}00025         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00028}00028     aux-\/>\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}} = cod;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00029}00029     aux-\/>\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}} = time;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00031}00031     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00032}00032 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00040}\mbox{\hyperlink{header_8h_a449adb2f0d384a77387f5a9da4c6469f}{00040}} \mbox{\hyperlink{struct_machines_list}{MachinesList}}* \mbox{\hyperlink{machines_8c_a449adb2f0d384a77387f5a9da4c6469f}{CreateMachineListNode}}(\mbox{\hyperlink{struct_machine}{Machine}}* m) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00041}00041     \mbox{\hyperlink{struct_machines_list}{MachinesList}}* newNode = (\mbox{\hyperlink{struct_machines_list}{MachinesList}}*)calloc(1, \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}));}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00042}00042     \textcolor{keywordflow}{if} (newNode == NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00043}00043         \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00046}00046     newNode-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}} = m-\/>\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00047}00047     newNode-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}} = m-\/>\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00048}00048     newNode-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}} = NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00050}00050     \textcolor{keywordflow}{return} newNode;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00051}00051 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00058}\mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{00058}} \mbox{\hyperlink{struct_machines_list}{MachinesList}}* \mbox{\hyperlink{machines_8c_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h, \mbox{\hyperlink{struct_machine}{Machine}}* newMachine) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00059}00059     \textcolor{keywordflow}{if} (newMachine == NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00060}00060         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00061}00061     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00063}00063     \mbox{\hyperlink{struct_machines_list}{MachinesList}}* aux = \mbox{\hyperlink{machines_8c_a449adb2f0d384a77387f5a9da4c6469f}{CreateMachineListNode}}(newMachine);}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00065}00065     \textcolor{keywordflow}{if} (\mbox{\hyperlink{machines_8c_a4df84032003ee3fabfd650bcc95e862e}{CheckMachineExists}}(h, aux-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}})) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00066}00066         \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00069}00069     \textcolor{keywordflow}{if} (h == NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00070}00070         h = aux;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00071}00071     \}\textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00072}00072         \mbox{\hyperlink{struct_machines_list}{MachinesList}}* tmp = h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00073}00073         \textcolor{keywordflow}{while} (tmp-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00074}00074             tmp = tmp-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00075}00075         \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00076}00076         tmp-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}} = aux;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00079}00079     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00080}00080 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00089}\mbox{\hyperlink{header_8h_a4df84032003ee3fabfd650bcc95e862e}{00089}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{machines_8c_a4df84032003ee3fabfd650bcc95e862e}{CheckMachineExists}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00090}00090     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00091}00091         \mbox{\hyperlink{struct_machines_list}{MachinesList}}* aux = h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00092}00092         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00093}00093             \textcolor{keywordflow}{if} (aux-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}} == cod) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00094}00094                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00095}00095             \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00096}00096             aux = aux-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00097}00097         \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00098}00098     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00100}00100     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00101}00101 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00109}\mbox{\hyperlink{header_8h_a43e29489aba14003f59e61ca73431388}{00109}} \mbox{\hyperlink{struct_machine}{Machine}}* \mbox{\hyperlink{machines_8c_a43e29489aba14003f59e61ca73431388}{SearchMachine}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h, \textcolor{keywordtype}{int} cod) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00110}00110     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00111}00111         \mbox{\hyperlink{struct_machines_list}{MachinesList}}* aux = h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00112}00112         \textcolor{keywordflow}{while} (aux != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00113}00113             \textcolor{keywordflow}{if} (aux-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}} == cod) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00114}00114                 \textcolor{keywordflow}{return} (aux);}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00115}00115             \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00116}00116             aux = aux-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00117}00117         \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00118}00118     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00120}00120     \textcolor{keywordflow}{return} NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00128}\mbox{\hyperlink{header_8h_a3d9833da4e2f8e45c929e13065a7480a}{00128}} \textcolor{keywordtype}{int} \mbox{\hyperlink{machines_8c_a3d9833da4e2f8e45c929e13065a7480a}{SumMachineTime}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00129}00129     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00130}00130     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00131}00131         sum += h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00132}00132         h = h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00133}00133     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00134}00134 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00135}00135     \textcolor{keywordflow}{return} sum;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00136}00136 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00143}\mbox{\hyperlink{header_8h_acf52e438306e61b06102beaff08f48f5}{00143}} \textcolor{keywordtype}{int} \mbox{\hyperlink{machines_8c_acf52e438306e61b06102beaff08f48f5}{CountMachines}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00144}00144     \textcolor{keywordtype}{int} count = 0;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00145}00145     \textcolor{keywordflow}{while} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00146}00146         count++;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00147}00147         h = h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00148}00148     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00150}00150     \textcolor{keywordflow}{return} count;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00151}00151 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00160}\mbox{\hyperlink{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}{00160}} \mbox{\hyperlink{struct_machine}{Machine}}* \mbox{\hyperlink{machines_8c_a63eaaebeec8bf3b07e98de09b35f82d3}{ChangeMachine}}(\mbox{\hyperlink{struct_machine}{Machine}}* h, \textcolor{keywordtype}{int} newMacCod, \textcolor{keywordtype}{int} newTime) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00161}00161     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00162}00162         h-\/>\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}} = newMacCod;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00163}00163         h-\/>\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}} = newTime;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00164}00164     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00165}00165     \textcolor{keywordflow}{return} h;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00166}00166 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00173}\mbox{\hyperlink{header_8h_a652a416591b66e1e3d0318c6c7e51717}{00173}} \mbox{\hyperlink{struct_machine}{Machine}}* \mbox{\hyperlink{machines_8c_a652a416591b66e1e3d0318c6c7e51717}{GetMachineWithLowerTime}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00174}00174     \mbox{\hyperlink{struct_machine}{Machine}}* aux = NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00175}00175     \textcolor{keywordtype}{int} auxTime;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00177}00177     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00178}00178         auxTime = h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00179}00179         aux = \mbox{\hyperlink{machines_8c_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, auxTime);}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00180}00180         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00181}00181             \textcolor{keywordflow}{if} (h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}} < auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e menor ao da aux}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00182}00182                 auxTime = h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00183}00183                 aux = \mbox{\hyperlink{machines_8c_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, auxTime);        }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00184}00184             \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00185}00185             h = h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00186}00186         \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00187}00187     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00189}00189     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00190}00190 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00197}\mbox{\hyperlink{header_8h_ae279e8364c7933f085d47c75a2211127}{00197}} \mbox{\hyperlink{struct_machine}{Machine}}* \mbox{\hyperlink{machines_8c_ae279e8364c7933f085d47c75a2211127}{GetMachineWithHigherTime}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00198}00198     \mbox{\hyperlink{struct_machine}{Machine}}* aux = NULL;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00199}00199     \textcolor{keywordtype}{int} auxTime;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00200}00200 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00201}00201     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00202}00202         auxTime = h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};                                   \textcolor{comment}{//atribui à aux o tempo da primeira maquina}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00203}00203         aux = \mbox{\hyperlink{machines_8c_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, auxTime);}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00204}00204         \textcolor{keywordflow}{while} (h != NULL) \{                                         \textcolor{comment}{//percorrer todas as maquinas da operacao}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00205}00205             \textcolor{keywordflow}{if} (h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}} > auxTime) \{                     \textcolor{comment}{//comparar se o tempo da maquina e maior ao da aux}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00206}00206                 auxTime = h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00207}00207                 aux = \mbox{\hyperlink{machines_8c_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, auxTime);}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00208}00208             \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00209}00209             h = h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00210}00210         \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00211}00211     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00213}00213     \textcolor{keywordflow}{return} aux;}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00214}00214 \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00220}\mbox{\hyperlink{header_8h_a732a6e4510ddfad7068585107eaca427}{00220}} \textcolor{keywordtype}{void} \mbox{\hyperlink{machines_8c_a732a6e4510ddfad7068585107eaca427}{ListMachines}}(\mbox{\hyperlink{struct_machines_list}{MachinesList}}* h) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00221}00221     \textcolor{keywordflow}{if} (h != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00222}00222         printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}});}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00223}00223         \textcolor{keywordflow}{while} (h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}} != NULL) \{}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00224}00224             h = h-\/>\mbox{\hyperlink{struct_machines_list_aba460bf64d8c8a8aa94dc12ecbe7dff3}{nextMachine}};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00225}00225             printf(\textcolor{stringliteral}{"{}-\/ Codigo Maquina: \%d | Tempo: \%d\(\backslash\)n"{}}, h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_a0b6e2dfb2a323a24fac57c9a731e143b}{cod}}, h-\/>\mbox{\hyperlink{struct_machines_list_a1ce1391dc81821b7afd095fc8954b0a5}{machine}}.\mbox{\hyperlink{struct_machine_aa36fe6623f5a0dad3f9a1eac4fa01a89}{time}}); }
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00226}00226         \};}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00227}00227     \}}
+\DoxyCodeLine{\Hypertarget{machines_8c_source_l00228}00228 \}}
 
 \end{DoxyCode}

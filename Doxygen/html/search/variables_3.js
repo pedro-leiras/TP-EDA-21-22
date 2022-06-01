@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['nextjob_0',['nextJob',['../struct_process_plan.html#a0350f6a3313ac67627a4f453d82d97dc',1,'ProcessPlan']]],
-  ['nextmachine_1',['nextMachine',['../struct_machines_list.html#a3bf841e358dd44dc3746dcc3619cc245',1,'MachinesList']]],
-  ['nextoperation_2',['nextOperation',['../struct_operations_list.html#a2cb1be4c90fea4311ecf11a0081769bf',1,'OperationsList']]]
+  ['machine_0',['machine',['../struct_machines_list.html#a1ce1391dc81821b7afd095fc8954b0a5',1,'MachinesList::machine()'],['../struct_node_info.html#a897783118bbdb37a8cb64630fcc44811',1,'NodeInfo::machine()']]],
+  ['machines_1',['machines',['../struct_operation.html#aae298d74cdf5b1371f1c28ca58d45190',1,'Operation']]]
 ];

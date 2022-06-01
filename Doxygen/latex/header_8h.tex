@@ -1,237 +1,347 @@
-\doxysection{D\+:/\+Pedro Leiras/\+IPCA/\+EDJD 1ANO/\+S2/\+EDA/\+TP-\/\+EDA-\/21-\/22/\+Trabalho Pratico 18550/\+Trabalho Pratico 18550/header.h File Reference}
-\label{header_8h}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/header.h@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/header.h}}
+\hypertarget{header_8h}{}\doxysection{Trabalho Pratico 18550/header.h File Reference}
+\label{header_8h}\index{Trabalho Pratico 18550/header.h@{Trabalho Pratico 18550/header.h}}
 
 
-Definicoes Globais para o Trabalho pratico da UC EDA (versao 1)  
+Definicoes Globais para o Trabalho pratico da UC EDA (versao 2)  
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdbool.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
-\doxysubsection*{Data Structures}
+\doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \textbf{ Machine}
+struct \mbox{\hyperlink{struct_machine}{Machine}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma maquina. \end{DoxyCompactList}\item 
-struct \textbf{ Machines\+List}
+struct \mbox{\hyperlink{struct_machines_list}{Machines\+List}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar as maquinas. \end{DoxyCompactList}\item 
-struct \textbf{ Operation}
+struct \mbox{\hyperlink{struct_operation}{Operation}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma operacao. \end{DoxyCompactList}\item 
-struct \textbf{ Operations\+List}
+struct \mbox{\hyperlink{struct_operations_list}{Operations\+List}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar as operacoes. \end{DoxyCompactList}\item 
-struct \textbf{ Job}
+struct \mbox{\hyperlink{struct_job}{Job}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar um trabalho. \end{DoxyCompactList}\item 
-struct \textbf{ Process\+Plan}
+struct \mbox{\hyperlink{struct_node}{Node}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar os trabalhos. \end{DoxyCompactList}\item 
-struct \textbf{ Operations\+Math}
+struct \mbox{\hyperlink{struct_node_info}{Node\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura para guardar a arvore num ficheiro binario. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_operations_math}{Operations\+Math}}
 \begin{DoxyCompactList}\small\item\em Estrutura utilizada para resultados em calculos com Operacoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \textbf{ Machine} \textbf{ Machine}
+typedef struct \mbox{\hyperlink{struct_machine}{Machine}} \mbox{\hyperlink{header_8h_ac5435b96779b7d7659b398b8275b6cbf}{Machine}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma maquina. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Machines\+List} \textbf{ Machines\+List}
+typedef struct \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \mbox{\hyperlink{header_8h_a8148abfb2de35789c458fe21aeaf5944}{Machines\+List}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar as maquinas. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Operation} \textbf{ Operation}
+typedef struct \mbox{\hyperlink{struct_operation}{Operation}} \mbox{\hyperlink{header_8h_a482954e58a1aa24c2a67b81bb6d92d9c}{Operation}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma operacao. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Operations\+List} \textbf{ Operations\+List}
+typedef struct \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \mbox{\hyperlink{header_8h_a6fc7be9a51de26281edd9f2b4f9dada3}{Operations\+List}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar as operacoes. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Job} \textbf{ Job}
+typedef struct \mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{header_8h_a7f678ed7503a7b4211821d14323751d8}{Job}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar um trabalho. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Process\+Plan} \textbf{ Process\+Plan}
+typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{header_8h_a3b09f37e675bcd48a01bf22155996872}{Node}}
 \begin{DoxyCompactList}\small\item\em Estrutura para armazenar os trabalhos. \end{DoxyCompactList}\item 
-typedef struct \textbf{ Operations\+Math} \textbf{ Operations\+Math}
+typedef struct \mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}
+\item 
+typedef struct \mbox{\hyperlink{struct_node_info}{Node\+Info}} \mbox{\hyperlink{header_8h_ad206b4d646cc03e8945d21cb404d8e75}{Node\+Info}}
+\begin{DoxyCompactList}\small\item\em Estrutura para guardar a arvore num ficheiro binario. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{header_8h_a5d40758bcc7205a6185d35529a72c311}{Operations\+Math}}
 \begin{DoxyCompactList}\small\item\em Estrutura utilizada para resultados em calculos com Operacoes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Machine} $\ast$ \textbf{ Create\+Machine} (int cod, int time)
-\begin{DoxyCompactList}\small\item\em Cria nova \doxyref{Machine}{p.}{struct_machine}. \end{DoxyCompactList}\item 
-\textbf{ Machines\+List} $\ast$ \textbf{ Create\+Machine\+List\+Node} (\textbf{ Machine} $\ast$m)
-\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Maquinas Copia para o nodo da lista a informacao de uma \doxyref{Machine}{p.}{struct_machine}. \end{DoxyCompactList}\item 
-\textbf{ Machines\+List} $\ast$ \textbf{ Insert\+Machine\+In\+Machines\+List} (\textbf{ Machines\+List} $\ast$h, \textbf{ Machine} $\ast$new\+Machine)
-\begin{DoxyCompactList}\small\item\em Insere uma nova \doxyref{Machine}{p.}{struct_machine} na lista. \end{DoxyCompactList}\item 
-bool \textbf{ Check\+Machine\+Exists} (\textbf{ Machines\+List} $\ast$h, int cod)
-\begin{DoxyCompactList}\small\item\em Verifica se uma \doxyref{Machine}{p.}{struct_machine} existe a Lista de Maquinas Procura se a \doxyref{Machine}{p.}{struct_machine} esta presente na Lista de Maquinas, atraves do codigo. \end{DoxyCompactList}\item 
-\textbf{ Machine} $\ast$ \textbf{ Search\+Machine} (\textbf{ Machines\+List} $\ast$h, int cod)
-\begin{DoxyCompactList}\small\item\em Verifica se a \doxyref{Machine}{p.}{struct_machine} existe. Se existir devolve endereco da Machine! \end{DoxyCompactList}\item 
-int \textbf{ Sum\+Machine\+Time} (\textbf{ Machines\+List} $\ast$h)
+\mbox{\hyperlink{struct_machine}{Machine}} $\ast$ \mbox{\hyperlink{header_8h_acd18d2851b205d6d5a1a378bef24d257}{Create\+Machine}} (int cod, int time)
+\begin{DoxyCompactList}\small\item\em Cria nova \mbox{\hyperlink{struct_machine}{Machine}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$ \mbox{\hyperlink{header_8h_a449adb2f0d384a77387f5a9da4c6469f}{Create\+Machine\+List\+Node}} (\mbox{\hyperlink{struct_machine}{Machine}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Maquinas Copia para o nodo da lista a informacao de uma \mbox{\hyperlink{struct_machine}{Machine}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$ \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{Insert\+Machine\+In\+Machines\+List}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h, \mbox{\hyperlink{struct_machine}{Machine}} $\ast$new\+Machine)
+\begin{DoxyCompactList}\small\item\em Insere uma nova \mbox{\hyperlink{struct_machine}{Machine}} na lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{header_8h_a4df84032003ee3fabfd650bcc95e862e}{Check\+Machine\+Exists}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se uma \mbox{\hyperlink{struct_machine}{Machine}} existe a Lista de Maquinas Procura se a \mbox{\hyperlink{struct_machine}{Machine}} esta presente na Lista de Maquinas, atraves do codigo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_machine}{Machine}} $\ast$ \mbox{\hyperlink{header_8h_a43e29489aba14003f59e61ca73431388}{Search\+Machine}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se a \mbox{\hyperlink{struct_machine}{Machine}} existe. Se existir devolve endereco da Machine! \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{header_8h_a3d9833da4e2f8e45c929e13065a7480a}{Sum\+Machine\+Time}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Soma todos os tempos das maquinas presentes numa Lista de Maquinas. \end{DoxyCompactList}\item 
-int \textbf{ Count\+Machines} (\textbf{ Machines\+List} $\ast$h)
+int \mbox{\hyperlink{header_8h_acf52e438306e61b06102beaff08f48f5}{Count\+Machines}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Conta todas as maquinas presentes numa Lista de Maquinas. \end{DoxyCompactList}\item 
-\textbf{ Machine} $\ast$ \textbf{ Change\+Machine} (\textbf{ Machine} $\ast$h, int new\+Mac\+Cod, int new\+Time)
+\mbox{\hyperlink{struct_machine}{Machine}} $\ast$ \mbox{\hyperlink{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}{Change\+Machine}} (\mbox{\hyperlink{struct_machine}{Machine}} $\ast$h, int new\+Mac\+Cod, int new\+Time)
 \begin{DoxyCompactList}\small\item\em Altera os dados de uma maquina. \end{DoxyCompactList}\item 
-\textbf{ Machine} $\ast$ \textbf{ Get\+Machine\+With\+Lower\+Time} (\textbf{ Machines\+List} $\ast$h)
+\mbox{\hyperlink{struct_machine}{Machine}} $\ast$ \mbox{\hyperlink{header_8h_a652a416591b66e1e3d0318c6c7e51717}{Get\+Machine\+With\+Lower\+Time}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Determinar a maquina com menor tempo numa Lista de Maquinas. \end{DoxyCompactList}\item 
-\textbf{ Machine} $\ast$ \textbf{ Get\+Machine\+With\+Higher\+Time} (\textbf{ Machines\+List} $\ast$h)
+\mbox{\hyperlink{struct_machine}{Machine}} $\ast$ \mbox{\hyperlink{header_8h_ae279e8364c7933f085d47c75a2211127}{Get\+Machine\+With\+Higher\+Time}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Determinar a maquina com maior tempo numa Lista de Maquinas. \end{DoxyCompactList}\item 
-void \textbf{ List\+Machines} (\textbf{ Machines\+List} $\ast$h)
+void \mbox{\hyperlink{header_8h_a732a6e4510ddfad7068585107eaca427}{List\+Machines}} (\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Lista todas as maquinas de uma Lista de Maquinas. \end{DoxyCompactList}\item 
-\textbf{ Operation} $\ast$ \textbf{ Create\+Operation} (int cod, \textbf{ Machines\+List} $\ast$m)
-\begin{DoxyCompactList}\small\item\em Cria nova \doxyref{Operation}{p.}{struct_operation}. \end{DoxyCompactList}\item 
-\textbf{ Operations\+List} $\ast$ \textbf{ Create\+Operation\+List\+Node} (\textbf{ Operation} $\ast$o)
-\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \doxyref{Operation}{p.}{struct_operation}. \end{DoxyCompactList}\item 
-\textbf{ Operations\+List} $\ast$ \textbf{ Insert\+Operation\+In\+Operations\+List} (\textbf{ Operations\+List} $\ast$h, \textbf{ Operation} $\ast$new\+Operation)
-\begin{DoxyCompactList}\small\item\em Insere uma nova \doxyref{Operation}{p.}{struct_operation} na lista. \end{DoxyCompactList}\item 
-bool \textbf{ Check\+Operation\+Exists} (\textbf{ Operations\+List} $\ast$h, int cod)
-\begin{DoxyCompactList}\small\item\em Verifica se uma \doxyref{Operation}{p.}{struct_operation} existe a Lista de Operacoes Procura se a \doxyref{Operation}{p.}{struct_operation} esta presente na Lista de Operacoes, atraves do codigo. \end{DoxyCompactList}\item 
-\textbf{ Operation} $\ast$ \textbf{ Search\+Operation} (\textbf{ Operations\+List} $\ast$h, int cod)
-\begin{DoxyCompactList}\small\item\em Verifica se a \doxyref{Operation}{p.}{struct_operation} existe. Se existir devolve endereco da Operation! \end{DoxyCompactList}\item 
-float \textbf{ Get\+Average\+Operation\+Time} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod)
+\mbox{\hyperlink{struct_operation}{Operation}} $\ast$ \mbox{\hyperlink{header_8h_a55cec244093d3be768819b96260e3df0}{Create\+Operation}} (int cod, \mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Cria nova \mbox{\hyperlink{struct_operation}{Operation}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$ \mbox{\hyperlink{header_8h_a1c8d73b6eba6d821da25647c86e2af65}{Create\+Operation\+List\+Node}} (\mbox{\hyperlink{struct_operation}{Operation}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \mbox{\hyperlink{struct_operation}{Operation}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$ \mbox{\hyperlink{header_8h_a70ca8c4605b9443afee9fb49312e045b}{Insert\+Operation\+In\+Operations\+List}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h, \mbox{\hyperlink{struct_operation}{Operation}} $\ast$new\+Operation)
+\begin{DoxyCompactList}\small\item\em Insere uma nova \mbox{\hyperlink{struct_operation}{Operation}} na lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{header_8h_a70d5498820b9d3b0d57b5b3f7b0611e6}{Check\+Operation\+Exists}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se uma \mbox{\hyperlink{struct_operation}{Operation}} existe a Lista de Operacoes Procura se a \mbox{\hyperlink{struct_operation}{Operation}} esta presente na Lista de Operacoes, atraves do codigo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operation}{Operation}} $\ast$ \mbox{\hyperlink{header_8h_a93755e4b77c40d29fed15b39eee032f4}{Search\+Operation}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se a \mbox{\hyperlink{struct_operation}{Operation}} existe. Se existir devolve endereco da Operation! \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{header_8h_a400977bed351297b568bc32e4fa72434}{Get\+Average\+Operation\+Time}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod, int op\+Cod)
 \begin{DoxyCompactList}\small\item\em Determina a quantidade media de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Change\+Operation\+In\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod, int mac\+Cod, int new\+Mac\+Cod, int new\+Time)
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a79e50541ca712eaf7ef55cbe998b6f91}{Change\+Operation\+In\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod, int op\+Cod, int mac\+Cod, int new\+Mac\+Cod, int new\+Time)
 \begin{DoxyCompactList}\small\item\em Altera os dados de uma Operacao. \end{DoxyCompactList}\item 
-\textbf{ Operations\+Math} \textbf{ Get\+Min\+Time\+To\+Complete\+Operations} (\textbf{ Operations\+List} $\ast$h)
+\mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{header_8h_aae44660d8fd42d25ce15f34e4fa3b8a4}{Get\+Min\+Time\+To\+Complete\+Operations}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Determina a quantidade minima de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
-\textbf{ Operations\+Math} \textbf{ Get\+Max\+Time\+To\+Complete\+Operations} (\textbf{ Operations\+List} $\ast$h)
+\mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{header_8h_ab1b50d442f3f730e77bc3cd2e5fea177}{Get\+Max\+Time\+To\+Complete\+Operations}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Determina a quantidade maxima de unidades de tempo necessarias para completar uma operacao. \end{DoxyCompactList}\item 
-void \textbf{ List\+Operations} (\textbf{ Operations\+List} $\ast$h)
+void \mbox{\hyperlink{header_8h_a464521e892eefc968d19a2ad18803e1d}{List\+Operations}} (\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Lista todas as operacoes de uma Lista de Operacoes. \end{DoxyCompactList}\item 
-\textbf{ Job} $\ast$ \textbf{ Create\+Job} (int cod, \textbf{ Operations\+List} $\ast$o)
-\begin{DoxyCompactList}\small\item\em Cria novo \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Create\+Process\+Plan\+Node} (\textbf{ Job} $\ast$j)
-\begin{DoxyCompactList}\small\item\em Cria novo nodo para a Lista de Jobs Copia para o nodo da lista a informacao de um job. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Insert\+Job\+In\+Process\+Plan} (\textbf{ Process\+Plan} $\ast$h, \textbf{ Job} $\ast$new\+Job)
-\begin{DoxyCompactList}\small\item\em Insere um novo job na lista. \end{DoxyCompactList}\item 
-bool \textbf{ Check\+Job\+Exists} (\textbf{ Process\+Plan} $\ast$h, int cod)
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{header_8h_a54562da31c08c96d9b36165327f0babd}{Create\+Job}} (int cod, \mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Cria novo \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{header_8h_a0afdef00c7a76c6c31ed2bad92413193}{Check\+Job\+Exists}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int cod)
 \begin{DoxyCompactList}\small\item\em Verifica se um job existe na Lista de Jobs Procura se o job esta presente na Lista de Jobs, atraves do codigo. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Add\+New\+Operation\+To\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, \textbf{ Operation} $\ast$o)
-\begin{DoxyCompactList}\small\item\em Adiciona uma nova operacao ao \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Remove\+Operation\+From\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod, int op\+Cod)
-\begin{DoxyCompactList}\small\item\em Remove uma operacao do \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
-\textbf{ Job} $\ast$ \textbf{ Search\+Job} (\textbf{ Process\+Plan} $\ast$h, int cod)
-\begin{DoxyCompactList}\small\item\em Verifica se o \doxyref{Job}{p.}{struct_job} existe. Se existir devolve endereco do Job! \end{DoxyCompactList}\item 
-\textbf{ Operations\+Math} \textbf{ Get\+Min\+Time\+To\+Complete\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod)
-\begin{DoxyCompactList}\small\item\em Determinar o tempo minimo para completar o \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
-\textbf{ Operations\+Math} \textbf{ Get\+Max\+Time\+To\+Complete\+Job} (\textbf{ Process\+Plan} $\ast$h, int job\+Cod)
-\begin{DoxyCompactList}\small\item\em Determinar o tempo maximo para completar o \doxyref{Job}{p.}{struct_job}. \end{DoxyCompactList}\item 
-\textbf{ Process\+Plan} $\ast$ \textbf{ Read\+Process\+Plan\+File} (char $\ast$path, \textbf{ Process\+Plan} $\ast$p)
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a578c831933e99868d985fbbb20b59b74}{Add\+New\+Operation\+To\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod, \mbox{\hyperlink{struct_operation}{Operation}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova operacao ao \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a066ceb6211faabeeff1929b8988c7d7c}{Remove\+Operation\+From\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod, int op\+Cod)
+\begin{DoxyCompactList}\small\item\em Remove uma operacao do \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{header_8h_aadc97e255104fdb8113c002e0af94cca}{Search\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int cod)
+\begin{DoxyCompactList}\small\item\em Verifica se o \mbox{\hyperlink{struct_job}{Job}} existe. Se existir devolve endereco do Job! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{header_8h_a1abc787cbe68a0bcda437ae45cee39c1}{Get\+Min\+Time\+To\+Complete\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod)
+\begin{DoxyCompactList}\small\item\em Determinar o tempo minimo para completar o \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{header_8h_adb8208bd24ae8eb9a84f6d98bebe9347}{Get\+Max\+Time\+To\+Complete\+Job}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, int job\+Cod)
+\begin{DoxyCompactList}\small\item\em Determinar o tempo maximo para completar o \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_a881597ea8c4d651398386e2f86ad05f6}{Init\+Tree}} ()
+\begin{DoxyCompactList}\small\item\em Inicializa a arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_ab590546bdeb81043ddc806b9baff0645}{New\+Node}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$j)
+\begin{DoxyCompactList}\small\item\em Cria novo node da arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a66963a5eeb9010f59984b2f622332812}{Add\+Node}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$root, \mbox{\hyperlink{struct_job}{Job}} $\ast$j)
+\begin{DoxyCompactList}\small\item\em Adiciona job a arvore. (recursivo) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{header_8h_a139d8d3ed475702c12c2d0c01de38534}{Tree\+Size}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} r)
+\begin{DoxyCompactList}\small\item\em Conta quantos nodes tem a arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_ac47ea1cbebcb5a0de6d051d578c1f099}{Find\+Min}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Encontra o node mais pequeno da arvore (recursivo) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{header_8h_a71fa20ae3b29036481ab7371e680df82}{Destroy\+Node}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$p)
+\begin{DoxyCompactList}\small\item\em Remove node da arvore na memoria. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_a618be9a085e93028896819918e3bbec8}{Delete\+Current\+Node}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Remove node da arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_a45f34340123fd58adead97737009aca3}{Remove\+Job}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, int job\+Cod)
+\begin{DoxyCompactList}\small\item\em Remove job da arvore. (recursivo) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_ac06302578f5a01ab8fb428e9e4d58ae7}{Balance}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root)
+\begin{DoxyCompactList}\small\item\em Balanceia os ramos da arvore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} \mbox{\hyperlink{header_8h_a67435c11453ce520f9db7ef60c221b0f}{BSTBalance}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, \mbox{\hyperlink{struct_node}{Node}} $\ast$list, int ini, int end)
+\item 
+void \mbox{\hyperlink{header_8h_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}{BST2\+List}} (\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} root, unsigned int $\ast$count, \mbox{\hyperlink{struct_node}{Node}} $\ast$list)
+\item 
+bool \mbox{\hyperlink{header_8h_a21caf4a4910af5d3f9068c20987c34e1}{Save\+All}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, FILE $\ast$fp)
+\begin{DoxyCompactList}\small\item\em Grava arvore em ficheiro binario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a20d113ac449e7807cefb88b132dbf7ad}{Get\+All}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$h, char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em Le arvore guardada em ficheiro binario. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Definicoes Globais para o Trabalho pratico da UC EDA (versao 1) 
+Definicoes Globais para o Trabalho pratico da UC EDA (versao 2) 
 
 \begin{DoxyAuthor}{Author}
-Pedro Leiras @email {\texttt{ a18550@alunos.\+ipca.\+pt}} 
+Pedro Leiras @email \href{mailto:a18550@alunos.ipca.pt}{\texttt{ a18550@alunos.\+ipca.\+pt}} 
 \end{DoxyAuthor}
 \begin{DoxyDate}{Date}
 2022
 \end{DoxyDate}
 Structs e Assinaturas de Funcoes \begin{DoxyRefDesc}{Bug}
-\item[\textbf{ Bug}]bugs desconhecidos. \end{DoxyRefDesc}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]bugs desconhecidos. \end{DoxyRefDesc}
 
 
-Definition in file \textbf{ header.\+h}.
+Definition in file \mbox{\hyperlink{header_8h_source}{header.\+h}}.
 
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\label{header_8h_a7f678ed7503a7b4211821d14323751d8}} 
+\mbox{\Hypertarget{header_8h_a7f678ed7503a7b4211821d14323751d8}\label{header_8h_a7f678ed7503a7b4211821d14323751d8}} 
 \index{header.h@{header.h}!Job@{Job}}
 \index{Job@{Job}!header.h@{header.h}}
-\doxysubsubsection{Job}
-{\footnotesize\ttfamily typedef struct \textbf{ Job} \textbf{ Job}}
+\doxysubsubsection{\texorpdfstring{Job}{Job}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_job}{Job}} \mbox{\hyperlink{struct_job}{Job}}}
 
 
 
 Estrutura para armazenar um trabalho. 
 
-Um trabalho contem um codigo (@cod) e uma lista de operacoes (@operations). \mbox{\label{header_8h_ac5435b96779b7d7659b398b8275b6cbf}} 
+Um trabalho contem um codigo (@cod) e uma lista de operacoes (@operations). \mbox{\Hypertarget{header_8h_ac5435b96779b7d7659b398b8275b6cbf}\label{header_8h_ac5435b96779b7d7659b398b8275b6cbf}} 
 \index{header.h@{header.h}!Machine@{Machine}}
 \index{Machine@{Machine}!header.h@{header.h}}
-\doxysubsubsection{Machine}
-{\footnotesize\ttfamily typedef struct \textbf{ Machine} \textbf{ Machine}}
+\doxysubsubsection{\texorpdfstring{Machine}{Machine}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_machine}{Machine}} \mbox{\hyperlink{struct_machine}{Machine}}}
 
 
 
 Estrutura para armazenar uma maquina. 
 
-Uma maquina contem um codigo (@cod) e tempo (@time). \mbox{\label{header_8h_a8148abfb2de35789c458fe21aeaf5944}} 
+Uma maquina contem um codigo (@cod) e tempo (@time). \mbox{\Hypertarget{header_8h_a8148abfb2de35789c458fe21aeaf5944}\label{header_8h_a8148abfb2de35789c458fe21aeaf5944}} 
 \index{header.h@{header.h}!MachinesList@{MachinesList}}
 \index{MachinesList@{MachinesList}!header.h@{header.h}}
-\doxysubsubsection{MachinesList}
-{\footnotesize\ttfamily typedef struct \textbf{ Machines\+List} \textbf{ Machines\+List}}
+\doxysubsubsection{\texorpdfstring{MachinesList}{MachinesList}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \mbox{\hyperlink{struct_machines_list}{Machines\+List}}}
 
 
 
 Estrutura para armazenar as maquinas. 
 
-Uma lista de maquinas contem a estrutura do tipo \doxyref{Machine}{p.}{struct_machine} (@machine) e o apontador para a proxima maquina (@next\+Machine). \mbox{\label{header_8h_a482954e58a1aa24c2a67b81bb6d92d9c}} 
-\index{header.h@{header.h}!Operation@{Operation}}
-\index{Operation@{Operation}!header.h@{header.h}}
-\doxysubsubsection{Operation}
-{\footnotesize\ttfamily typedef struct \textbf{ Operation} \textbf{ Operation}}
-
-
-
-Estrutura para armazenar uma operacao. 
-
-Uma operacao contem um codigo (@cod) e uma lista de maquinas (@machines). \mbox{\label{header_8h_a6fc7be9a51de26281edd9f2b4f9dada3}} 
-\index{header.h@{header.h}!OperationsList@{OperationsList}}
-\index{OperationsList@{OperationsList}!header.h@{header.h}}
-\doxysubsubsection{OperationsList}
-{\footnotesize\ttfamily typedef struct \textbf{ Operations\+List} \textbf{ Operations\+List}}
-
-
-
-Estrutura para armazenar as operacoes. 
-
-Uma lista de operacoes contem a estrutura do tipo \doxyref{Operation}{p.}{struct_operation} (@operation) e o apontador para a proxima operacao (@next\+Operation). \mbox{\label{header_8h_a5d40758bcc7205a6185d35529a72c311}} 
-\index{header.h@{header.h}!OperationsMath@{OperationsMath}}
-\index{OperationsMath@{OperationsMath}!header.h@{header.h}}
-\doxysubsubsection{OperationsMath}
-{\footnotesize\ttfamily typedef struct \textbf{ Operations\+Math} \textbf{ Operations\+Math}}
-
-
-
-Estrutura utilizada para resultados em calculos com Operacoes. 
-
-Um \doxyref{Operations\+Math}{p.}{struct_operations_math} contem o resultado dos calculos (@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@operations). \mbox{\label{header_8h_ac2a7dfcad7fd850eea1b4d38d5c50b3d}} 
-\index{header.h@{header.h}!ProcessPlan@{ProcessPlan}}
-\index{ProcessPlan@{ProcessPlan}!header.h@{header.h}}
-\doxysubsubsection{ProcessPlan}
-{\footnotesize\ttfamily typedef struct \textbf{ Process\+Plan} \textbf{ Process\+Plan}}
+Uma lista de maquinas contem a estrutura do tipo \mbox{\hyperlink{struct_machine}{Machine}} (@machine) e o apontador para a proxima maquina (@next\+Machine). \mbox{\Hypertarget{header_8h_a3b09f37e675bcd48a01bf22155996872}\label{header_8h_a3b09f37e675bcd48a01bf22155996872}} 
+\index{header.h@{header.h}!Node@{Node}}
+\index{Node@{Node}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Node}{Node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_node}{Node}} \mbox{\hyperlink{struct_node}{Node}}}
 
 
 
 Estrutura para armazenar os trabalhos. 
 
-Uma lista de trabalhos contem a estrutura do tipo \doxyref{Job}{p.}{struct_job} (@job) e o apontador para o proximo trabalho (@next\+Job). 
+Uma arvore de trabalhos contem a estrutura do tipo \mbox{\hyperlink{struct_job}{Job}} (@job), o apontador para o ramo a esquerda (@left\+Tree) e o apontador para o ramo a direitoa (@right\+Tree). \mbox{\Hypertarget{header_8h_ad206b4d646cc03e8945d21cb404d8e75}\label{header_8h_ad206b4d646cc03e8945d21cb404d8e75}} 
+\index{header.h@{header.h}!NodeInfo@{NodeInfo}}
+\index{NodeInfo@{NodeInfo}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{NodeInfo}{NodeInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_node_info}{Node\+Info}} \mbox{\hyperlink{struct_node_info}{Node\+Info}}}
+
+
+
+Estrutura para guardar a arvore num ficheiro binario. 
+
+Uma estrutura que contem o codigo do \mbox{\hyperlink{struct_job}{Job}} (@cod\+Job), o codigo da operacao (@cod\+Operation) e a estrutura da maquina (@machine). \mbox{\Hypertarget{header_8h_a482954e58a1aa24c2a67b81bb6d92d9c}\label{header_8h_a482954e58a1aa24c2a67b81bb6d92d9c}} 
+\index{header.h@{header.h}!Operation@{Operation}}
+\index{Operation@{Operation}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Operation}{Operation}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_operation}{Operation}} \mbox{\hyperlink{struct_operation}{Operation}}}
+
+
+
+Estrutura para armazenar uma operacao. 
+
+Uma operacao contem um codigo (@cod) e uma lista de maquinas (@machines). \mbox{\Hypertarget{header_8h_a6fc7be9a51de26281edd9f2b4f9dada3}\label{header_8h_a6fc7be9a51de26281edd9f2b4f9dada3}} 
+\index{header.h@{header.h}!OperationsList@{OperationsList}}
+\index{OperationsList@{OperationsList}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{OperationsList}{OperationsList}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \mbox{\hyperlink{struct_operations_list}{Operations\+List}}}
+
+
+
+Estrutura para armazenar as operacoes. 
+
+Uma lista de operacoes contem a estrutura do tipo \mbox{\hyperlink{struct_operation}{Operation}} (@operation) e o apontador para a proxima operacao (@next\+Operation). \mbox{\Hypertarget{header_8h_a5d40758bcc7205a6185d35529a72c311}\label{header_8h_a5d40758bcc7205a6185d35529a72c311}} 
+\index{header.h@{header.h}!OperationsMath@{OperationsMath}}
+\index{OperationsMath@{OperationsMath}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{OperationsMath}{OperationsMath}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} \mbox{\hyperlink{struct_operations_math}{Operations\+Math}}}
+
+
+
+Estrutura utilizada para resultados em calculos com Operacoes. 
+
+Um \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} contem o resultado dos calculos (@res) e o apontador para o lista de operacoes utilizadas para obter o resultado (@operations). \mbox{\Hypertarget{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}\label{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}} 
+\index{header.h@{header.h}!PtrNode@{PtrNode}}
+\index{PtrNode@{PtrNode}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{PtrNode}{PtrNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}
+
+
 
 \doxysubsection{Function Documentation}
-\mbox{\label{header_8h_a2ef2c0ac42434e6382e8a37454eb4c5c}} 
+\mbox{\Hypertarget{header_8h_a578c831933e99868d985fbbb20b59b74}\label{header_8h_a578c831933e99868d985fbbb20b59b74}} 
 \index{header.h@{header.h}!AddNewOperationToJob@{AddNewOperationToJob}}
 \index{AddNewOperationToJob@{AddNewOperationToJob}!header.h@{header.h}}
-\doxysubsubsection{AddNewOperationToJob()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Add\+New\+Operation\+To\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{\textbf{ Operation} $\ast$}]{o }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{AddNewOperationToJob()}{AddNewOperationToJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Add\+New\+Operation\+To\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{\mbox{\hyperlink{struct_operation}{Operation}} $\ast$}]{o }\end{DoxyParamCaption})}
 
 
 
-Adiciona uma nova operacao ao \doxyref{Job}{p.}{struct_job}. 
+Adiciona uma nova operacao ao \mbox{\hyperlink{struct_job}{Job}}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em o} & Apontador da lista de Operacoes adicionar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+Primeiro node da árvore Process\+Plan 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 103} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00070}{70}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}} 
+\mbox{\Hypertarget{header_8h_a66963a5eeb9010f59984b2f622332812}\label{header_8h_a66963a5eeb9010f59984b2f622332812}} 
+\index{header.h@{header.h}!AddNode@{AddNode}}
+\index{AddNode@{AddNode}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{AddNode()}{AddNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Add\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{j }\end{DoxyParamCaption})}
+
+
+
+Adiciona job a arvore. (recursivo) 
+
+Adiciona um job a arvore, verificando o codigo do \mbox{\hyperlink{struct_job}{Job}} de forma a escolher o ramo a adicionar
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00054}{54}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_ac06302578f5a01ab8fb428e9e4d58ae7}\label{header_8h_ac06302578f5a01ab8fb428e9e4d58ae7}} 
+\index{header.h@{header.h}!Balance@{Balance}}
+\index{Balance@{Balance}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{Balance()}{Balance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
+
+
+
+Balanceia os ramos da arvore. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00191}{191}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}\label{header_8h_a14ecdea30b9fdf3cc5b60ec93aa1f2bf}} 
+\index{header.h@{header.h}!BST2List@{BST2List}}
+\index{BST2List@{BST2List}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{BST2List()}{BST2List()}}
+{\footnotesize\ttfamily void BST2\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{unsigned int $\ast$}]{count,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00227}{227}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a67435c11453ce520f9db7ef60c221b0f}\label{header_8h_a67435c11453ce520f9db7ef60c221b0f}} 
+\index{header.h@{header.h}!BSTBalance@{BSTBalance}}
+\index{BSTBalance@{BSTBalance}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{BSTBalance()}{BSTBalance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} BSTBalance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{list,  }\item[{int}]{ini,  }\item[{int}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00212}{212}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}\label{header_8h_a63eaaebeec8bf3b07e98de09b35f82d3}} 
 \index{header.h@{header.h}!ChangeMachine@{ChangeMachine}}
 \index{ChangeMachine@{ChangeMachine}!header.h@{header.h}}
-\doxysubsubsection{ChangeMachine()}
-{\footnotesize\ttfamily \textbf{ Machine} $\ast$ Change\+Machine (\begin{DoxyParamCaption}\item[{\textbf{ Machine} $\ast$}]{h,  }\item[{int}]{new\+Mac\+Cod,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{ChangeMachine()}{ChangeMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machine}{Machine}} $\ast$ Change\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machine}{Machine}} $\ast$}]{h,  }\item[{int}]{new\+Mac\+Cod,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
 
 
 
@@ -239,7 +349,7 @@ Altera os dados de uma maquina.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Apontador da \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em h} & Apontador da \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em new\+Mac\+Cod} & Novo codigo para a maquina \\
 \hline
@@ -247,17 +357,17 @@ Altera os dados de uma maquina.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador da \doxyref{Machine}{p.}{struct_machine} 
+Apontador da \mbox{\hyperlink{struct_machine}{Machine}} 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 152} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00160}{160}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a235196aa6c989c0c49622de7d14109de}} 
+\mbox{\Hypertarget{header_8h_a79e50541ca712eaf7ef55cbe998b6f91}\label{header_8h_a79e50541ca712eaf7ef55cbe998b6f91}} 
 \index{header.h@{header.h}!ChangeOperationInJob@{ChangeOperationInJob}}
 \index{ChangeOperationInJob@{ChangeOperationInJob}!header.h@{header.h}}
-\doxysubsubsection{ChangeOperationInJob()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Change\+Operation\+In\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod,  }\item[{int}]{mac\+Cod,  }\item[{int}]{new\+Mac\+Cod,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{ChangeOperationInJob()}{ChangeOperationInJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Change\+Operation\+In\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod,  }\item[{int}]{mac\+Cod,  }\item[{int}]{new\+Mac\+Cod,  }\item[{int}]{new\+Time }\end{DoxyParamCaption})}
 
 
 
@@ -265,31 +375,31 @@ Altera os dados de uma Operacao.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \mbox{\hyperlink{struct_operation}{Operation}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em mac\+Cod} & Codigo da \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em mac\+Cod} & Codigo da \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em new\+Mac\+Cod} & Novo codigo da \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em new\+Mac\+Cod} & Novo codigo da \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em new\+Time} & Novo tempo da \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em new\+Time} & Novo tempo da \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+Primeiro node da árvore do Process\+Plan 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 155} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00163}{163}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a77dcfbb7baae202cde0298943eecffa9}} 
+\mbox{\Hypertarget{header_8h_a0afdef00c7a76c6c31ed2bad92413193}\label{header_8h_a0afdef00c7a76c6c31ed2bad92413193}} 
 \index{header.h@{header.h}!CheckJobExists@{CheckJobExists}}
 \index{CheckJobExists@{CheckJobExists}!header.h@{header.h}}
-\doxysubsubsection{CheckJobExists()}
-{\footnotesize\ttfamily bool Check\+Job\+Exists (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CheckJobExists()}{CheckJobExists()}}
+{\footnotesize\ttfamily bool Check\+Job\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
@@ -297,71 +407,71 @@ Verifica se um job existe na Lista de Jobs Procura se o job esta presente na Lis
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true -\/ \doxyref{Job}{p.}{struct_job} existe na lista; false -\/ \doxyref{Job}{p.}{struct_job} nao esta presente na lista 
+true -\/ \mbox{\hyperlink{struct_job}{Job}} existe na lista; false -\/ \mbox{\hyperlink{struct_job}{Job}} nao esta presente na lista 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 82} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00043}{43}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_a4df84032003ee3fabfd650bcc95e862e}} 
+\mbox{\Hypertarget{header_8h_a4df84032003ee3fabfd650bcc95e862e}\label{header_8h_a4df84032003ee3fabfd650bcc95e862e}} 
 \index{header.h@{header.h}!CheckMachineExists@{CheckMachineExists}}
 \index{CheckMachineExists@{CheckMachineExists}!header.h@{header.h}}
-\doxysubsubsection{CheckMachineExists()}
-{\footnotesize\ttfamily bool Check\+Machine\+Exists (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CheckMachineExists()}{CheckMachineExists()}}
+{\footnotesize\ttfamily bool Check\+Machine\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
-Verifica se uma \doxyref{Machine}{p.}{struct_machine} existe a Lista de Maquinas Procura se a \doxyref{Machine}{p.}{struct_machine} esta presente na Lista de Maquinas, atraves do codigo. 
+Verifica se uma \mbox{\hyperlink{struct_machine}{Machine}} existe a Lista de Maquinas Procura se a \mbox{\hyperlink{struct_machine}{Machine}} esta presente na Lista de Maquinas, atraves do codigo. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Machine}{p.}{struct_machine} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_machine}{Machine}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true -\/ \doxyref{Machine}{p.}{struct_machine} existe na lista; false -\/ \doxyref{Machine}{p.}{struct_machine} nao esta presente na lista 
+true -\/ \mbox{\hyperlink{struct_machine}{Machine}} existe na lista; false -\/ \mbox{\hyperlink{struct_machine}{Machine}} nao esta presente na lista 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 81} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00089}{89}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a70d5498820b9d3b0d57b5b3f7b0611e6}} 
+\mbox{\Hypertarget{header_8h_a70d5498820b9d3b0d57b5b3f7b0611e6}\label{header_8h_a70d5498820b9d3b0d57b5b3f7b0611e6}} 
 \index{header.h@{header.h}!CheckOperationExists@{CheckOperationExists}}
 \index{CheckOperationExists@{CheckOperationExists}!header.h@{header.h}}
-\doxysubsubsection{CheckOperationExists()}
-{\footnotesize\ttfamily bool Check\+Operation\+Exists (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CheckOperationExists()}{CheckOperationExists()}}
+{\footnotesize\ttfamily bool Check\+Operation\+Exists (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
-Verifica se uma \doxyref{Operation}{p.}{struct_operation} existe a Lista de Operacoes Procura se a \doxyref{Operation}{p.}{struct_operation} esta presente na Lista de Operacoes, atraves do codigo. 
+Verifica se uma \mbox{\hyperlink{struct_operation}{Operation}} existe a Lista de Operacoes Procura se a \mbox{\hyperlink{struct_operation}{Operation}} esta presente na Lista de Operacoes, atraves do codigo. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Operations\+List}{p.}{struct_operations_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_operation}{Operation}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true -\/ \doxyref{Operation}{p.}{struct_operation} existe na lista; false -\/ \doxyref{Operation}{p.}{struct_operation} nao esta presente na lista 
+true -\/ \mbox{\hyperlink{struct_operation}{Operation}} existe na lista; false -\/ \mbox{\hyperlink{struct_operation}{Operation}} nao esta presente na lista 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 82} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00090}{90}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_acf52e438306e61b06102beaff08f48f5}} 
+\mbox{\Hypertarget{header_8h_acf52e438306e61b06102beaff08f48f5}\label{header_8h_acf52e438306e61b06102beaff08f48f5}} 
 \index{header.h@{header.h}!CountMachines@{CountMachines}}
 \index{CountMachines@{CountMachines}!header.h@{header.h}}
-\doxysubsubsection{CountMachines()}
-{\footnotesize\ttfamily int Count\+Machines (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CountMachines()}{CountMachines()}}
+{\footnotesize\ttfamily int Count\+Machines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -369,7 +479,7 @@ Conta todas as maquinas presentes numa Lista de Maquinas.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -377,67 +487,67 @@ Total de maquinas
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 135} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00143}{143}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a54562da31c08c96d9b36165327f0babd}} 
+\mbox{\Hypertarget{header_8h_a54562da31c08c96d9b36165327f0babd}\label{header_8h_a54562da31c08c96d9b36165327f0babd}} 
 \index{header.h@{header.h}!CreateJob@{CreateJob}}
 \index{CreateJob@{CreateJob}!header.h@{header.h}}
-\doxysubsubsection{CreateJob()}
-{\footnotesize\ttfamily \textbf{ Job} $\ast$ Create\+Job (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\textbf{ Operations\+List} $\ast$}]{o }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CreateJob()}{CreateJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Create\+Job (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{o }\end{DoxyParamCaption})}
 
 
 
-Cria novo \doxyref{Job}{p.}{struct_job}. 
+Cria novo \mbox{\hyperlink{struct_job}{Job}}. 
 
 Aloca memoria necessaria para armazenar um job em memoria
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em o} & Inicio da Lista de Operacoes \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 23} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00023}{23}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_acd18d2851b205d6d5a1a378bef24d257}} 
+\mbox{\Hypertarget{header_8h_acd18d2851b205d6d5a1a378bef24d257}\label{header_8h_acd18d2851b205d6d5a1a378bef24d257}} 
 \index{header.h@{header.h}!CreateMachine@{CreateMachine}}
 \index{CreateMachine@{CreateMachine}!header.h@{header.h}}
-\doxysubsubsection{CreateMachine()}
-{\footnotesize\ttfamily \textbf{ Machine} $\ast$ Create\+Machine (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{int}]{time }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CreateMachine()}{CreateMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machine}{Machine}} $\ast$ Create\+Machine (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{int}]{time }\end{DoxyParamCaption})}
 
 
 
-Cria nova \doxyref{Machine}{p.}{struct_machine}. 
+Cria nova \mbox{\hyperlink{struct_machine}{Machine}}. 
 
-Aloca memoria necessaria para armazenar uma \doxyref{Machine}{p.}{struct_machine} em memoria
+Aloca memoria necessaria para armazenar uma \mbox{\hyperlink{struct_machine}{Machine}} em memoria
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em time} & Tempo para realizar tarefa \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 22} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00022}{22}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a449adb2f0d384a77387f5a9da4c6469f}} 
+\mbox{\Hypertarget{header_8h_a449adb2f0d384a77387f5a9da4c6469f}\label{header_8h_a449adb2f0d384a77387f5a9da4c6469f}} 
 \index{header.h@{header.h}!CreateMachineListNode@{CreateMachineListNode}}
 \index{CreateMachineListNode@{CreateMachineListNode}!header.h@{header.h}}
-\doxysubsubsection{CreateMachineListNode()}
-{\footnotesize\ttfamily \textbf{ Machines\+List} $\ast$ Create\+Machine\+List\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Machine} $\ast$}]{m }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CreateMachineListNode()}{CreateMachineListNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$ Create\+Machine\+List\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machine}{Machine}} $\ast$}]{m }\end{DoxyParamCaption})}
 
 
 
-Cria novo nodo para a Lista de Maquinas Copia para o nodo da lista a informacao de uma \doxyref{Machine}{p.}{struct_machine}. 
+Cria novo nodo para a Lista de Maquinas Copia para o nodo da lista a informacao de uma \mbox{\hyperlink{struct_machine}{Machine}}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em m} & Nova \doxyref{Machine}{p.}{struct_machine} \\
+\mbox{\texttt{ in}}  & {\em m} & Nova \mbox{\hyperlink{struct_machine}{Machine}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -445,44 +555,44 @@ Apontador para nodo criado
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 36} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00040}{40}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a55cec244093d3be768819b96260e3df0}} 
+\mbox{\Hypertarget{header_8h_a55cec244093d3be768819b96260e3df0}\label{header_8h_a55cec244093d3be768819b96260e3df0}} 
 \index{header.h@{header.h}!CreateOperation@{CreateOperation}}
 \index{CreateOperation@{CreateOperation}!header.h@{header.h}}
-\doxysubsubsection{CreateOperation()}
-{\footnotesize\ttfamily \textbf{ Operation} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\textbf{ Machines\+List} $\ast$}]{m }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CreateOperation()}{CreateOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation}{Operation}} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{int}]{cod,  }\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{m }\end{DoxyParamCaption})}
 
 
 
-Cria nova \doxyref{Operation}{p.}{struct_operation}. 
+Cria nova \mbox{\hyperlink{struct_operation}{Operation}}. 
 
-Aloca memoria necessaria para armazenar uma \doxyref{Operation}{p.}{struct_operation} em memoria
+Aloca memoria necessaria para armazenar uma \mbox{\hyperlink{struct_operation}{Operation}} em memoria
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_operation}{Operation}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em m} & Inicio da Lista de Maquinas \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 23} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00023}{23}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a1c8d73b6eba6d821da25647c86e2af65}} 
+\mbox{\Hypertarget{header_8h_a1c8d73b6eba6d821da25647c86e2af65}\label{header_8h_a1c8d73b6eba6d821da25647c86e2af65}} 
 \index{header.h@{header.h}!CreateOperationListNode@{CreateOperationListNode}}
 \index{CreateOperationListNode@{CreateOperationListNode}!header.h@{header.h}}
-\doxysubsubsection{CreateOperationListNode()}
-{\footnotesize\ttfamily \textbf{ Operations\+List} $\ast$ Create\+Operation\+List\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Operation} $\ast$}]{o }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{CreateOperationListNode()}{CreateOperationListNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$ Create\+Operation\+List\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operation}{Operation}} $\ast$}]{o }\end{DoxyParamCaption})}
 
 
 
-Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \doxyref{Operation}{p.}{struct_operation}. 
+Cria novo nodo para a Lista de Operacoes Copia para o nodo da lista a informacao de uma \mbox{\hyperlink{struct_operation}{Operation}}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em o} & Nova \doxyref{Operation}{p.}{struct_operation} \\
+\mbox{\texttt{ in}}  & {\em o} & Nova \mbox{\hyperlink{struct_operation}{Operation}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -490,35 +600,108 @@ Apontador para nodo criado
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 37} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00041}{41}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a568850c2b9d587f32aa4fe9ca783c3f9}} 
-\index{header.h@{header.h}!CreateProcessPlanNode@{CreateProcessPlanNode}}
-\index{CreateProcessPlanNode@{CreateProcessPlanNode}!header.h@{header.h}}
-\doxysubsubsection{CreateProcessPlanNode()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Create\+Process\+Plan\+Node (\begin{DoxyParamCaption}\item[{\textbf{ Job} $\ast$}]{j }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{header_8h_a618be9a085e93028896819918e3bbec8}\label{header_8h_a618be9a085e93028896819918e3bbec8}} 
+\index{header.h@{header.h}!DeleteCurrentNode@{DeleteCurrentNode}}
+\index{DeleteCurrentNode@{DeleteCurrentNode}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{DeleteCurrentNode()}{DeleteCurrentNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Delete\+Current\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
 
 
 
-Cria novo nodo para a Lista de Jobs Copia para o nodo da lista a informacao de um job. 
+Remove node da arvore. 
+
+Verifica a existencia de sub-\/arvores e remove o node indicado
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em j} & Novo \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador para nodo criado 
+Primeiro node da arvore 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 37} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00110}{110}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
 
-\mbox{\label{header_8h_a988ed3af4f9b2f4c28151183ed6722e1}} 
+\mbox{\Hypertarget{header_8h_a71fa20ae3b29036481ab7371e680df82}\label{header_8h_a71fa20ae3b29036481ab7371e680df82}} 
+\index{header.h@{header.h}!DestroyNode@{DestroyNode}}
+\index{DestroyNode@{DestroyNode}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{DestroyNode()}{DestroyNode()}}
+{\footnotesize\ttfamily void Destroy\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$$\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+Remove node da arvore na memoria. 
+
+Liberta da memoria um node indicado
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00149}{149}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_ac47ea1cbebcb5a0de6d051d578c1f099}\label{header_8h_ac47ea1cbebcb5a0de6d051d578c1f099}} 
+\index{header.h@{header.h}!FindMin@{FindMin}}
+\index{FindMin@{FindMin}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{FindMin()}{FindMin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Find\+Min (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root }\end{DoxyParamCaption})}
+
+
+
+Encontra o node mais pequeno da arvore (recursivo) 
+
+Encontra o node com o codigo de \mbox{\hyperlink{struct_job}{Job}} mais pequeno (mais a esquerda)
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_node}{Node}} com o codigo de \mbox{\hyperlink{struct_job}{Job}} mais pequeno da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00164}{164}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a20d113ac449e7807cefb88b132dbf7ad}\label{header_8h_a20d113ac449e7807cefb88b132dbf7ad}} 
+\index{header.h@{header.h}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Get\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+Le arvore guardada em ficheiro binario. 
+
+Le cada linha com o codigo do \mbox{\hyperlink{struct_job}{Job}}, codigo da operacao e cada maquina de forma individual
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em file\+Name} & Nome do ficheiro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro \mbox{\hyperlink{struct_node}{Node}} da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00279}{279}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a400977bed351297b568bc32e4fa72434}\label{header_8h_a400977bed351297b568bc32e4fa72434}} 
 \index{header.h@{header.h}!GetAverageOperationTime@{GetAverageOperationTime}}
 \index{GetAverageOperationTime@{GetAverageOperationTime}!header.h@{header.h}}
-\doxysubsubsection{GetAverageOperationTime()}
-{\footnotesize\ttfamily float Get\+Average\+Operation\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetAverageOperationTime()}{GetAverageOperationTime()}}
+{\footnotesize\ttfamily float Get\+Average\+Operation\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
 
 
 
@@ -526,11 +709,11 @@ Determina a quantidade media de unidades de tempo necessarias para completar uma
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo da \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} \\
+\mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da \mbox{\hyperlink{struct_operation}{Operation}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -538,13 +721,13 @@ Quantidade media de unidades de tempo em float
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 123} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00131}{131}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_ae279e8364c7933f085d47c75a2211127}} 
+\mbox{\Hypertarget{header_8h_ae279e8364c7933f085d47c75a2211127}\label{header_8h_ae279e8364c7933f085d47c75a2211127}} 
 \index{header.h@{header.h}!GetMachineWithHigherTime@{GetMachineWithHigherTime}}
 \index{GetMachineWithHigherTime@{GetMachineWithHigherTime}!header.h@{header.h}}
-\doxysubsubsection{GetMachineWithHigherTime()}
-{\footnotesize\ttfamily \textbf{ Machine} $\ast$ Get\+Machine\+With\+Higher\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMachineWithHigherTime()}{GetMachineWithHigherTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machine}{Machine}} $\ast$ Get\+Machine\+With\+Higher\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -552,21 +735,21 @@ Determinar a maquina com maior tempo numa Lista de Maquinas.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador da copia da \doxyref{Machine}{p.}{struct_machine} 
+Apontador da copia da \mbox{\hyperlink{struct_machine}{Machine}} 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 189} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00197}{197}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a652a416591b66e1e3d0318c6c7e51717}} 
+\mbox{\Hypertarget{header_8h_a652a416591b66e1e3d0318c6c7e51717}\label{header_8h_a652a416591b66e1e3d0318c6c7e51717}} 
 \index{header.h@{header.h}!GetMachineWithLowerTime@{GetMachineWithLowerTime}}
 \index{GetMachineWithLowerTime@{GetMachineWithLowerTime}!header.h@{header.h}}
-\doxysubsubsection{GetMachineWithLowerTime()}
-{\footnotesize\ttfamily \textbf{ Machine} $\ast$ Get\+Machine\+With\+Lower\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMachineWithLowerTime()}{GetMachineWithLowerTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machine}{Machine}} $\ast$ Get\+Machine\+With\+Lower\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -574,45 +757,45 @@ Determinar a maquina com menor tempo numa Lista de Maquinas.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador da copia da \doxyref{Machine}{p.}{struct_machine} 
+Apontador da copia da \mbox{\hyperlink{struct_machine}{Machine}} 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 165} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00173}{173}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a90d6e8bb0d91f65233a25f7f03edc410}} 
+\mbox{\Hypertarget{header_8h_adb8208bd24ae8eb9a84f6d98bebe9347}\label{header_8h_adb8208bd24ae8eb9a84f6d98bebe9347}} 
 \index{header.h@{header.h}!GetMaxTimeToCompleteJob@{GetMaxTimeToCompleteJob}}
 \index{GetMaxTimeToCompleteJob@{GetMaxTimeToCompleteJob}!header.h@{header.h}}
-\doxysubsubsection{GetMaxTimeToCompleteJob()}
-{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Max\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMaxTimeToCompleteJob()}{GetMaxTimeToCompleteJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} Get\+Max\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
 
 
 
-Determinar o tempo maximo para completar o \doxyref{Job}{p.}{struct_job}. 
+Determinar o tempo maximo para completar o \mbox{\hyperlink{struct_job}{Job}}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Struct com o tempo maximo para completar o \doxyref{Job}{p.}{struct_job} e as respetivas operacoes, com as maquinas para obter esse valor 
+Struct com o tempo maximo para completar o \mbox{\hyperlink{struct_job}{Job}} e as respetivas operacoes, com as maquinas para obter esse valor 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 192} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00155}{155}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_ab1b50d442f3f730e77bc3cd2e5fea177}} 
+\mbox{\Hypertarget{header_8h_ab1b50d442f3f730e77bc3cd2e5fea177}\label{header_8h_ab1b50d442f3f730e77bc3cd2e5fea177}} 
 \index{header.h@{header.h}!GetMaxTimeToCompleteOperations@{GetMaxTimeToCompleteOperations}}
 \index{GetMaxTimeToCompleteOperations@{GetMaxTimeToCompleteOperations}!header.h@{header.h}}
-\doxysubsubsection{GetMaxTimeToCompleteOperations()}
-{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Max\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMaxTimeToCompleteOperations()}{GetMaxTimeToCompleteOperations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} Get\+Max\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -620,7 +803,7 @@ Determina a quantidade maxima de unidades de tempo necessarias para completar um
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -628,37 +811,37 @@ Struct com o resultado e respetivas operacoes onde o resultado foi obtido
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 201} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00210}{210}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a30bfde5d1435253942fd666156e81fe6}} 
+\mbox{\Hypertarget{header_8h_a1abc787cbe68a0bcda437ae45cee39c1}\label{header_8h_a1abc787cbe68a0bcda437ae45cee39c1}} 
 \index{header.h@{header.h}!GetMinTimeToCompleteJob@{GetMinTimeToCompleteJob}}
 \index{GetMinTimeToCompleteJob@{GetMinTimeToCompleteJob}!header.h@{header.h}}
-\doxysubsubsection{GetMinTimeToCompleteJob()}
-{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Min\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMinTimeToCompleteJob()}{GetMinTimeToCompleteJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} Get\+Min\+Time\+To\+Complete\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod }\end{DoxyParamCaption})}
 
 
 
-Determinar o tempo minimo para completar o \doxyref{Job}{p.}{struct_job}. 
+Determinar o tempo minimo para completar o \mbox{\hyperlink{struct_job}{Job}}. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Struct com o tempo minimo para completar o \doxyref{Job}{p.}{struct_job} e as respetivas operacoes, com as maquinas para obter esse valor 
+Struct com o tempo minimo para completar o \mbox{\hyperlink{struct_job}{Job}} e as respetivas operacoes, com as maquinas para obter esse valor 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 172} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00135}{135}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_aae44660d8fd42d25ce15f34e4fa3b8a4}} 
+\mbox{\Hypertarget{header_8h_aae44660d8fd42d25ce15f34e4fa3b8a4}\label{header_8h_aae44660d8fd42d25ce15f34e4fa3b8a4}} 
 \index{header.h@{header.h}!GetMinTimeToCompleteOperations@{GetMinTimeToCompleteOperations}}
 \index{GetMinTimeToCompleteOperations@{GetMinTimeToCompleteOperations}!header.h@{header.h}}
-\doxysubsubsection{GetMinTimeToCompleteOperations()}
-{\footnotesize\ttfamily \textbf{ Operations\+Math} Get\+Min\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{GetMinTimeToCompleteOperations()}{GetMinTimeToCompleteOperations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_math}{Operations\+Math}} Get\+Min\+Time\+To\+Complete\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -666,7 +849,7 @@ Determina a quantidade minima de unidades de tempo necessarias para completar um
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -674,76 +857,69 @@ Struct com o resultado e respetivas operacoes onde o resultado foi obtido
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 175} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00184}{184}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a64902ea12b4e9cd03c6062727b728a00}} 
-\index{header.h@{header.h}!InsertJobInProcessPlan@{InsertJobInProcessPlan}}
-\index{InsertJobInProcessPlan@{InsertJobInProcessPlan}!header.h@{header.h}}
-\doxysubsubsection{InsertJobInProcessPlan()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Insert\+Job\+In\+Process\+Plan (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{\textbf{ Job} $\ast$}]{new\+Job }\end{DoxyParamCaption})}
-
-
-
-Insere um novo job na lista. 
+\mbox{\Hypertarget{header_8h_a881597ea8c4d651398386e2f86ad05f6}\label{header_8h_a881597ea8c4d651398386e2f86ad05f6}} 
+\index{header.h@{header.h}!InitTree@{InitTree}}
+\index{InitTree@{InitTree}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{InitTree()}{InitTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Init\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
-\hline
-\mbox{\texttt{ in}}  & {\em new\+Job} & Apontador do \doxyref{Job}{p.}{struct_job} a adicionar \\
-\hline
-\end{DoxyParams}
+
+Inicializa a arvore. 
 
 
-Definition at line \textbf{ 51} of file \textbf{ jobs.\+c}.
 
-\mbox{\label{header_8h_a1c18c2ead9f239c4670c561d97fc589d}} 
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00018}{18}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a1c18c2ead9f239c4670c561d97fc589d}\label{header_8h_a1c18c2ead9f239c4670c561d97fc589d}} 
 \index{header.h@{header.h}!InsertMachineInMachinesList@{InsertMachineInMachinesList}}
 \index{InsertMachineInMachinesList@{InsertMachineInMachinesList}!header.h@{header.h}}
-\doxysubsubsection{InsertMachineInMachinesList()}
-{\footnotesize\ttfamily \textbf{ Machines\+List} $\ast$ Insert\+Machine\+In\+Machines\+List (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h,  }\item[{\textbf{ Machine} $\ast$}]{new\+Machine }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{InsertMachineInMachinesList()}{InsertMachineInMachinesList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$ Insert\+Machine\+In\+Machines\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_machine}{Machine}} $\ast$}]{new\+Machine }\end{DoxyParamCaption})}
 
 
 
-Insere uma nova \doxyref{Machine}{p.}{struct_machine} na lista. 
+Insere uma nova \mbox{\hyperlink{struct_machine}{Machine}} na lista. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em h} & Inicio da Lista de Maquinas \\
 \hline
-\mbox{\texttt{ in}}  & {\em new\+Operation} & Apontador da \doxyref{Machine}{p.}{struct_machine} a adicionar \\
+\mbox{\texttt{ in}}  & {\em new\+Operation} & Apontador da \mbox{\hyperlink{struct_machine}{Machine}} a adicionar \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 50} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00058}{58}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a70ca8c4605b9443afee9fb49312e045b}} 
+\mbox{\Hypertarget{header_8h_a70ca8c4605b9443afee9fb49312e045b}\label{header_8h_a70ca8c4605b9443afee9fb49312e045b}} 
 \index{header.h@{header.h}!InsertOperationInOperationsList@{InsertOperationInOperationsList}}
 \index{InsertOperationInOperationsList@{InsertOperationInOperationsList}!header.h@{header.h}}
-\doxysubsubsection{InsertOperationInOperationsList()}
-{\footnotesize\ttfamily \textbf{ Operations\+List} $\ast$ Insert\+Operation\+In\+Operations\+List (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{\textbf{ Operation} $\ast$}]{new\+Operation }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{InsertOperationInOperationsList()}{InsertOperationInOperationsList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$ Insert\+Operation\+In\+Operations\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_operation}{Operation}} $\ast$}]{new\+Operation }\end{DoxyParamCaption})}
 
 
 
-Insere uma nova \doxyref{Operation}{p.}{struct_operation} na lista. 
+Insere uma nova \mbox{\hyperlink{struct_operation}{Operation}} na lista. 
 
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em h} & Inicio da Lista de Operacoes \\
 \hline
-\mbox{\texttt{ in}}  & {\em new\+Operation} & Apontador da \doxyref{Operation}{p.}{struct_operation} a adicionar \\
+\mbox{\texttt{ in}}  & {\em new\+Operation} & Apontador da \mbox{\hyperlink{struct_operation}{Operation}} a adicionar \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 51} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00059}{59}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a732a6e4510ddfad7068585107eaca427}} 
+\mbox{\Hypertarget{header_8h_a732a6e4510ddfad7068585107eaca427}\label{header_8h_a732a6e4510ddfad7068585107eaca427}} 
 \index{header.h@{header.h}!ListMachines@{ListMachines}}
 \index{ListMachines@{ListMachines}!header.h@{header.h}}
-\doxysubsubsection{ListMachines()}
-{\footnotesize\ttfamily void List\+Machines (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{ListMachines()}{ListMachines()}}
+{\footnotesize\ttfamily void List\+Machines (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -756,13 +932,13 @@ Lista todas as maquinas de uma Lista de Maquinas.
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 212} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00220}{220}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a464521e892eefc968d19a2ad18803e1d}} 
+\mbox{\Hypertarget{header_8h_a464521e892eefc968d19a2ad18803e1d}\label{header_8h_a464521e892eefc968d19a2ad18803e1d}} 
 \index{header.h@{header.h}!ListOperations@{ListOperations}}
 \index{ListOperations@{ListOperations}!header.h@{header.h}}
-\doxysubsubsection{ListOperations()}
-{\footnotesize\ttfamily void List\+Operations (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{ListOperations()}{ListOperations()}}
+{\footnotesize\ttfamily void List\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -770,126 +946,192 @@ Lista todas as operacoes de uma Lista de Operacoes.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista de Operacoes \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line \textbf{ 226} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00235}{235}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a1e8e90040d25eda9776d08a28afb3d00}} 
-\index{header.h@{header.h}!ReadProcessPlanFile@{ReadProcessPlanFile}}
-\index{ReadProcessPlanFile@{ReadProcessPlanFile}!header.h@{header.h}}
-\doxysubsubsection{ReadProcessPlanFile()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Read\+Process\+Plan\+File (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{\textbf{ Process\+Plan} $\ast$}]{p }\end{DoxyParamCaption})}
-
-
-
-Definition at line \textbf{ 60} of file \textbf{ main.\+c}.
-
-\mbox{\label{header_8h_ab35fb3c991455c3d1139cfefb6f2d4de}} 
-\index{header.h@{header.h}!RemoveOperationFromJob@{RemoveOperationFromJob}}
-\index{RemoveOperationFromJob@{RemoveOperationFromJob}!header.h@{header.h}}
-\doxysubsubsection{RemoveOperationFromJob()}
-{\footnotesize\ttfamily \textbf{ Process\+Plan} $\ast$ Remove\+Operation\+From\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{header_8h_ab590546bdeb81043ddc806b9baff0645}\label{header_8h_ab590546bdeb81043ddc806b9baff0645}} 
+\index{header.h@{header.h}!NewNode@{NewNode}}
+\index{NewNode@{NewNode}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{NewNode()}{NewNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ New\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{j }\end{DoxyParamCaption})}
 
 
 
-Remove uma operacao do \doxyref{Job}{p.}{struct_job}. 
+Cria novo node da arvore. 
+
+Aloca memoria necessaria para armazenar um node da arvore em memoria
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
 \hline
-\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \doxyref{Job}{p.}{struct_job} \\
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nodo criado 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00030}{30}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a45f34340123fd58adead97737009aca3}\label{header_8h_a45f34340123fd58adead97737009aca3}} 
+\index{header.h@{header.h}!RemoveJob@{RemoveJob}}
+\index{RemoveJob@{RemoveJob}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{RemoveJob()}{RemoveJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}} Remove\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{root,  }\item[{int}]{cod\+Job }\end{DoxyParamCaption})}
+
+
+
+Remove job da arvore. (recursivo) 
+
+Procura se o \mbox{\hyperlink{struct_job}{Job}} existe na arvore e de forma recursiva encontra o ramo onde se encontra. Uma vez encontrado remove.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em root} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em j} & Apontador do \mbox{\hyperlink{struct_job}{Job}} a adicionar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Primeiro node da arvore 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00081}{81}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a066ceb6211faabeeff1929b8988c7d7c}\label{header_8h_a066ceb6211faabeeff1929b8988c7d7c}} 
+\index{header.h@{header.h}!RemoveOperationFromJob@{RemoveOperationFromJob}}
+\index{RemoveOperationFromJob@{RemoveOperationFromJob}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{RemoveOperationFromJob()}{RemoveOperationFromJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}} $\ast$ Remove\+Operation\+From\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{job\+Cod,  }\item[{int}]{op\+Cod }\end{DoxyParamCaption})}
+
+
+
+Remove uma operacao do \mbox{\hyperlink{struct_job}{Job}}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
+\hline
+\mbox{\texttt{ in}}  & {\em job\+Cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
 \mbox{\texttt{ in}}  & {\em op\+Cod} & Codigo da Operacao a remover \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} 
+Primeiro node da árvore do Process\+Plan 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 121} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00088}{88}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_a1cf3d0102ef8db597c1ee531f0075217}} 
+\mbox{\Hypertarget{header_8h_a21caf4a4910af5d3f9068c20987c34e1}\label{header_8h_a21caf4a4910af5d3f9068c20987c34e1}} 
+\index{header.h@{header.h}!SaveAll@{SaveAll}}
+\index{SaveAll@{SaveAll}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{SaveAll()}{SaveAll()}}
+{\footnotesize\ttfamily bool Save\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{FILE $\ast$}]{fp }\end{DoxyParamCaption})}
+
+
+
+Grava arvore em ficheiro binario. 
+
+Grava em cada linha o codigo do \mbox{\hyperlink{struct_job}{Job}}, codigo da operacao e cada maquina de forma individual
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em h} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\mbox{\texttt{ in}}  & {\em fp} & Apontador do ficheiro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE -\/ gravado com sucesso $\vert$ FALSE -\/ erro na gravacao 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00244}{244}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
+
+\mbox{\Hypertarget{header_8h_aadc97e255104fdb8113c002e0af94cca}\label{header_8h_aadc97e255104fdb8113c002e0af94cca}} 
 \index{header.h@{header.h}!SearchJob@{SearchJob}}
 \index{SearchJob@{SearchJob}!header.h@{header.h}}
-\doxysubsubsection{SearchJob()}
-{\footnotesize\ttfamily \textbf{ Job} $\ast$ Search\+Job (\begin{DoxyParamCaption}\item[{\textbf{ Process\+Plan} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{SearchJob()}{SearchJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Search\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
-Verifica se o \doxyref{Job}{p.}{struct_job} existe. Se existir devolve endereco do Job! 
+Verifica se o \mbox{\hyperlink{struct_job}{Job}} existe. Se existir devolve endereco do Job! 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Process\+Plan}{p.}{struct_process_plan} \\
+\mbox{\texttt{ in}}  & {\em h} & Primeiro node da árvore do Process\+Plan \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo do \doxyref{Job}{p.}{struct_job} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo do \mbox{\hyperlink{struct_job}{Job}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador para o \doxyref{Job}{p.}{struct_job} encontrado 
+Apontador para o \mbox{\hyperlink{struct_job}{Job}} encontrado 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 152} of file \textbf{ jobs.\+c}.
+Definition at line \mbox{\hyperlink{jobs_8c_source_l00119}{119}} of file \mbox{\hyperlink{jobs_8c_source}{jobs.\+c}}.
 
-\mbox{\label{header_8h_a43e29489aba14003f59e61ca73431388}} 
+\mbox{\Hypertarget{header_8h_a43e29489aba14003f59e61ca73431388}\label{header_8h_a43e29489aba14003f59e61ca73431388}} 
 \index{header.h@{header.h}!SearchMachine@{SearchMachine}}
 \index{SearchMachine@{SearchMachine}!header.h@{header.h}}
-\doxysubsubsection{SearchMachine()}
-{\footnotesize\ttfamily \textbf{ Machine} $\ast$ Search\+Machine (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{SearchMachine()}{SearchMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_machine}{Machine}} $\ast$ Search\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
-Verifica se a \doxyref{Machine}{p.}{struct_machine} existe. Se existir devolve endereco da Machine! 
+Verifica se a \mbox{\hyperlink{struct_machine}{Machine}} existe. Se existir devolve endereco da Machine! 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Machine}{p.}{struct_machine} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_machine}{Machine}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador para a \doxyref{Machine}{p.}{struct_machine} encontrada 
+Apontador para a \mbox{\hyperlink{struct_machine}{Machine}} encontrada 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 101} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00109}{109}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
 
-\mbox{\label{header_8h_a93755e4b77c40d29fed15b39eee032f4}} 
+\mbox{\Hypertarget{header_8h_a93755e4b77c40d29fed15b39eee032f4}\label{header_8h_a93755e4b77c40d29fed15b39eee032f4}} 
 \index{header.h@{header.h}!SearchOperation@{SearchOperation}}
 \index{SearchOperation@{SearchOperation}!header.h@{header.h}}
-\doxysubsubsection{SearchOperation()}
-{\footnotesize\ttfamily \textbf{ Operation} $\ast$ Search\+Operation (\begin{DoxyParamCaption}\item[{\textbf{ Operations\+List} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{SearchOperation()}{SearchOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operation}{Operation}} $\ast$ Search\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operations_list}{Operations\+List}} $\ast$}]{h,  }\item[{int}]{cod }\end{DoxyParamCaption})}
 
 
 
-Verifica se a \doxyref{Operation}{p.}{struct_operation} existe. Se existir devolve endereco da Operation! 
+Verifica se a \mbox{\hyperlink{struct_operation}{Operation}} existe. Se existir devolve endereco da Operation! 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Operations\+List}{p.}{struct_operations_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_operations_list}{Operations\+List}} \\
 \hline
-\mbox{\texttt{ in}}  & {\em cod} & Codigo da \doxyref{Operation}{p.}{struct_operation} a procurar \\
+\mbox{\texttt{ in}}  & {\em cod} & Codigo da \mbox{\hyperlink{struct_operation}{Operation}} a procurar \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador para a \doxyref{Operation}{p.}{struct_operation} encontrada 
+Apontador para a \mbox{\hyperlink{struct_operation}{Operation}} encontrada 
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 102} of file \textbf{ operations.\+c}.
+Definition at line \mbox{\hyperlink{operations_8c_source_l00110}{110}} of file \mbox{\hyperlink{operations_8c_source}{operations.\+c}}.
 
-\mbox{\label{header_8h_a3d9833da4e2f8e45c929e13065a7480a}} 
+\mbox{\Hypertarget{header_8h_a3d9833da4e2f8e45c929e13065a7480a}\label{header_8h_a3d9833da4e2f8e45c929e13065a7480a}} 
 \index{header.h@{header.h}!SumMachineTime@{SumMachineTime}}
 \index{SumMachineTime@{SumMachineTime}!header.h@{header.h}}
-\doxysubsubsection{SumMachineTime()}
-{\footnotesize\ttfamily int Sum\+Machine\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Machines\+List} $\ast$}]{h }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{SumMachineTime()}{SumMachineTime()}}
+{\footnotesize\ttfamily int Sum\+Machine\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_machines_list}{Machines\+List}} $\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
@@ -897,7 +1139,7 @@ Soma todos os tempos das maquinas presentes numa Lista de Maquinas.
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \doxyref{Machines\+List}{p.}{struct_machines_list} \\
+\mbox{\texttt{ in}}  & {\em h} & Inicio da Lista do \mbox{\hyperlink{struct_machines_list}{Machines\+List}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -905,5 +1147,29 @@ Total da soma
 \end{DoxyReturn}
 
 
-Definition at line \textbf{ 120} of file \textbf{ machines.\+c}.
+Definition at line \mbox{\hyperlink{machines_8c_source_l00128}{128}} of file \mbox{\hyperlink{machines_8c_source}{machines.\+c}}.
+
+\mbox{\Hypertarget{header_8h_a139d8d3ed475702c12c2d0c01de38534}\label{header_8h_a139d8d3ed475702c12c2d0c01de38534}} 
+\index{header.h@{header.h}!TreeSize@{TreeSize}}
+\index{TreeSize@{TreeSize}!header.h@{header.h}}
+\doxysubsubsection{\texorpdfstring{TreeSize()}{TreeSize()}}
+{\footnotesize\ttfamily int Tree\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{header_8h_a872e8f46e5b764c3d99fda33f6a681f4}{Ptr\+Node}}}]{r }\end{DoxyParamCaption})}
+
+
+
+Conta quantos nodes tem a arvore. 
+
+Conta o total de nodes existentes na arvore
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em r} & \mbox{\hyperlink{struct_node}{Node}} da arvore \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Total de nodes 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{process_plan_8c_source_l00178}{178}} of file \mbox{\hyperlink{process_plan_8c_source}{process\+Plan.\+c}}.
 

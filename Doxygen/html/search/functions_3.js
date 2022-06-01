@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['insertjobinprocessplan_0',['InsertJobInProcessPlan',['../header_8h.html#a64902ea12b4e9cd03c6062727b728a00',1,'InsertJobInProcessPlan(ProcessPlan *h, Job *newJob):&#160;jobs.c'],['../jobs_8c.html#a64902ea12b4e9cd03c6062727b728a00',1,'InsertJobInProcessPlan(ProcessPlan *h, Job *newJob):&#160;jobs.c']]],
-  ['insertmachineinmachineslist_1',['InsertMachineInMachinesList',['../header_8h.html#a1c18c2ead9f239c4670c561d97fc589d',1,'InsertMachineInMachinesList(MachinesList *h, Machine *newMachine):&#160;machines.c'],['../machines_8c.html#a1c18c2ead9f239c4670c561d97fc589d',1,'InsertMachineInMachinesList(MachinesList *h, Machine *newMachine):&#160;machines.c']]],
-  ['insertoperationinoperationslist_2',['InsertOperationInOperationsList',['../header_8h.html#a70ca8c4605b9443afee9fb49312e045b',1,'InsertOperationInOperationsList(OperationsList *h, Operation *newOperation):&#160;operations.c'],['../operations_8c.html#a70ca8c4605b9443afee9fb49312e045b',1,'InsertOperationInOperationsList(OperationsList *h, Operation *newOperation):&#160;operations.c']]]
+  ['deletecurrentnode_0',['DeleteCurrentNode',['../header_8h.html#a618be9a085e93028896819918e3bbec8',1,'DeleteCurrentNode(PtrNode root):&#160;processPlan.c'],['../process_plan_8c.html#a618be9a085e93028896819918e3bbec8',1,'DeleteCurrentNode(PtrNode root):&#160;processPlan.c']]],
+  ['destroynode_1',['DestroyNode',['../header_8h.html#a71fa20ae3b29036481ab7371e680df82',1,'DestroyNode(Node **p):&#160;processPlan.c'],['../process_plan_8c.html#a71fa20ae3b29036481ab7371e680df82',1,'DestroyNode(Node **p):&#160;processPlan.c']]]
 ];

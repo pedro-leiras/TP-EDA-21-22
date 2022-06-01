@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['operation_0',['Operation',['../struct_operation.html',1,'']]],
-  ['operation_1',['operation',['../struct_operations_list.html#ae8617ca768db17a9c8b6fc7309f4a8ab',1,'OperationsList']]],
-  ['operation_2',['Operation',['../header_8h.html#a482954e58a1aa24c2a67b81bb6d92d9c',1,'header.h']]],
-  ['operations_3',['operations',['../struct_job.html#aa63cc6f543bed47dea7113ccf34fc5f6',1,'Job::operations()'],['../struct_operations_math.html#aa63cc6f543bed47dea7113ccf34fc5f6',1,'OperationsMath::operations()']]],
-  ['operations_2ec_4',['operations.c',['../operations_8c.html',1,'']]],
-  ['operationslist_5',['OperationsList',['../struct_operations_list.html',1,'OperationsList'],['../header_8h.html#a6fc7be9a51de26281edd9f2b4f9dada3',1,'OperationsList():&#160;header.h']]],
-  ['operationsmath_6',['OperationsMath',['../struct_operations_math.html',1,'OperationsMath'],['../header_8h.html#a5d40758bcc7205a6185d35529a72c311',1,'OperationsMath():&#160;header.h']]]
+  ['machine_0',['Machine',['../struct_machine.html',1,'']]],
+  ['machine_1',['machine',['../struct_machines_list.html#a1ce1391dc81821b7afd095fc8954b0a5',1,'MachinesList::machine()'],['../struct_node_info.html#a897783118bbdb37a8cb64630fcc44811',1,'NodeInfo::machine()']]],
+  ['machine_2',['Machine',['../header_8h.html#ac5435b96779b7d7659b398b8275b6cbf',1,'header.h']]],
+  ['machines_3',['machines',['../struct_operation.html#aae298d74cdf5b1371f1c28ca58d45190',1,'Operation']]],
+  ['machines_2ec_4',['machines.c',['../machines_8c.html',1,'']]],
+  ['machineslist_5',['MachinesList',['../struct_machines_list.html',1,'MachinesList'],['../header_8h.html#a8148abfb2de35789c458fe21aeaf5944',1,'MachinesList():&#160;header.h']]],
+  ['main_6',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['main_2ec_7',['main.c',['../main_8c.html',1,'']]]
 ];

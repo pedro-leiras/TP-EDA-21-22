@@ -1,101 +1,53 @@
-\doxysection{main.\+c}
-\label{main_8c_source}\index{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/main.c@{D:/Pedro Leiras/IPCA/EDJD 1ANO/S2/EDA/TP-\/EDA-\/21-\/22/Trabalho Pratico 18550/Trabalho Pratico 18550/main.c}}
-\textbf{ Go to the documentation of this file.}
+\hypertarget{main_8c_source}{}\doxysection{main.\+c}
+\label{main_8c_source}\index{Trabalho Pratico 18550/main.c@{Trabalho Pratico 18550/main.c}}
+\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001 }
-\DoxyCodeLine{00010 \textcolor{preprocessor}{\#include "{}header.h"{}};}
-\DoxyCodeLine{00011 }
-\DoxyCodeLine{00012 \textcolor{keywordtype}{int} main() \{}
-\DoxyCodeLine{00013     ProcessPlan* p = NULL;}
-\DoxyCodeLine{00014     MachinesList* machinesOp1 = NULL, * machinesOp2 = NULL, * machinesOp3 = NULL;}
-\DoxyCodeLine{00015     OperationsList* OperationsJob1 = NULL;}
-\DoxyCodeLine{00016     OperationsMath x;}
-\DoxyCodeLine{00017     \textcolor{keywordtype}{float} y;}
-\DoxyCodeLine{00018 }
-\DoxyCodeLine{00019     \textcolor{comment}{//p = ReadProcessPlanFile("{}data.txt"{}, p);}}
-\DoxyCodeLine{00020 }
-\DoxyCodeLine{00021     Machine* M1 = CreateMachine(1, 4);}
-\DoxyCodeLine{00022     Machine* M2 = CreateMachine(2, 4);}
-\DoxyCodeLine{00023     Machine* M3 = CreateMachine(3, 5);}
-\DoxyCodeLine{00024     Machine* M4 = CreateMachine(4, 5);}
-\DoxyCodeLine{00025 }
-\DoxyCodeLine{00026     machinesOp1 = InsertMachineInMachinesList(machinesOp1, M1);}
-\DoxyCodeLine{00027     machinesOp1 = InsertMachineInMachinesList(machinesOp1, M2);}
-\DoxyCodeLine{00028 }
-\DoxyCodeLine{00029     Operation* O1 = CreateOperation(1, machinesOp1);}
-\DoxyCodeLine{00030     OperationsJob1 = InsertOperationInOperationsList(OperationsJob1, O1);}
-\DoxyCodeLine{00031 }
-\DoxyCodeLine{00032     Job* Job1 = CreateJob(1, OperationsJob1);}
-\DoxyCodeLine{00033     p = InsertJobInProcessPlan(p, Job1);}
-\DoxyCodeLine{00034 }
-\DoxyCodeLine{00035     machinesOp2 = InsertMachineInMachinesList(machinesOp2, M3);}
-\DoxyCodeLine{00036     machinesOp2 = InsertMachineInMachinesList(machinesOp2, M4);}
-\DoxyCodeLine{00037     Operation* O2 = CreateOperation(2, machinesOp2);}
-\DoxyCodeLine{00038     machinesOp3 = InsertMachineInMachinesList(machinesOp3, M1);}
-\DoxyCodeLine{00039     machinesOp3 = InsertMachineInMachinesList(machinesOp3, M3);}
-\DoxyCodeLine{00040     Operation* O3 = CreateOperation(3, machinesOp3);}
-\DoxyCodeLine{00041 }
-\DoxyCodeLine{00042     p = AddNewOperationToJob(p, 1, O2);}
-\DoxyCodeLine{00043     p = AddNewOperationToJob(p, 1, O3);}
-\DoxyCodeLine{00044     p = RemoveOperationFromJob(p, 1, 1);}
-\DoxyCodeLine{00045     p = ChangeOperationInJob(p, 1, 3, 3, 3, 10);}
-\DoxyCodeLine{00046 }
-\DoxyCodeLine{00047     x = GetMinTimeToCompleteJob(p, 1);}
-\DoxyCodeLine{00048     ListOperations(x.operations);}
-\DoxyCodeLine{00049     puts(\textcolor{stringliteral}{"{} "{}});}
-\DoxyCodeLine{00050     x = GetMaxTimeToCompleteJob(p, 1);}
-\DoxyCodeLine{00051     ListOperations(x.operations);}
-\DoxyCodeLine{00052 }
-\DoxyCodeLine{00053     y = GetAverageOperationTime(p, 1, 3);}
-\DoxyCodeLine{00054 }
-\DoxyCodeLine{00055     \textcolor{keywordflow}{return} 0;}
-\DoxyCodeLine{00056 \}}
-\DoxyCodeLine{00057 }
-\DoxyCodeLine{00058 }
-\DoxyCodeLine{00059 \textcolor{comment}{//TODO: perceber como desfragmentar cada linha}}
-\DoxyCodeLine{00060 ProcessPlan* ReadProcessPlanFile(\textcolor{keywordtype}{char}* path, ProcessPlan* p) \{}
-\DoxyCodeLine{00061     FILE* fp = fopen(path, \textcolor{stringliteral}{"{}r"{}});}
-\DoxyCodeLine{00062     \textcolor{keywordtype}{char} buffer[256];}
-\DoxyCodeLine{00063     \textcolor{keywordtype}{int} result;}
-\DoxyCodeLine{00064     \textcolor{keywordflow}{if} (fp == NULL)}
-\DoxyCodeLine{00065     \{}
-\DoxyCodeLine{00066         printf(\textcolor{stringliteral}{"{}Error: could not open file \%s"{}}, path);}
-\DoxyCodeLine{00067         \textcolor{keywordflow}{return} p;}
-\DoxyCodeLine{00068     \}}
-\DoxyCodeLine{00069 }
-\DoxyCodeLine{00070     \textcolor{keywordflow}{while} (fgets(buffer, 256, fp)) \{}
-\DoxyCodeLine{00071         \textcolor{keywordtype}{char} line[250];}
-\DoxyCodeLine{00072         \textcolor{keywordtype}{char}* machines;}
-\DoxyCodeLine{00073         \textcolor{keywordtype}{char} machine[250];}
-\DoxyCodeLine{00074         \textcolor{keywordtype}{char}* auxMach;}
-\DoxyCodeLine{00075         \textcolor{keywordtype}{char}* macData;}
-\DoxyCodeLine{00076         \textcolor{keywordtype}{int} machCod, machTime;}
-\DoxyCodeLine{00077         strcpy(line, buffer);}
-\DoxyCodeLine{00078 }
-\DoxyCodeLine{00079         machines = strtok(line, \textcolor{stringliteral}{"{}()"{}});}
-\DoxyCodeLine{00080         \textcolor{keywordflow}{while} (machines != NULL) \{}
-\DoxyCodeLine{00081             \textcolor{keywordflow}{if} (strcmp(machines, \textcolor{stringliteral}{"{};"{}}) != 0) \{}
-\DoxyCodeLine{00082                 strcpy(machine, machines);}
-\DoxyCodeLine{00083                 auxMach = strtok(machine, \textcolor{stringliteral}{"{}\{\}"{}});}
-\DoxyCodeLine{00084                 \textcolor{comment}{/*while (auxMach != NULL) \{}}
-\DoxyCodeLine{00085 \textcolor{comment}{                    printf("{}\%s"{}, auxMach);}}
-\DoxyCodeLine{00086 \textcolor{comment}{                    macData = strtok(auxMach, "{},"{});}}
-\DoxyCodeLine{00087 \textcolor{comment}{                    while (macData != NULL) \{}}
-\DoxyCodeLine{00088 \textcolor{comment}{                        macData = strtok(auxMach, "{},"{});}}
-\DoxyCodeLine{00089 \textcolor{comment}{                        machTime = macData;}}
-\DoxyCodeLine{00090 \textcolor{comment}{                        auxMach = strtok(NULL, "{},"{});}}
-\DoxyCodeLine{00091 \textcolor{comment}{                    \}}}
-\DoxyCodeLine{00092 \textcolor{comment}{                    auxMach = strtok(NULL, "{}\{\}"{});}}
-\DoxyCodeLine{00093 \textcolor{comment}{                \}*/}}
-\DoxyCodeLine{00094             \}}
-\DoxyCodeLine{00095     }
-\DoxyCodeLine{00096             machines = strtok(NULL, \textcolor{stringliteral}{"{}()"{}});}
-\DoxyCodeLine{00097         \}}
-\DoxyCodeLine{00098     \}}
-\DoxyCodeLine{00099         }
-\DoxyCodeLine{00100     fclose(fp);}
-\DoxyCodeLine{00101 }
-\DoxyCodeLine{00102     \textcolor{keywordflow}{return} p;}
-\DoxyCodeLine{00103 \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{header_8h}{header.h}}"{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}\mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{00012}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013     FILE* fp;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014     \mbox{\hyperlink{struct_node}{Node}}* p = \mbox{\hyperlink{header_8h_a881597ea8c4d651398386e2f86ad05f6}{InitTree}}();}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015     \mbox{\hyperlink{struct_machine}{Machine}}* auxMachine = NULL,* auxMachine2 = NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016     \mbox{\hyperlink{struct_machines_list}{MachinesList}}* auxMachineList = NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017     \mbox{\hyperlink{struct_operations_math}{OperationsMath}} x;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018     \textcolor{keywordtype}{float} y;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020     p = \mbox{\hyperlink{header_8h_a20d113ac449e7807cefb88b132dbf7ad}{GetAll}}(p, \textcolor{stringliteral}{"{}data.dat"{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022     p = \mbox{\hyperlink{header_8h_ac06302578f5a01ab8fb428e9e4d58ae7}{Balance}}(p);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024     p = \mbox{\hyperlink{header_8h_a45f34340123fd58adead97737009aca3}{RemoveJob}}(p, 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026     auxMachine = \mbox{\hyperlink{header_8h_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(1, 3);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027     auxMachine2 = \mbox{\hyperlink{header_8h_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(3, 7);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028     auxMachineList = \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(auxMachineList, auxMachine);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029     auxMachineList = \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(auxMachineList, auxMachine2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030     \mbox{\hyperlink{struct_operation}{Operation}}* auxOperation = \mbox{\hyperlink{header_8h_a55cec244093d3be768819b96260e3df0}{CreateOperation}}(5, auxMachineList);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031     p = \mbox{\hyperlink{header_8h_a578c831933e99868d985fbbb20b59b74}{AddNewOperationToJob}}(p, 4, auxOperation);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033     auxMachineList = NULL;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034     auxMachine = \mbox{\hyperlink{header_8h_acd18d2851b205d6d5a1a378bef24d257}{CreateMachine}}(6, 3);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035     auxMachineList = \mbox{\hyperlink{header_8h_a1c18c2ead9f239c4670c561d97fc589d}{InsertMachineInMachinesList}}(auxMachineList, auxMachine);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036     auxOperation = \mbox{\hyperlink{header_8h_a55cec244093d3be768819b96260e3df0}{CreateOperation}}(5, auxMachineList);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037     p = \mbox{\hyperlink{header_8h_a578c831933e99868d985fbbb20b59b74}{AddNewOperationToJob}}(p, 6, auxOperation);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039     p = \mbox{\hyperlink{header_8h_a066ceb6211faabeeff1929b8988c7d7c}{RemoveOperationFromJob}}(p, 3, 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040     p = \mbox{\hyperlink{header_8h_a79e50541ca712eaf7ef55cbe998b6f91}{ChangeOperationInJob}}(p, 8, 3, 3, 5, 10);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042     x = \mbox{\hyperlink{header_8h_a1abc787cbe68a0bcda437ae45cee39c1}{GetMinTimeToCompleteJob}}(p, 6);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043     \mbox{\hyperlink{header_8h_a464521e892eefc968d19a2ad18803e1d}{ListOperations}}(x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044     puts(\textcolor{stringliteral}{"{} "{}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045     x = \mbox{\hyperlink{header_8h_adb8208bd24ae8eb9a84f6d98bebe9347}{GetMaxTimeToCompleteJob}}(p, 6);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046     \mbox{\hyperlink{header_8h_a464521e892eefc968d19a2ad18803e1d}{ListOperations}}(x.\mbox{\hyperlink{struct_operations_math_a4018d43480dc07c9a2ad894f56680b68}{operations}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048     y = \mbox{\hyperlink{header_8h_a400977bed351297b568bc32e4fa72434}{GetAverageOperationTime}}(p, 6, 3);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050     \textcolor{keywordflow}{if} ((fp = fopen(\textcolor{stringliteral}{"{}data2.dat"{}}, \textcolor{stringliteral}{"{}wb"{}})) != NULL) \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051         \mbox{\hyperlink{header_8h_a21caf4a4910af5d3f9068c20987c34e1}{SaveAll}}(p, fp);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052         fclose(fp);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055 \}}
 
 \end{DoxyCode}
