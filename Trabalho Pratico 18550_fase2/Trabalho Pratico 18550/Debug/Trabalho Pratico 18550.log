@@ -1,0 +1,17 @@
+﻿  jobs.c
+  machines.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\machines.c(114,17): warning C4133: 'return': incompatible types - from 'MachinesList *' to 'Machine *'
+  main.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\main.c(10,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  operations.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\operations.c(115,17): warning C4133: 'return': incompatible types - from 'OperationsList *' to 'Operation *'
+  processPlan.c
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(44,48): warning C4047: 'function': 'int' differs in levels of indirection from 'Job *'
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(44,47): warning C4024: 'RemoveJob': different types for formal and actual parameter 2
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(47,51): warning C4047: 'function': 'int' differs in levels of indirection from 'Job *'
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(47,50): warning C4024: 'RemoveJob': different types for formal and actual parameter 2
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(83,60): warning C4047: 'function': 'int' differs in levels of indirection from 'Job *'
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(83,50): warning C4024: 'RemoveJob': different types for formal and actual parameter 2
+D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Trabalho Pratico 18550\processPlan.c(163,1): warning C4047: 'initializing': 'int' differs in levels of indirection from 'void *'
+  Generating Code...
+  Trabalho Pratico 18550.vcxproj -> D:\Pedro Leiras\IPCA\EDJD 1ANO\S2\EDA\TP-EDA-21-22\Trabalho Pratico 18550_fase2\Debug\Trabalho Pratico 18550.exe
